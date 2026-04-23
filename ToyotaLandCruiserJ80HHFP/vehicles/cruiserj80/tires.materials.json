@@ -1,0 +1,43 @@
+{
+  "maxxis900_standard": {
+    "name": "maxxis900_standard",
+    "mapTo": "maxxis900_standard",
+    "class": "Material",
+    "persistentId": "fe76c442-a989-4455-a6a2-c818816909c0",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          9.99999997e-07,
+          9.99999997e-07,
+          9.99999997e-07,
+          1
+        ],
+        "baseColorMap": "/vehicles/common/tires/Maxxis900/maxxis900_black.png",
+        "clearCoatBottomNormalMapStrength": -0.25,
+        "clearCoatFactor": 0.541000009,
+        "clearCoatRoughnessFactor": 0.402999997,
+        "detailNormalMapStrength": 1.73000002,
+        "normalMap": "/vehicles/common/tires/Maxxis900/maxxis900",
+        "normalMapStrength": 0,
+        "pixelSpecular": true,
+        "roughnessFactor": 0.433999985,
+        "roughnessMap": "/vehicles/common/null.dds"
+      },
+      {
+        "baseColorMap": "/vehicles/common/Maxxis900/maxxis900_black.png",
+        "normalMap": "/vehicles/common/Maxxis900/maxxis900"
+      },
+      {},
+      {}
+    ],
+    "doubleSided": true,
+    "dynamicCubemap": true,
+    "invertBackFaceNormals": true,
+    "materialTag0": "tire",
+    "materialTag1": "props",
+    "subSurfacaae0": "0",
+    "translucentBlendOp": "None",
+    "translucentRecvShadows": true,
+    "version": 1.5
+  }
+}

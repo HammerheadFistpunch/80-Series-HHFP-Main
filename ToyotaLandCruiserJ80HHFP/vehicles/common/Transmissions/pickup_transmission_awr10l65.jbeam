@@ -1,0 +1,78 @@
+{
+"pickup_transmission_awr10l65f": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"10-Speed Automatic Transmission (AWR10L65)",
+        "value":2800,
+    },
+    "slotType": "pickup_transmission",
+    "slots": [
+        ["type", "default", "description"],
+        ["pickup_converter","pickup_converter","Torque Converter", {"coreSlot":true}],
+        ["pickup_transfer_case","pickup_transfer_case_4WD","Transfer Case", {"coreSlot":true}],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["torqueConverter", "torqueConverter", "mainEngine", 1],
+        ["automaticGearbox", "gearbox", "torqueConverter", 1],
+    ],
+    "gearbox": {
+        "uiName":"Gearbox",
+        "gearRatios":[-3.061, 0, 4.92, 3.26, 2.35, 1.94, 1.53, 1.19, 1.00, 0.80, 0.66, 0.61],
+        "parkLockTorque":2000,
+        "oneWayViscousCoef":40,
+        "gearChangeTime": 0.1,
+        "shiftEfficiency":0.8,
+        "friction": 1.41,
+        "dynamicFriction": 0.0014,
+        "torqueLossCoef": 0.0166,
+        "gearboxNode:":["tra1"],
+    },
+    "vehicleController": {
+        "automaticModes":"PRNDSM",
+        "shiftDownRPMOffsetCoef":1.15,
+        "calculateOptimalLoadShiftPoints": true,
+        "transmissionGearChangeDelay":0.2,
+        "aggressionHoldOffThrottleDelay":2.5,
+        "aggressionSmoothingUp":2,
+        "aggressionSmoothingDown":0.2,
+        "gearboxDecisionSmoothingUp":2,
+        "gearboxDecisionSmoothingDown":2,
+        "lowShiftDownRPM":1300,
+        "lowShiftUpRPM":1500,
+        "maxGearChangeTime": 0.2,
+        "minGearChangeTime": 0.1,
+        "sportGearChangeTime": 0.1,
+        "throttleCoefWhileShifting": 0.1,
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["gavril_v8_pickup_transmission", ["pickup_engine","pickup_transmission"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":false},
+         {"collision":true},
+         //--4 Speed Auto-
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"nodeWeight":32.9},
+         {"group":"pickup_transmission"},
+         ["tra1", 0.0, -0.41, 0.46],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //--TRANSMISSION CONE--
+          {"beamSpring":18800940,"beamDamp":470},
+          {"beamDeform":175000,"beamStrength":"FLT_MAX"},
+          ["tra1","e1r"],
+          ["tra1","e3r"],
+          ["tra1","e1l"],
+          ["tra1","e3l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+}
+}

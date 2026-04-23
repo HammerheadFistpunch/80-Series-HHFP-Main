@@ -1,0 +1,92 @@
+{
+"pickup_transmission_a750f": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"5-Speed Automatic Transmission (A750F)",
+        "value":2800,
+    },
+    "slotType": "pickup_transmission",
+    "slots": [
+        ["type", "default", "description"],
+        ["pickup_converter","pickup_converter","Torque Converter", {"coreSlot":true}],
+        ["pickup_transfer_case","pickup_transfer_case_4WD","Transfer Case", {"coreSlot":true}],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["torqueConverter", "torqueConverter", "mainEngine", 1],
+        ["automaticGearbox", "gearbox", "torqueConverter", 1],
+    ],
+    "gearbox": {
+        "uiName":"Gearbox",
+        "gearRatios":[-3.224, 0, 3.52, 2.042, 1.4, 1.000, 0.716],
+        "parkLockTorque":2500,
+        "oneWayViscousCoef":40,
+        "gearChangeTime": 0.35,
+        "shiftEfficiency":0.7,
+        "friction": 8,
+        "gearboxNode:":["tra1"],
+    },
+    "vehicleController": {
+        "automaticModes":"PRND21",
+        "calculateOptimalLoadShiftPoints": true,
+        "transmissionGearChangeDelay":0.5,
+        "gearboxDecisionSmoothingUp":2,
+        "gearboxDecisionSmoothingDown":2,
+        "aggressionSmoothingUp":0.5,
+        "aggressionSmoothingDown":0.5,
+        "aggressionHoldOffThrottleDelay":1.75,
+        "lowShiftDownRPM":1000,
+        "lowShiftUpRPM":1800,
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["gavril_v8_pickup_transmission", ["pickup_engine","pickup_transmission"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":false},
+         {"collision":true},
+         //--4 Speed Auto-
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"nodeWeight":32.9},
+         {"group":"pickup_transmission"},
+         ["tra1", 0.0, -0.41, 0.46],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //--TRANSMISSION CONE--
+          {"beamSpring":18800940,"beamDamp":470},
+          {"beamDeform":175000,"beamStrength":"FLT_MAX"},
+          ["tra1","e1r"],
+          ["tra1","e3r"],
+          ["tra1","e1l"],
+          ["tra1","e3l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+"pickup_converter_towhaul": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Tow Haul Mode Converter",
+        "value":150,
+    },
+    "slotType" : "pickup_converter",
+    "torqueConverter": {
+        "uiName":"Torque Converter",
+        "converterDiameter":0.285,
+        "converterStiffness":18,
+        "couplingAVRatio":0.85,
+        "stallTorqueRatio":2,
+        "lockupClutchTorque":400,
+        "additionalEngineInertia":0.03,
+    },
+    "vehicleController": {
+        "torqueConverterLockupRPM":3880,
+        "torqueConverterLockupMinGear":1,
+    },
+},
+}
+}

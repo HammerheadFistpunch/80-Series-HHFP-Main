@@ -1,0 +1,58 @@
+{
+"cruiserj80_celing": {
+    "information":{
+        "authors":"Finn W",
+        "name":"Mirror and Sunvisors",
+        "value":5300,
+    },
+    "slotType" : "cruiserj80_celing",
+    "slots": [
+        ["type", "default", "description"],
+        ["cruiserj80_dice","","Mirror Accessory"]],    
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["cruiserj80_celing", ["cruiserj80_body"]],
+    ],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
+        {
+            "lightInnerAngle":0,
+            "lightOuterAngle":120,
+            "lightBrightness":0.25,
+            "lightRange":70,
+            "lightColor":{"r":245, "g":201, "b":96, "a":255},
+            "lightAttenuation":{"x":0, "y":1, "z":1},
+            "lightCastShadows":true,
+            "flareName":"vehicleBrakeLightFlare",
+            "flareScale":0.9,
+            "cookieName":"art/special/BNG_light_cookie_headlight.dds"
+            "texSize":512,
+            "shadowSoftness":0.9,
+        },
+        //lights
+        //left front
+        ["ceilinglightFL"    , "SPOTLIGHT"        , "rf1", "rf1l", "rf2", {"x":-14, "y":0, "z":-20} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.155, "y":0.19, "z":0.04},"lightRange":30,"lightBrightness":2,"flareScale":0.01,"deformGroup":"sunroof_f_break"}],
+        //left rear
+        ["ceilinglightRL"    , "SPOTLIGHT"        , "rf3l", "p9l", "rf4l", {"x":-45, "y":45, "z":40} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.7, "y":0.4, "z":0.6},"lightRange":30,"lightBrightness":2,"flareScale":0.01,"deformGroup":"sunroof_r_break"}],
+    ],
+    "triggers":[
+        ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        ["ceilinglightFL", "", "rf1","rf1l","rf2", "box", {"x":0.016, "y":0.015, "z":0.030}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.06, "y":0.07, "z":0.0260}],
+        ["ceilinglightRL", "", "rf3l", "rf4l", "p9l", "box", {"x":0.040, "y":0.015, "z":0.01}, {"x":23, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":-0.1560, "y":-0.29, "z":-0.5590}],
+    ],
+    "triggerEventLinks":[
+        ["triggerId:triggers", "action", "targetEventId:events"],
+        ["ceilinglightFL", "action0", "ceilinglightFL"],
+        ["ceilinglightFR", "action0", "ceilinglightFR"],
+        ["ceilinglightRL", "action0", "ceilinglightRL"],
+        ["ceilinglightRR", "action0", "ceilinglightRR"],
+    ],
+    "events":[
+        ["id", "title", "desc"],
+        ["ceilinglightFL", "Toggle Driver Ceiling Light", "Toggle Driver Ceiling Light", {"onUp":"electrics.values.ceilinglightFL = 1 - (electrics.values.ceilinglightFL or 0)", "order": 1}],
+        ["ceilinglightFR", "Toggle Passenger Ceiling Light", "Toggle Passenger Ceiling Light", {"onUp":"electrics.values.ceilinglightFR = 1 - (electrics.values.ceilinglightFR or 0)", "order": 1}],
+        ["ceilinglightRL", "Toggle Rear Left Ceiling Light", "Toggle Rear Left Ceiling Light", {"onUp":"electrics.values.ceilinglightRL = 1 - (electrics.values.ceilinglightRL or 0)", "order": 1}],
+        ["ceilinglightRR", "Toggle Rear Right Ceiling Light", "Toggle Rear Right Ceiling Light", {"onUp":"electrics.values.ceilinglightRR = 1 - (electrics.values.ceilinglightRR or 0)", "order": 1}],
+    ],
+},
+}

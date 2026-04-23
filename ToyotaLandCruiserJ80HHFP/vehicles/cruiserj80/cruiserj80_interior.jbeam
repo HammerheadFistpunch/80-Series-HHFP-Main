@@ -1,0 +1,1275 @@
+{
+"cruiserj80_interior": {
+    "information":{
+        "authors":"Omashida",
+        "name":"Left Hand Drive Interior",
+        "value":1000,
+    },
+    "slotType" : "cruiserj80_interior",
+    "slots": [
+        ["type", "default", "description"],
+        ["cruiserj80_steer","cruiserj80_steer","Steering Wheel"],
+        ["cruiserj80_shifter","cruiserj80_manuelshifter","Shifter"],
+        ["cruiserj80_interior_accessory","","Interior Accessory"],
+        ["cruiserj80_armrest","cruiserj80_armrest","Center Console"],
+        ["cruiserj80_dash_carpet","","Dashborad Accsessory"],
+        ["cruiserj80_garmin","","Navigation Unit"],
+        ["cruiserj80_thirdrow","cruiserj80_thirdrow","Third Row"],
+        ["cruiserj80_celing","cruiserj80_celing","Celing"],
+    ],
+    "camerasInternal":[
+        ["type", "x", "y", "z", "fov", "id1:", "id2:", "id3:", "id4:", "id5:", "id6:"],
+        {"nodeWeight":2.35},
+        {"beamSpring":846, "beamDamp":94},
+        {"selfCollision":true},
+        {"collision":true},
+        //dash cam
+        ["dash", 0.4350, 0.22, 1.54, 55, "b1rr","b1ll","b3rr","b3ll","b6rr","b6ll", {"beamDeform":2800560,"beamStrength":"FLT_MAX"}],
+    ],
+    "triggers":[
+        ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        ["starterMotor", "Ignition", "dsh","dshl","dsh2","box", {"x":0.04, "y":0.04, "z":0.04}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.2450, "y":0.11, "z":-0.12}],
+    ],
+    "triggerEventLinks":[
+        ["triggerId:triggers", "action", "targetEventId:events"],
+        ["starterMotor", "action0", "starterMotor"]
+    ],
+    "events":[
+        ["id", "title", "desc"],
+        ["starterMotor", "ui.inputActions.vehicle.activateStarterMotor.title", "ui.inputActions.vehicle.activateStarterMotor.description", {"ctx": "vlua", "onDown"  :"controller.mainController.setStarter(true)", "onUp"  :"controller.mainController.setStarter(false)", "order": 12}]
+    ],	
+    "soundscape": [
+        ["name", "src"],
+        //indicator7
+        {"node:":"b6l"},
+        ["indicatorStart", "event:>Vehicle>Interior>Indicator>POL_On"],
+        ["indicatorStop", "event:>Vehicle>Interior>Indicator>POL_Off"],
+        ["indLoop1", "event:>Vehicle>Interior>Indicator>POL_Click"],
+        ["indLoop2", "event:>Vehicle>Interior>Indicator>POL_Clack"],
+        //lights3
+        ["LightOn", "event:>Vehicle>Interior>Light>AU5_Light_On"],
+        ["LightOff", "event:>Vehicle>Interior>Light>AU5_Light_Off"],
+        //handbrake2
+        {"node:":"b5ll"},
+        ["handbrakeEngaging","event:>Vehicle>Interior>Handbrake_Ratchet>Ratchet_07_Ratchet"],
+        ["handbrakeDisengaging","event:>Vehicle>Interior>Handbrake_Ratchet>Ratchet_07_Button"],
+        ["handbrakeDisengaged","event:>Vehicle>Interior>Handbrake_Ratchet>Ratchet_07_Thump"],
+        //affects horn location because horn soundscape is loaded after
+        {"node:":"b6l"},
+    ],
+    "props": [
+        ["func",         "mesh",                 "idRef:","idX:","idY:", "baseRotation",           "rotation",                  "translation",           "min", "max", "offset", "multiplier"],
+        //speedometer
+        ["wheelspeed",   "cruiserj80_needle_speedo", "dsh","dshl","dsh2",       {"x":-80 "y":192, "z":180}, {"x":0, "y":0, "z":-4.15},   {"x":0, "y":0, "z":0},   0, 52, -26.1, 1],
+        //tachometer
+        ["rpm",          "cruiserj80_needle_tacho",  "dsh","dshl","dsh2",       {"x":-80 "y":180
+, "z":180}, {"x":0, "y":0, "z":-0.0435}, {"x":0, "y":0, "z":0},   0, 6000, -3000, 1],
+        //fuel gauge
+        ["fuel",         "cruiserj80_needle_fuel",   "dsh","dshl","dsh2",       {"x":-80 "y":230, "z":180}, {"x":0, "y":0, "z":-80},     {"x":0, "y":0, "z":0},   0, 1, -1, 1],
+        //water temp
+        ["watertemp",    "cruiserj80_needle_temp",   "dsh", "dshl","dsh2",      {"x":-80 "y":80, "z":180}, {"x":0, "y":0, "z":1},      {"x":0, "y":0, "z":0},   60, 160, -90, 1],
+		//key
+		["keyTurn",  "cruiserj80_key",   "b1l","b1r","b5l",       {"x":-0 "y":0, "z":90}, {"x":65, "y":0, "z":0},     {"x":0, "y":0, "z":0},   0, 1, 0, 1],
+        //pedals
+        ["brake",        "cruiserj80_brakepedal",    "b1l","b1r","b5l",    {"x":0, "y":0, "z":180},   {"x":-25, "y":0, "z":0},     {"x":0.0, "y":0, "z":0}, 0, 1, 0, 1],
+        ["throttle",     "cruiserj80_gaspedal",      "b1l","b1r","b5l",     {"x":0, "y":0, "z":180},   {"x":-25, "y":0, "z":0},     {"x":0.0, "y":0, "z":0}, 0, 1, 0, 1],
+        ["parkingbrake", "cruiserj80_parkingbrake",  "b1l","b1r","b5l",     {"x":0, "y":0, "z":180},   {"x":-25, "y":0, "z":0},     {"x":0.0, "y":0, "z":0}, 0, 1, 0, 1],
+        //turn signal stalk
+        ["turnsignal",   "cruiserj80_signalstalk",   "dsh","dshl","dsh2",       {"x":27 "y":180, "z":175}, {"x":0, "y":-15, "z":-2},     {"x":0, "y":0, "z":0},   -1, 1, -1, 1],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         //interior
+         ["cruiserj80_dash", ["cruiserj80_dash"]],
+     ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"collision":true},
+         {"selfCollision":true},
+
+         //dash nodes
+         {"group":"cruiserj80_dash"},
+         {"nodeWeight":0.752},
+         ["dshr", -0.76000, -0.57000, 1.25000],
+         ["dsh", 0.00000, -0.57000, 1.25000],
+         ["dshl", 0.76000, -0.57000, 1.25000],
+         ["dsh2", 0.00000, -0.57000, 0.85000],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+          //dash flexbody node
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1.0},
+          {"beamSpring":869146.6,"beamDamp":142.73},
+          {"beamDeform":12400,"beamStrength":"FLT_MAX"},
+          {"deformLimitExpansion":""},
+          ["dshr","b5r"],
+          ["dshl","b5l"],
+          ["dshr","b6r"],
+          ["dshl","b6l"],
+          ["dshr","b1r"],
+          ["dshl","b1l"],
+          ["dshr","b5rr"],
+          ["dshl","b5ll"],
+          ["dshr","b6rr"],
+          ["dshl","b6ll"],
+          ["dshl","dshr"],
+          ["dsh","b5r"],
+          ["dsh","b5l"],
+          ["dsh","b6r"],
+          ["dsh","b6l"],
+          ["dsh","b1r"],
+          ["dsh","b1l"],
+          ["dshl","dsh"],
+          ["dshr","dsh"],
+          ["dsh2", "dsh"],
+          ["dsh2", "dshr"],
+          ["dsh2", "dshl"],
+          ["dsh2", "b5l"],
+          ["dsh2", "b5r"],
+          ["dsh2", "b1l"],
+          ["dsh2", "b1r"],
+          ["dsh2", "b2l"],
+          ["dsh2", "b2r"],
+          ["dsh2", "b5rr"],
+          ["dsh2", "b5ll"],
+          ["dshr", "b1rr"],
+          ["dshl", "b1ll"],
+          //--BLEED DEFORM LIMIT TO OTHER PARTS--
+          {"deformLimitExpansion":1.2},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+"cruiserj80_seats_R": {
+    "information":{
+        "authors":"Omashida",
+        "name":"Rear Bench Seats",
+        "value":650,
+    },
+    "slotType" : "cruiserj80_seats_R",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_seats_R", ["cruiserj80_floor", "cruiserj80_seats_R"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"group":"cruiserj80_seats_R"},
+         {"collision":true},
+         {"selfCollision":true},
+         {"nodeWeight":1.88},
+         ["sr3r", -0.60000, 1.34000, 1.50000],
+         ["sr3", 0.00000, 1.34000, 1.40000],
+         ["sr3l", 0.60000, 1.34000, 1.50000],
+
+         ["sr2r", -0.66000, 1.15000, 0.90000],
+         ["sr2", 0.00000, 1.15000, 0.90000],
+         ["sr2l", 0.66000, 1.15000, 0.90000],
+
+         ["sr1r", -0.66000, 0.76000, 0.92000],
+         ["sr1", 0.00000, 0.76000, 0.92000],
+         ["sr1l", 0.66000, 0.76000, 0.92000],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //main shape
+          {"beamSpring":2350940,"beamDamp":282},
+          {"beamDeform":7000,"beamStrength":"FLT_MAX"},
+          {"deformLimitExpansion":1.2},
+          ["sr1r", "sr1"],
+          ["sr1", "sr1l"],
+          ["sr2r", "sr2"],
+          ["sr2", "sr2l"],
+          ["sr3r", "sr3"],
+          ["sr3", "sr3l"],
+          ["sr1r", "sr2r"],
+          ["sr2r", "sr3r"],
+          ["sr1", "sr2"],
+          ["sr2", "sr3"],
+          ["sr1l", "sr2l"],
+          ["sr2l", "sr3l"],
+          //crossing
+          {"beamDeform":4900,"beamStrength":"FLT_MAX"},
+          {"deformLimitExpansion":""},
+          ["sr3", "sr2r"],
+          ["sr3r", "sr2"],
+          ["sr2", "sr1r"],
+          ["sr1", "sr2r"],
+          ["sr2", "sr1l"],
+          ["sr1", "sr2l"],
+          ["sr2l", "sr3"],
+          ["sr3l", "sr2"],
+          //corners
+          {"beamDeform":2100},
+          ["sr3r", "sr1r"],
+          ["sr3", "sr1"],
+          ["sr3l", "sr1l"],
+
+          //damper
+          {"beamSpring":0,"beamDamp":752},
+          ["sr3l", "tb3l"],
+          ["sr3", "tb3l"],
+          ["sr3", "tb3r"],
+          ["sr3r", "tb3r"],
+
+          //attach
+          {"beamSpring":265080,"beamDamp":35.34},
+          {"beamDeform":4200,"beamStrength":"FLT_MAX"},
+          ["sr2", "b4r"],
+          ["sr2", "b4l"],
+          ["sr2", "tb1r"],
+          ["sr2", "tb1l"],
+          ["sr1", "b4r"],
+          ["sr1", "b4l"],
+          ["sr1r", "b4r"],
+          ["sr2r", "b4r"],
+          ["sr2r", "tb1r"],
+          ["sr2r", "b4rr"],
+          ["sr1r", "b4rr"],
+          ["sr1l", "b4l"],
+          ["sr2l", "b4l"],
+          ["sr2l", "tb1l"],
+          ["sr2l", "b4ll"],
+          ["sr1l", "b4ll"],
+
+          //limiter
+          {"beamType":"|SUPPORT", "beamLongBound":5},
+          {"beamSpring":441800,"beamDamp":132.54},
+          {"beamPrecompression":0.9},
+          {"beamDeform":4200,"beamStrength":"FLT_MAX"},
+          {"optional":true},
+          ["sr3", "p9r"],
+          ["sr3", "rf4r"],
+          ["sr3", "p9l"],
+          ["sr3", "rf4l"],
+          ["sr3r", "p9r"],
+          ["sr3l", "p9l"],
+          ["sr2", "b4rrr"],
+          ["sr2", "b4lll"],
+          ["sr1", "b4rr"],
+          ["sr1", "b3rr"],
+          ["sr1", "b4ll"],
+          ["sr1", "b3ll"],
+          {"optional":false},
+          {"beamPrecompression":1},
+
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"deformLimitExpansion":""},
+    ],
+    "triangles":[
+        ["id1:", "id2:", "id3:"],
+        {"groundModel":"metal"},
+        {"dragCoef":0},
+        ["sr2", "sr2r", "sr1r"],
+        ["sr1r", "sr1", "sr2"],
+        ["sr2", "sr1", "sr1l"],
+        ["sr1l", "sr2l", "sr2"],
+        ["sr3r", "sr2r", "sr2"],
+        ["sr2", "sr3", "sr3r"],
+        ["sr3", "sr2", "sr3l"],
+        ["sr3l", "sr2", "sr2l"],
+
+    ],
+},
+"cruiserj80_seat_FL": {
+    "information":{
+        "authors":"Omashida",
+        "name":"Front Left Seat",
+        "value":500,
+    },
+    "slotType" : "cruiserj80_seat_FL",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_seat_FL", ["cruiserj80_floor","cruiserj80_seat_FL"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"collision":true},
+         {"selfCollision":false},
+         {"nodeWeight":1.41},
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         //seats flexbody
+         {"group":"cruiserj80_seat_FL"},
+         {"collision":true},
+         {"selfCollision":true},
+         {"nodeWeight":1.88},
+         ["sf1l", 0.20000, -0.30000, 0.86000],
+         ["sf1ll", 0.70000, -0.30000, 0.86000],
+         ["sf2l", 0.20000, 0.20000, 0.80000],
+         ["sf2ll", 0.70000, 0.20000, 0.80000],
+         ["sf3l", 0.30000, 0.40000, 1.55000],
+         ["sf3ll", 0.60000, 0.40000, 1.55000],
+         {"group":""},
+    ],
+    "beams":[
+        ["id1:", "id2:"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //main shape
+        {"beamSpring":2350940,"beamDamp":282},
+        {"beamDeform":7000,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":1.2},
+        ["sf1l", "sf1ll"],
+        ["sf2l", "sf2ll"],
+        ["sf3l", "sf3ll"],
+        ["sf1l", "sf2l"],
+        ["sf2l", "sf3l"],
+        ["sf1ll", "sf2ll"],
+        ["sf2ll", "sf3ll"],
+        //crossing
+        {"beamDeform":4900,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":""},
+        ["sf1ll", "sf2l"],
+        ["sf2ll", "sf1l"],
+        ["sf2l", "sf3ll"],
+        ["sf3l", "sf2ll"],
+        //corners
+        {"beamDeform":2100},
+        ["sf3l", "sf1l"],
+        ["sf3ll", "sf1ll"],
+
+        //damper
+        {"beamSpring":0,"beamDamp":752},
+        ["sf3ll", "tb2l"],
+        ["sf3l", "tb2"],
+
+        //attach
+        {"beamSpring":265080,"beamDamp":35.34},
+        {"beamDeform":4200,"beamStrength":"FLT_MAX"},
+        ["sf2l", "b3l"],
+        ["sf2l", "b2l"],
+        ["sf2l", "b3ll"],
+        ["sf2ll", "b3ll"],
+        ["sf2ll", "b3l"],
+        ["sf2ll", "b2ll"],
+        ["sf1l", "b2l"],
+        ["sf1l", "b2ll"],
+        ["sf1l", "b3l"],
+        ["sf1ll", "b2ll"],
+        ["sf1ll", "b2l"],
+        ["sf1ll", "b3ll"],
+
+        //limiter
+        {"beamType":"|SUPPORT", "beamLongBound":5},
+        {"beamSpring":441800,"beamDamp":132.54},
+        {"beamPrecompression":0.9},
+        {"beamDeform":4200,"beamStrength":"FLT_MAX"},
+        {"optional":true},
+        ["sf3l", "p8l"],
+        ["sf3l", "p7l"],
+        ["sf3l", "rf2l"],
+        ["sf2l", "p3l"],
+        ["sf2l", "b2ll"],
+        ["sf2l", "b1ll"],
+        ["sf1l", "b1ll"],
+
+        //to other seat
+        {"beamPrecompression":0.7},
+        ["sf1rr", "sf1ll"],
+        ["sf2rr", "sf2ll"],
+        ["sf3rr", "sf3ll"],
+        {"optional":false},
+        {"beamPrecompression":1},
+
+        {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"deformLimitExpansion":""},
+    ],
+    "triangles":[
+        ["id1:", "id2:", "id3:"],
+        {"groundModel":"metal"},
+        {"dragCoef":0},
+        //front seat
+        ["sf2l",  "sf1l",  "sf1ll"],
+        ["sf1ll", "sf2ll", "sf2l"],
+        ["sf3l",  "sf2l",  "sf2ll"],
+        ["sf2ll", "sf3ll", "sf3l"],
+    ],
+},
+"cruiserj80_seat_FR": {
+    "information":{
+        "authors":"Omashida",
+        "name":"Front Right Seat",
+        "value":500,
+    },
+    "slotType" : "cruiserj80_seat_FR",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_seat_FR", ["cruiserj80_floor","cruiserj80_seat_FR"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"collision":true},
+         {"selfCollision":true},
+         {"nodeWeight":1.41},
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         //seats flexbody
+         {"group":"cruiserj80_seat_FR"},
+         {"collision":true},
+         {"selfCollision":true},
+         {"nodeWeight":1.88},
+         ["sf1r", -0.20000, -0.30000, 0.86000],
+         ["sf1rr", -0.70000, -0.30000, 0.86000],
+         ["sf2r", -0.20000, 0.20000, 0.80000],
+         ["sf2rr", -0.70000, 0.20000, 0.80000],
+         ["sf3r", -0.30000, 0.40000, 1.55000],
+         ["sf3rr", -0.60000, 0.40000, 1.55000],
+         {"group":""},
+    ],
+    "beams":[
+        ["id1:", "id2:"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //main shape
+        {"beamSpring":2350940,"beamDamp":282},
+        {"beamDeform":7000,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":1.2},
+        ["sf1r", "sf1rr"],
+        ["sf2r", "sf2rr"],
+        ["sf3r", "sf3rr"],
+        ["sf1r", "sf2r"],
+        ["sf2r", "sf3r"],
+        ["sf1rr", "sf2rr"],
+        ["sf2rr", "sf3rr"],
+        //crossing
+        {"beamDeform":4900,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":""},
+        ["sf1rr", "sf2r"],
+        ["sf2rr", "sf1r"],
+        ["sf2r", "sf3rr"],
+        ["sf3r", "sf2rr"],
+        //corners
+        {"beamDeform":2100},
+        ["sf3r", "sf1r"],
+        ["sf3rr", "sf1rr"],
+
+        //damper
+        {"beamSpring":0,"beamDamp":752},
+        ["sf3rr", "tb2r"],
+        ["sf3r", "tb2"],
+
+        //attach
+        {"beamSpring":265080,"beamDamp":35.34},
+        {"beamDeform":4200,"beamStrength":"FLT_MAX"},
+        ["sf2r", "b3r"],
+        ["sf2r", "b2r"],
+        ["sf2r", "b3rr"],
+        ["sf2rr", "b3rr"],
+        ["sf2rr", "b3r"],
+        ["sf2rr", "b2rr"],
+        ["sf1r", "b2r"],
+        ["sf1r", "b2rr"],
+        ["sf1r", "b3r"],
+        ["sf1rr", "b2rr"],
+        ["sf1rr", "b2r"],
+        ["sf1rr", "b3rr"],
+
+        //limiter
+        {"beamType":"|SUPPORT", "beamLongBound":5},
+        {"beamSpring":441800,"beamDamp":132.54},
+        {"beamPrecompression":0.9},
+        {"beamDeform":4200,"beamStrength":"FLT_MAX"},
+        {"optional":true},
+        ["sf3r", "p8r"],
+        ["sf3r", "p7r"],
+        ["sf3r", "rf2r"],
+        ["sf2r", "p3r"],
+        ["sf2r", "b2rr"],
+        ["sf2r", "b1rr"],
+        ["sf1r", "b1rr"],
+        //to other seat
+        {"beamPrecompression":0.7},
+        //["sf1rr", "sf1ll"],
+        //["sf2rr", "sf2ll"],
+        //["sf3rr", "sf3ll"],
+        {"optional":false},
+        {"beamPrecompression":1},
+
+        {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"deformLimitExpansion":""},
+    ],
+    "triangles":[
+        ["id1:", "id2:", "id3:"],
+        {"groundModel":"metal"},
+        {"dragCoef":0},
+        //front seat
+        ["sf1r", "sf2r", "sf1rr"],
+        ["sf2rr", "sf1rr", "sf2r"],
+        ["sf2r", "sf3r", "sf2rr"],
+        ["sf3rr", "sf2rr", "sf3r"],
+    ],
+},
+"cruiserj80_race_seat_FL": {
+    "information":{
+        "authors":"Omashida",
+        "name":"Front Left Race Seat Base",
+        "value":10,
+    },
+    "slotType" : "cruiserj80_seat_FL",
+    "slots": [
+        ["type", "default", "description"],
+        ["race_seat_FL","race_seat_FL", "Front Left Race Seat", {"nodeMove":{"x":0.45, "y":0.07, "z":0.62}}],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["racingseat_base" ["cruiserj80_floor","race_seat_FL"],[],{"pos":{"x":0.45,"y":0.07,"z":0.58}, "scale":{"x":1.0, "y":1.0, "z":1.75}}],
+    ],
+    "beams":[
+        ["id1:", "id2:"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //main shape
+        {"beamSpring":2350940,"beamDamp":282},
+        {"beamDeform":9000,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":""},
+        {"optional":true},
+
+        //damper
+        {"beamSpring":0,"beamDamp":752},
+        ["sf3ll", "tb2l"],
+        ["sf3l", "tb2"],
+
+        //attach
+        {"beamSpring":265080,"beamDamp":35.34},
+        {"beamDeform":4200,"beamStrength":"FLT_MAX"},
+        ["sf2l", "b3l"],
+        ["sf2l", "b2l"],
+        ["sf2l", "b3ll"],
+        ["sf2ll", "b3ll"],
+        ["sf2ll", "b3l"],
+        ["sf2ll", "b2ll"],
+        ["sf1l", "b2l"],
+        ["sf1l", "b2ll"],
+        ["sf1l", "b3l"],
+        ["sf1ll", "b2ll"],
+        ["sf1ll", "b2l"],
+        ["sf1ll", "b3ll"],
+
+        //limiter
+        {"beamType":"|SUPPORT", "beamLongBound":5},
+        {"beamSpring":441800,"beamDamp":132.54},
+        {"beamPrecompression":0.9},
+        {"beamDeform":4200,"beamStrength":"FLT_MAX"},
+        ["sf3l", "p8l"],
+        ["sf3l", "p7l"],
+        ["sf3l", "rf2l"],
+        ["sf2l", "p3l"],
+        ["sf2l", "b2ll"],
+        ["sf2l", "b1ll"],
+        ["sf1l", "b1ll"],
+
+        //to other seat
+        {"beamPrecompression":0.7},
+        ["sf1rr", "sf1ll"],
+        ["sf2rr", "sf2ll"],
+        ["sf3rr", "sf3ll"],
+        {"optional":false},
+        {"beamPrecompression":1},
+
+        {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"deformLimitExpansion":""},
+    ],
+},
+"cruiserj80_race_seat_FR": {
+    "information":{
+        "authors":"Omashida",
+        "name":"Front Right Race Seat Base",
+        "value":10,
+    },
+    "slotType" : "cruiserj80_seat_FR",
+    "slots": [
+        ["type", "default", "description"],
+        ["race_seat_FR","race_seat_FR", "Front Right Race Seat", {"nodeMove":{"x":-0.45, "y":0.07, "z":0.62}}],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["racingseat_base" ["cruiserj80_floor","cruiserj80_seat_FR"],[],{"pos":{"x":-0.45,"y":0.07,"z":0.58}, "scale":{"x":1.0, "y":1.0, "z":1.75}}],
+    ],
+    "beams":[
+        ["id1:", "id2:"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //main shape
+        {"beamSpring":2350940,"beamDamp":282},
+        {"beamDeform":9000,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":""},
+        {"optional":true},
+
+        //damper
+        {"beamSpring":0,"beamDamp":752},
+        ["sf3rr", "tb2r"],
+        ["sf3r", "tb2"],
+
+        //attach
+        {"beamSpring":265080,"beamDamp":35.34},
+        {"beamDeform":4200,"beamStrength":"FLT_MAX"},
+        ["sf2r", "b3r"],
+        ["sf2r", "b2r"],
+        ["sf2r", "b3rr"],
+        ["sf2rr", "b3rr"],
+        ["sf2rr", "b3r"],
+        ["sf2rr", "b2rr"],
+        ["sf1r", "b2r"],
+        ["sf1r", "b2rr"],
+        ["sf1r", "b3r"],
+        ["sf1rr", "b2rr"],
+        ["sf1rr", "b2r"],
+        ["sf1rr", "b3rr"],
+
+        //limiter
+        {"beamType":"|SUPPORT", "beamLongBound":5},
+        {"beamSpring":441800,"beamDamp":132.54},
+        {"beamPrecompression":0.9},
+        {"beamDeform":4200,"beamStrength":"FLT_MAX"},
+        ["sf3r", "p8r"],
+        ["sf3r", "p7r"],
+        ["sf3r", "rf2r"],
+        ["sf2r", "p3r"],
+        ["sf2r", "b2rr"],
+        ["sf2r", "b1rr"],
+        ["sf1r", "b1rr"],
+        //to other seat
+        {"beamPrecompression":0.7},
+        //["sf1rr", "sf1ll"],
+        //["sf2rr", "sf2ll"],
+        //["sf3rr", "sf3ll"],
+        {"optional":false},
+        {"beamPrecompression":1},
+
+        {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"deformLimitExpansion":""},
+    ],
+    "triangles":[
+        ["id1:", "id2:", "id3:"],
+        {"groundModel":"metal"},
+        {"dragCoef":1},
+        //front seat
+        ["sf1r",  "sf2r",  "sf1rr"],
+        ["sf2rr", "sf1rr", "sf2r"],
+        ["sf2r",  "sf3r",  "sf2rr"],
+        ["sf3rr", "sf2rr", "sf3r"],
+        ["sf1r",  "sf3r",  "sf2r"],
+        ["sf2rr", "sf3rr", "sf1rr"],
+    ],
+},
+"cruiserj80_shifter_A": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Automatic Shifter",
+        "value":80,
+    },
+    "slotType" : "cruiserj80_shifter_A",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["cruiserj80_centerconsole_A", ["cruiserj80_dash","cruiserj80_body"]],
+    ],
+    "props": [
+        ["func" ,  "mesh",               "idRef:","idX:","idY:", "baseRotation",           "rotation",              "translation",           "min", "max", "offset", "multiplier"],
+        //automatic transmission
+        ["gear_A"   ,"cruiserj80_shifter_A", "f7r","f7l","f8r", {"x":85, "y":0, "z":0}, {"x":1, "y":0, "z":0}     , {"x":0, "y":0.15, "z":0.01}, 0, 1, -0.2, 1],
+    ],
+},
+"cruiserj80_shifter_M": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"5-Speed Manual Shifter",
+        "value":50,
+    },
+    "slotType" : "cruiserj80_shifter_M",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_prndlblank", ["cruiserj80_body"]],
+         ["cruiserj80_shifter_M", ["cruiserj80_floor","cruiserj80_shifterboot_M","cruiserj80_shifterknob_M","cruiserj80_shifterbase_M"]],
+    ],
+    "controller": [
+        ["fileName"],
+        ["propAnimation/hPattern", {"name":"hPattern"}],
+
+    ]
+    "hPattern": {
+        "gearCoordinates": [
+            ["gearIndex",   "x",      "y"]
+            [-1,            0.5,       -1]
+            [0,             0.0,        0]
+            [1,            -0.5,        1]
+            [2,            -0.5,       -1]
+            [3,             0.0,        1]
+            [4,             0.0,       -1]
+            [5,             0.5,        1]
+        ]
+        "shiftSoundNode:":["sh_b3"]
+        "shiftSoundEventHPatternGearIn": "event:>Vehicle>Interior>Gearshift>manual_modern_03_in",
+        "shiftSoundEventHPatternGearOut": "event:>Vehicle>Interior>Gearshift>manual_modern_03_out",
+        "shiftSoundVolumeHPatternGearIn": 1,
+        "shiftSoundVolumeHPatternGearOut": 1,
+    },
+    "props": [
+        ["func",   "mesh",             "idRef:","idX:","idY:", "baseRotation",         "rotation",            "translation",         "min", "max", "offset", "multiplier"],
+        //shifter
+        ["clutch", "cruiserj80_clutchpedal"   , "b1l","b1r","b5l",    {"x":0, "y":0, "z":180}, {"x":-25, "y":0, "z":0}    , {"x":0.0, "y":0, "z":0}, 0, 1, 0, 1]
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"collision":true},
+         {"selfCollision":false},
+         //--SHIFTER---  has to be jbeamed to allow for recruiserj80stic movement
+         {"group":"cruiserj80_shifterbase_M"},
+         {"nodeWeight":0.45}
+         ["sh_b1l", 0.10773, -0.45471, 0.72871],
+         ["sh_b1r", -0.03815, -0.45471, 0.72871],
+         ["sh_b2l", 0.10773, -0.27241, 0.70178],
+         ["sh_b2r", -0.03815, -0.27241, 0.70178],
+
+         ["sh_b3", 0.03479, -0.37764, 0.65038],
+         {"selfCollision":true},
+         {"group":["cruiserj80_shifterboot_M","cruiserj80_shifterknob_M"]},
+         {"nodeWeight":1.5}
+         ["sh_l3", 0.04086, -0.28077, 1.08538],
+
+         {"selfCollision":false},
+         {"nodeWeight":0.30}
+         {"group":["cruiserj80_shifterboot_M","cruiserj80_shifterknob_M"]},
+         ["sh_l1l", 0.08997, -0.40736, 0.84484],
+         ["sh_l1r", -0.02039, -0.40736, 0.84484],
+         ["sh_l2l", 0.08997, -0.28567, 0.83015],
+         ["sh_l2r", -0.02039, -0.28567, 0.83015],
+         {"selfCollision":false},
+         {"collision":true},
+         {"group":""},
+    ],
+    "beams":[
+        ["id1:", "id2:"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //main shape
+        {"beamSpring":401000,"beamDamp":55},
+        {"beamDeform":259000,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":1.1},
+        ["sh_b1l", "sh_b1r"],
+        ["sh_b1l", "sh_b2l"],
+        ["sh_b1l", "sh_b2r"],
+        ["sh_b1r", "sh_b2l"],
+        ["sh_b1r", "sh_b2r"],
+        ["sh_b2l", "sh_b2r"],
+
+        ["sh_b1l", "sh_b3"],
+        ["sh_b1r", "sh_b3"],
+        ["sh_b2l", "sh_b3"],
+        ["sh_b2r", "sh_b3"],
+
+        //lever
+        {"beamSpring":121000,"beamDamp":35},
+        ["sh_l3", "sh_l1l"],
+        ["sh_l3", "sh_l1r"],
+        ["sh_l3", "sh_l2l"],
+        ["sh_l3", "sh_l2r"],
+
+        ["sh_l1l", "sh_l1r"],
+        ["sh_l1l", "sh_l2l"],
+        ["sh_l1l", "sh_l2r"],
+
+        ["sh_l1r", "sh_l2l"],
+        ["sh_l1r", "sh_l2r"],
+        ["sh_l2l", "sh_l2r"],
+        //hinge
+        {"beamSpring":121000,"beamDamp":25},
+        ["sh_b3", "sh_l3"],
+        ["sh_b3", "sh_l1l"],
+        ["sh_b3", "sh_l1r"],
+        ["sh_b3", "sh_l2l"],
+        ["sh_b3", "sh_l2r"],
+
+        //stabilize the shifter
+        {"beamSpring":0,"beamDamp":175},
+        ["sh_b1l", "sh_l3"],
+        ["sh_b1r", "sh_l3"],
+        ["sh_b2l", "sh_l3"],
+        ["sh_b2r", "sh_l3"],
+        {"breakGroup":""},
+        //attach to body
+        {"beamSpring":300000,"beamDamp":70},
+        {"beamDeform":1400,"beamStrength":"FLT_MAX"},
+        ["sh_b1l", "b5r"],
+        ["sh_b1r", "b5r"],
+        ["sh_b2l", "b5r"],
+        ["sh_b2r", "b5r"],
+        ["sh_b3",  "b5r"],
+
+        ["sh_b1l", "b5l"],
+        ["sh_b1r", "b5l"],
+        ["sh_b2l", "b5l"],
+        ["sh_b2r", "b5l"],
+        ["sh_b3",  "b5l"],
+
+        ["sh_b1l", "dsh2",{"beamDeform":12400}],
+        ["sh_b1r", "dsh2",{"beamDeform":12400}],
+        ["sh_b2l", "dsh2",{"beamDeform":12400}],
+        ["sh_b2r", "dsh2",{"beamDeform":12400}],
+        ["sh_b3",  "dsh2",{"beamDeform":12400}],
+
+        ["sh_b1l", "b1r"],
+        ["sh_b1r", "b1r"],
+        ["sh_b2l", "b1r"],
+        ["sh_b2r", "b1r"],
+        ["sh_b3",  "b1r"],
+
+        ["sh_b1l", "b1l"],
+        ["sh_b1r", "b1l"],
+        ["sh_b2l", "b1l"],
+        ["sh_b2r", "b1l"],
+        ["sh_b3",  "b1l"],
+        //support beams
+        {"beamType":"|SUPPORT","beamPrecompression":0.90,"beamLongBound":2},
+        {"beamSpring":201000,"beamDamp":50},
+        {"beamDeform":16000,"beamStrength":"FLT_MAX"},
+        ["sh_l1r", "sh_b2l"],
+        ["sh_l2r", "sh_b1l"],
+        ["sh_l2l", "sh_b1r"],
+        ["sh_l1l", "sh_b2r"],
+        {"beamPrecompression":0.93}
+        ["sh_l3", "sh_b1l"],
+        ["sh_l3", "sh_b2l"],
+        {"beamPrecompression":0.95}
+        ["sh_l3", "sh_b1r"],
+        ["sh_l3", "sh_b2r"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "torsionHydros": [
+        ["id1:","id2:","id3:","id4:"],
+        {"spring":200, "damp":1, "deform":"FLT_MAX", "strength":1000},
+        ["sh_b2l","sh_b1l","sh_b1r","sh_l3",  {"inputSource":"hPatternAxisY","factor":-0.20}],
+        ["sh_b1r","sh_b1l","sh_b2l","sh_l3",  {"inputSource":"hPatternAxisX","factor":-0.15}],
+        ["sh_b1r","sh_b2r","sh_b2l","sh_l3",  {"inputSource":"hPatternAxisY","factor":0.20}],
+        ["sh_b2l","sh_b2r","sh_b1r","sh_l3",  {"inputSource":"hPatternAxisX","factor":0.15}],
+    ],
+    "torsionbars": [
+        ["id1:", "id2:", "id3:", "id4:"],
+        {"spring":100, "damp":0.2, "deform":30000, "strength":1000},
+        ["sh_b1r", "sh_b3", "sh_l3", "sh_l1r"],
+        ["sh_b2r", "sh_b3", "sh_l3", "sh_l2r"],
+        ["sh_b2l", "sh_b3", "sh_l3", "sh_l2l"],
+        ["sh_b1l", "sh_b3", "sh_l3", "sh_l1l"],
+
+    ],
+},
+"cruiserj80_shifter_T": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Manual Low Range Selector",
+        "value":30,
+    },
+    "slotType" : "cruiserj80_shifter_T",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_shifter_T", ["cruiserj80_shifterbase_T", "cruiserj80_shifterboot_T", "cruiserj80_shifterknob_T"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"collision":true},
+         {"selfCollision":false},
+         //--SHIFTER---  has to be jbeamed to allow for realistic movement
+         {"group":"cruiserj80_shifterbase_T"},
+         {"nodeWeight":0.45}
+         ["tsh_b1l", 0.04273, -0.23007, 0.76349],
+         ["tsh_b1r", -0.04892, -0.23007, 0.76349],
+         ["tsh_b2l", 0.04273, -0.13876, 0.75017],
+         ["tsh_b2r", -0.04892, -0.13876, 0.75017],
+
+         ["tsh_b3", -0.00310, -0.18589, 0.71021, {"group":""}],
+         {"selfCollision":true},
+         {"group":["cruiserj80_shifterboot_T","cruiserj80_shifterknob_T"]},
+         {"nodeWeight":1.5}
+         ["tsh_l3", -0.00011, -0.19303, 0.96330],
+
+         {"selfCollision":false},
+         {"nodeWeight":0.30}
+         {"group":["cruiserj80_shifterboot_T","cruiserj80_shifterknob_T"]},
+         ["tsh_l1l", 0.01620, -0.19841, 0.88336],
+         ["tsh_l1r", -0.02239, -0.19841, 0.88336],
+         ["tsh_l2l", 0.01620, -0.16085, 0.87670],
+         ["tsh_l2r", -0.02239, -0.16085, 0.87670],
+         {"selfCollision":false},
+         {"collision":true},
+         {"group":""},
+    ],
+    "beams":[
+        ["id1:", "id2:"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //main shape
+        {"beamSpring":401000,"beamDamp":55},
+        {"beamDeform":259000,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":1.1},
+        ["tsh_b1l", "tsh_b1r"],
+        ["tsh_b1l", "tsh_b2l"],
+        ["tsh_b1l", "tsh_b2r"],
+        ["tsh_b1r", "tsh_b2l"],
+        ["tsh_b1r", "tsh_b2r"],
+        ["tsh_b2l", "tsh_b2r"],
+
+        ["tsh_b1l", "tsh_b3"],
+        ["tsh_b1r", "tsh_b3"],
+        ["tsh_b2l", "tsh_b3"],
+        ["tsh_b2r", "tsh_b3"],
+
+        //lever
+        {"beamSpring":121000,"beamDamp":35},
+        ["tsh_l3", "tsh_l1l"],
+        ["tsh_l3", "tsh_l1r"],
+        ["tsh_l3", "tsh_l2l"],
+        ["tsh_l3", "tsh_l2r"],
+
+        ["tsh_l1l", "tsh_l1r"],
+        ["tsh_l1l", "tsh_l2l"],
+        ["tsh_l1l", "tsh_l2r"],
+
+        ["tsh_l1r", "tsh_l2l"],
+        ["tsh_l1r", "tsh_l2r"],
+        ["tsh_l2l", "tsh_l2r"],
+        //hinge
+        {"beamSpring":121000,"beamDamp":25},
+        ["tsh_b3", "tsh_l3"],
+        ["tsh_b3", "tsh_l1l"],
+        ["tsh_b3", "tsh_l1r"],
+        ["tsh_b3", "tsh_l2l"],
+        ["tsh_b3", "tsh_l2r"],
+
+        //stabilize the shifter
+        {"beamSpring":0,"beamDamp":175},
+        ["tsh_b1l", "tsh_l3"],
+        ["tsh_b1r", "tsh_l3"],
+        ["tsh_b2l", "tsh_l3"],
+        ["tsh_b2r", "tsh_l3"],
+        {"breakGroup":""},
+        //attach to body
+        {"beamSpring":300000,"beamDamp":70},
+        {"beamDeform":1400,"beamStrength":"FLT_MAX"},
+        ["tsh_b1l", "b5r"],
+        ["tsh_b1r", "b5r"],
+        ["tsh_b2l", "b5r"],
+        ["tsh_b2r", "b5r"],
+        ["tsh_b3",  "b5r"],
+
+        ["tsh_b1l", "b5l"],
+        ["tsh_b1r", "b5l"],
+        ["tsh_b2l", "b5l"],
+        ["tsh_b2r", "b5l"],
+        ["tsh_b3",  "b5l"],
+
+        ["tsh_b1l", "dsh2",{"beamDeform":12400}],
+        ["tsh_b1r", "dsh2",{"beamDeform":12400}],
+        ["tsh_b2l", "dsh2",{"beamDeform":12400}],
+        ["tsh_b2r", "dsh2",{"beamDeform":12400}],
+        ["tsh_b3",  "dsh2",{"beamDeform":12400}],
+
+        ["tsh_b1l", "b1r"],
+        ["tsh_b1r", "b1r"],
+        ["tsh_b2l", "b1r"],
+        ["tsh_b2r", "b1r"],
+        ["tsh_b3",  "b1r"],
+
+        ["tsh_b1l", "b1l"],
+        ["tsh_b1r", "b1l"],
+        ["tsh_b2l", "b1l"],
+        ["tsh_b2r", "b1l"],
+        ["tsh_b3",  "b1l"],
+        //support beams
+        {"beamType":"|SUPPORT","beamPrecompression":0.895,"beamLongBound":2},
+        {"beamSpring":201000,"beamDamp":50},
+        {"beamDeform":16000,"beamStrength":"FLT_MAX"},
+        ["tsh_l1r", "tsh_b2l"],
+        ["tsh_l2r", "tsh_b1l"],
+        ["tsh_l2l", "tsh_b1r"],
+        ["tsh_l1l", "tsh_b2r"],
+        {"beamPrecompression":0.905}
+        ["tsh_l3", "tsh_b1l"],
+        ["tsh_l3", "tsh_b1r"],
+        ["tsh_l3", "tsh_b2l"],
+        ["tsh_l3", "tsh_b2r"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "torsionHydros": [
+        ["id1:","id2:","id3:","id4:"],
+        {"spring":200, "damp":1, "deform":"FLT_MAX", "strength":1000},
+        ["tsh_b2l","tsh_b1l","tsh_b1r","tsh_l3",  {"inputSource":"transfercase_state","factor":-0.25}],
+        ["tsh_b1r","tsh_b2r","tsh_b2l","tsh_l3",  {"inputSource":"transfercase_state","factor":0.25}],
+    ],
+    "torsionbars": [
+        ["id1:", "id2:", "id3:", "id4:"],
+        {"spring":100, "damp":0.2, "deform":30000, "strength":1000},
+        ["tsh_b1r", "tsh_b3", "tsh_l3", "tsh_l1r"],
+        ["tsh_b2r", "tsh_b3", "tsh_l3", "tsh_l2r"],
+        ["tsh_b2l", "tsh_b3", "tsh_l3", "tsh_l2l"],
+        ["tsh_b1l", "tsh_b3", "tsh_l3", "tsh_l1l"],
+
+        ["tsh_b1r","tsh_b1l","tsh_b2l","tsh_l3"],
+        ["tsh_b2l","tsh_b2r","tsh_b1r","tsh_l3"],
+
+    ],
+},
+"cruiserj80_shifter_T_alt": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Automatic Low Range Selector",
+        "value":30,
+    },
+    "slotType" : "cruiserj80_shifter_T_alt",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_shifter_T_alt", ["cruiserj80_shifterbase_T", "cruiserj80_shifterboot_T", "cruiserj80_shifterknob_T"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"collision":true},
+         {"selfCollision":false},
+         //--SHIFTER---  has to be jbeamed to allow for realistic movement
+         {"group":"cruiserj80_shifterbase_T"},
+         {"nodeWeight":0.45}
+         ["tsh_b1l", 0.04273, -0.41240, 0.82826],
+         ["tsh_b1r", -0.04892, -0.41240, 0.82826],
+         ["tsh_b2l", 0.04273, -0.32109, 0.81494],
+         ["tsh_b2r", -0.04892, -0.32109, 0.81494],
+
+         ["tsh_b3", -0.00310, -0.36822, 0.77498, {"group":""}],
+         {"selfCollision":true},
+         {"group":["cruiserj80_shifterboot_T","cruiserj80_shifterknob_T"]},
+         {"nodeWeight":1.5}
+         ["tsh_l3", -0.00011, -0.37536, 1.02807],
+
+         {"selfCollision":false},
+         {"nodeWeight":0.30}
+         {"group":["cruiserj80_shifterboot_T","cruiserj80_shifterknob_T"]},
+         ["tsh_l1l", 0.01620, -0.38074, 0.94813],
+         ["tsh_l1r", -0.02239, -0.38074, 0.94813],
+         ["tsh_l2l", 0.01620, -0.34318, 0.94147],
+         ["tsh_l2r", -0.02239, -0.34318, 0.94147],
+         {"selfCollision":false},
+         {"collision":true},
+         {"group":""},
+    ],
+    "beams":[
+        ["id1:", "id2:"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //main shape
+        {"beamSpring":401000,"beamDamp":55},
+        {"beamDeform":259000,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":1.1},
+        ["tsh_b1l", "tsh_b1r"],
+        ["tsh_b1l", "tsh_b2l"],
+        ["tsh_b1l", "tsh_b2r"],
+        ["tsh_b1r", "tsh_b2l"],
+        ["tsh_b1r", "tsh_b2r"],
+        ["tsh_b2l", "tsh_b2r"],
+
+        ["tsh_b1l", "tsh_b3"],
+        ["tsh_b1r", "tsh_b3"],
+        ["tsh_b2l", "tsh_b3"],
+        ["tsh_b2r", "tsh_b3"],
+
+        //lever
+        {"beamSpring":121000,"beamDamp":35},
+        ["tsh_l3", "tsh_l1l"],
+        ["tsh_l3", "tsh_l1r"],
+        ["tsh_l3", "tsh_l2l"],
+        ["tsh_l3", "tsh_l2r"],
+
+        ["tsh_l1l", "tsh_l1r"],
+        ["tsh_l1l", "tsh_l2l"],
+        ["tsh_l1l", "tsh_l2r"],
+
+        ["tsh_l1r", "tsh_l2l"],
+        ["tsh_l1r", "tsh_l2r"],
+        ["tsh_l2l", "tsh_l2r"],
+        //hinge
+        {"beamSpring":121000,"beamDamp":25},
+        ["tsh_b3", "tsh_l3"],
+        ["tsh_b3", "tsh_l1l"],
+        ["tsh_b3", "tsh_l1r"],
+        ["tsh_b3", "tsh_l2l"],
+        ["tsh_b3", "tsh_l2r"],
+
+        //stabilize the shifter
+        {"beamSpring":0,"beamDamp":175},
+        ["tsh_b1l", "tsh_l3"],
+        ["tsh_b1r", "tsh_l3"],
+        ["tsh_b2l", "tsh_l3"],
+        ["tsh_b2r", "tsh_l3"],
+        {"breakGroup":""},
+        //attach to body
+        {"beamSpring":300000,"beamDamp":70},
+        {"beamDeform":1400,"beamStrength":"FLT_MAX"},
+        ["tsh_b1l", "b5r"],
+        ["tsh_b1r", "b5r"],
+        ["tsh_b2l", "b5r"],
+        ["tsh_b2r", "b5r"],
+        ["tsh_b3",  "b5r"],
+
+        ["tsh_b1l", "b5l"],
+        ["tsh_b1r", "b5l"],
+        ["tsh_b2l", "b5l"],
+        ["tsh_b2r", "b5l"],
+        ["tsh_b3",  "b5l"],
+
+        ["tsh_b1l", "dsh2",{"beamDeform":12400}],
+        ["tsh_b1r", "dsh2",{"beamDeform":12400}],
+        ["tsh_b2l", "dsh2",{"beamDeform":12400}],
+        ["tsh_b2r", "dsh2",{"beamDeform":12400}],
+        ["tsh_b3",  "dsh2",{"beamDeform":12400}],
+
+        ["tsh_b1l", "b1r"],
+        ["tsh_b1r", "b1r"],
+        ["tsh_b2l", "b1r"],
+        ["tsh_b2r", "b1r"],
+        ["tsh_b3",  "b1r"],
+
+        ["tsh_b1l", "b1l"],
+        ["tsh_b1r", "b1l"],
+        ["tsh_b2l", "b1l"],
+        ["tsh_b2r", "b1l"],
+        ["tsh_b3",  "b1l"],
+        //support beams
+        {"beamType":"|SUPPORT","beamPrecompression":0.895,"beamLongBound":2},
+        {"beamSpring":201000,"beamDamp":50},
+        {"beamDeform":16000,"beamStrength":"FLT_MAX"},
+        ["tsh_l1r", "tsh_b2l"],
+        ["tsh_l2r", "tsh_b1l"],
+        ["tsh_l2l", "tsh_b1r"],
+        ["tsh_l1l", "tsh_b2r"],
+        {"beamPrecompression":0.905}
+        ["tsh_l3", "tsh_b1l"],
+        ["tsh_l3", "tsh_b1r"],
+        ["tsh_l3", "tsh_b2l"],
+        ["tsh_l3", "tsh_b2r"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "torsionHydros": [
+        ["id1:","id2:","id3:","id4:"],
+        {"spring":200, "damp":1, "deform":"FLT_MAX", "strength":1000},
+        ["tsh_b2l","tsh_b1l","tsh_b1r","tsh_l3",  {"inputSource":"transfercase_state","factor":-0.25}],
+        ["tsh_b1r","tsh_b2r","tsh_b2l","tsh_l3",  {"inputSource":"transfercase_state","factor":0.25}],
+    ],
+    "torsionbars": [
+        ["id1:", "id2:", "id3:", "id4:"],
+        {"spring":100, "damp":0.2, "deform":30000, "strength":1000},
+        ["tsh_b1r", "tsh_b3", "tsh_l3", "tsh_l1r"],
+        ["tsh_b2r", "tsh_b3", "tsh_l3", "tsh_l2r"],
+        ["tsh_b2l", "tsh_b3", "tsh_l3", "tsh_l2l"],
+        ["tsh_b1l", "tsh_b3", "tsh_l3", "tsh_l1l"],
+
+        ["tsh_b1r","tsh_b1l","tsh_b2l","tsh_l3"],
+        ["tsh_b2l","tsh_b2r","tsh_b1r","tsh_l3"],
+
+    ],
+},
+"cruiserj80_dash_carpet": {
+    "information":{
+        "authors":"Omashida",
+        "name":"On Dash Carpet",
+        "value":300,
+    },
+    "slotType" : "cruiserj80_dash_carpet",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_dash_carpet", ["cruiserj80_body"]],
+    ],
+},
+"cruiserj80_thirdrow": {
+    "information":{
+        "authors":"Omashida",
+        "name":"Standard Third Row Seats",
+        "value":300,
+    },
+    "slotType" : "cruiserj80_thirdrow",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_thirdrow", ["cruiserj80_body"]],
+    ],
+},
+"cruiserj80_thirdrow_alt": {
+    "information":{
+        "authors":"Omashida",
+        "name":"Foldable Third Row Seats",
+        "value":300,
+    },
+    "slotType" : "cruiserj80_thirdrow",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_thirdrow_alt", ["cruiserj80_body"]],
+    ],
+},
+"cruiserj80_manuelshifter": {
+    "information":{
+        "authors":"Omashida",
+        "name":"Manuel Shifter",
+        "value":300,
+    },
+    "slotType" : "cruiserj80_shifter",
+    "slots": [
+        ["type", "default", "description"],
+        ["cruiserj80_shifter_M","cruiserj80_shifter_M","Type",{"coreSlot":true}],
+        ["cruiserj80_shifter_T","cruiserj80_shifter_T","Low Range Selector",{"coreSlot":true}],
+        ["cruiserj80_shifter_decor","","Decor"],
+    ],
+},
+"cruiserj80_autoshifter": {
+    "information":{
+        "authors":"Omashida",
+        "name":"Automatic Shifter",
+        "value":300,
+    },
+    "slotType" : "cruiserj80_shifter",
+    "slots": [
+        ["type", "default", "description"],
+        ["cruiserj80_shifter_A","cruiserj80_shifter_A","Type",{"coreSlot":true}],
+        ["cruiserj80_shifter_T_alt","cruiserj80_shifter_T_alt","Low Range Selector",{"coreSlot":true}],
+    ],
+},
+"cruiserj80_shifter_decor": {
+    "information":{
+        "authors":"Omashida",
+        "name":"Manuel Shifter Decor",
+        "value":300,
+    },
+    "slotType" : "cruiserj80_shifter_decor",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_shifterdecor", ["cruiserj80_body"]],
+         ["cruiserj80_shifter_boot", ["cruiserj80_shifterboot_M"]],
+    ],
+},
+"cruiserj80_armrest": {
+    "information":{
+        "authors":"Omashida",
+        "name":"OEM Center Console",
+        "value":300,
+    },
+    "slotType" : "cruiserj80_armrest",
+    "slots": [
+        ["type", "default", "description"],
+        ["cruiserj80_armrest_custom","","Custom Armrest"],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_armrest", ["cruiserj80_body"]],
+    ],
+},
+"cruiserj80_armrest_custom": {
+    "information":{
+        "authors":"Omashida",
+        "name":"Custom Falcon Armrest",
+        "value":300,
+    },
+    "slotType" : "cruiserj80_armrest_custom",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_armrest", ["cruiserj80_body"]],
+         ["cruiserj80_centerconsole_custom", ["cruiserj80_body"]],
+    ],
+},
+}

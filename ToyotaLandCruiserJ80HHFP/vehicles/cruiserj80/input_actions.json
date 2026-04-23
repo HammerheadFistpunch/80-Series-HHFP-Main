@@ -1,0 +1,4 @@
+{
+"toggle_Boot":{"order":  1,  "onUp":"electrics.values.boot = 1-(electrics.values.boot or 0) ", "title": "Open/Close Boot", "desc": "Opens/closes the Boot" },
+"toggle_hood":{"order":  1,  "onUp":"electrics.values.hood = 1-(electrics.values.hood or 0) ", "title": "Open/Close Hood", "desc": "Opens/closes the Hood" },
+}

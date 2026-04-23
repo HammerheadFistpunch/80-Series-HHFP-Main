@@ -1,0 +1,80 @@
+{
+"carby97_floppyantenna_fender": {
+    "information":{
+        "authors":"BeamNG, EcoNadder77",
+        "name":"Fender Antenna",
+        "value":100,
+    }
+    "slotType" : "carby97_floppyantenna_fender",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["carby97_floppyantenna", ["carby97_fender_R","floppyantenna"]],
+    ],
+
+     "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"group":"floppyantenna"},
+         {"selfCollision":false}
+         {"collision":true}
+         {"nodeWeight":0.14},
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_RUBBER"},
+         //base
+         ["antb1r", -0.93647, -1.08408, 1.10628],
+         ["antb1l", -0.79647, -1.08408, 1.10628],
+         ["antb2", -0.86647, -1.18435, 1.11449],
+         //antenna
+         ["ant1", -0.86647, -1.12353, 1.15821],
+         ["ant2", -0.86647, -1.10744, 1.57727],
+         ["ant3", -0.86647, -1.09215, 2.09251],
+    ],
+
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":35000,"beamDamp":50},
+          {"beamDeform":"FLT_MAX","beamStrength":"FLT_MAX"},
+          //base
+          ["antb1r","antb1l"],
+          ["antb1r","antb2"],
+          ["antb1l","antb2"],
+
+          ["antb1r","ant1"],
+          ["antb2","ant1"],
+          ["antb1l","ant1"],
+          //antenna
+          ["ant1","ant2"],
+          ["ant2","ant3"],
+
+          {"beamSpring":5000,"beamDamp":10},
+          ["antb1r","ant2"],
+          ["antb2","ant2"],
+          ["antb1l","ant2"],
+          ["antb1r","ant3"],
+          ["antb2","ant3"],
+          ["antb1l","ant3"],
+          //attach
+          {"beamSpring":65000,"beamDamp":50},
+          {"beamDeform":3200,"beamStrength":3200},
+            {"breakGroup":"floppyantenna"}
+          ["antb1r","fe7r"],
+          ["antb1l","fe7r"],
+          ["antb1r","fe8r"],
+          ["antb1l","fe8r"],
+          ["antb2","fe7r"],
+          ["antb2","fe8r"],
+          ["antb1r","fe3r"],
+          ["antb1l","fe3r"],
+          ["antb2","fe3r"],
+          ["ant1","fe7r"],
+          ["ant1","fe7r"],
+          ["ant1","fe3r"],
+
+          ["antb1r","fe3r"],
+          ["antb1l","fe3r"],
+          ["antb2","fe3r"],
+            {"breakGroup":""}
+    ],
+
+}
+}

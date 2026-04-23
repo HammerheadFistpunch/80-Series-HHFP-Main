@@ -1,0 +1,98 @@
+{
+"cruiserj80_motorolla_antenna": {
+    "information":{
+        "authors":"BeamNG, EcoNadder77",
+        "name":"Motorolla 3M Antenna (Sykh)",
+        "value":100,
+    }
+    "slotType" : "cruiserj80_motorolla_insert",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_highfreq_antenna", ["cruiserj80_body","floppyantenna"]],
+         ["cruiserj80_motorolla_antenna_burj", ["cruiserj80_body"]],
+    ],
+
+     "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"group":"floppyantenna"},
+         {"selfCollision":false}
+         {"collision":true}
+         {"nodeWeight":0.14},
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_RUBBER"},
+         //base
+         ["antb1r", 0.18629, 1.82594, 1.99890],
+         ["antb1l", 0.32629, 1.82594, 1.99890],
+         ["antb2", 0.25629, 1.72567, 2.00712],
+         //antenna
+         ["ant1", 0.25629, 1.78649, 2.05083],
+         ["ant2", 0.25629, 1.79145, 2.27216],
+         ["ant3", 0.25629, 1.91081, 3.38706],
+    ],
+
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":35000,"beamDamp":50},
+          {"beamDeform":"FLT_MAX","beamStrength":"FLT_MAX"},
+          //base
+          ["antb1r","antb1l"],
+          ["antb1r","antb2"],
+          ["antb1l","antb2"],
+
+          ["antb1r","ant1"],
+          ["antb2","ant1"],
+          ["antb1l","ant1"],
+          //antenna
+          ["ant1","ant2"],
+          ["ant2","ant3"],
+
+          {"beamSpring":5000,"beamDamp":10},
+          ["antb1r","ant2"],
+          ["antb2","ant2"],
+          ["antb1l","ant2"],
+          ["antb1r","ant3"],
+          ["antb2","ant3"],
+          ["antb1l","ant3"],
+          //attach
+        {"beamPrecompression":1},
+        {"beamSpring":132175,"beamDamp":10},
+        {"beamDeform":4000,"beamStrength":4000},
+            {"breakGroup":"floppyantenna"}
+          ["antb1r","rf6"],
+          ["antb1l","rf6l"],
+          ["antb1r","rf6"],
+          ["antb1l","rf6"],
+          ["antb2","rf5l"],
+          ["antb2","rf5l"],
+          ["antb1r","r6r"],
+          ["antb1l","rf6l"],
+          ["antb2","rf6l"],
+          ["ant1","fe7r"],
+          ["ant1","fe7r"],
+          ["ant1","rf6l"],
+
+          ["antb1r","rf6l"],
+          ["antb1l","rf6l"],
+          ["antb2","p10l"],
+            {"breakGroup":""}
+    ],
+
+}
+"cruiserj80_motorolla_mount": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Motorolla Antenna Mount",
+        "value":8,
+    }
+    "slotType" : "cruiserj80_roofaccessory",
+    "slots": [
+        ["type", "default", "description"],
+        ["cruiserj80_motorolla_insert","", "Motorolla 3M Antenna (Sykh)"],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_antennamount", ["cruiserj80_body"]],
+    ],
+}
+}

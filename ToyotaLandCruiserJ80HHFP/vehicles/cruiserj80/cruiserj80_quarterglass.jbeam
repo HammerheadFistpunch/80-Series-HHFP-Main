@@ -1,0 +1,231 @@
+{
+"cruiserj80_windshield": {
+    "information":{
+        "authors":"Omashida",
+        "name":"Windshield",
+        "value":400,
+    },
+    "slotType" : "cruiserj80_windshield",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         //glass
+         {"deformGroup":"windshield_break", "deformMaterialBase":"cruiserj80_windshield", "deformMaterialDamaged":"cruiserj80_glass_dmg"},
+         ["cruiserj80_windshield", ["cruiserj80_windshield"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>impact_glass_windscreen_01", "deformVolume":0.7}],
+         {"deformGroup":"windshield_break", "deformMaterialBase":"cruiserj80_glass_int", "deformMaterialDamaged":"cruiserj80_glass_dmg"},
+         ["cruiserj80_windshield_int", ["cruiserj80_windshield"]],
+
+         {"deformGroup":"windshield_break", "deformMaterialBase":"glass_invisible", "deformMaterialDamaged":"glass_mirror"},
+         ["cruiserj80_windshield_dmg", ["cruiserj80_windshield"]],
+         {"deformGroup":""},       
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":true},
+         {"collision":true},
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_GLASS"},
+         {"nodeWeight":1.88},
+         //windshield
+         {"group":["cruiserj80_windshield","gps"]},
+         ["wi1", 0.00000, -0.58000, 1.51000],
+         {"nodeMaterial":"|NM_METAL"},
+
+         //roof
+         {"group":"cruiserj80_body"},
+         {"nodeWeight":3.76},
+         ["rf1r", -0.62858, -0.18000, 1.77000, {"group":["cruiserj80_body","cruiserj80_windshield","gps"]}],
+         ["rf1", 0.00000, -0.22000, 1.78500, {"group":["cruiserj80_body","cruiserj80_windshield","gps"]}],
+         ["rf1l", 0.62858, -0.18000, 1.77000, {"group":["cruiserj80_body","cruiserj80_windshield","gps"]}],
+
+         //a-pillar
+         {"nodeWeight":2.538},
+         ["p1r", -0.58668, -0.55000, 1.48000, {"group":["cruiserj80_body","cruiserj80_windshield","gps"]}],
+         ["p1l", 0.58668, -0.55000, 1.48000, {"group":["cruiserj80_body","cruiserj80_windshield","gps"]}],
+         ["p2r", -0.72636, -0.53000, 1.48000, {"group":["cruiserj80_body","cruiserj80_windshield","gps"]}],
+         ["p2l", 0.72636, -0.53000, 1.48000, {"group":["cruiserj80_body","cruiserj80_windshield","gps"]}],
+
+         //firewall
+         {"nodeWeight":5.64},
+         ["b6rr", -0.82457, -0.86170, 1.16000, {"group":["cruiserj80_body","cruiserj80_windshield","gps","cruiserj80_snorkel"]}],
+         ["b6r", -0.32795, -0.89170, 1.18000, {"group":["cruiserj80_body","cruiserj80_windshield","gps"]}],
+         ["b6l", 0.32795, -0.89170, 1.19000, {"group":["cruiserj80_body","cruiserj80_windshield","gps"]}],
+         ["b6ll", 0.82457, -0.86170, 1.16000, {"group":["cruiserj80_body","cruiserj80_windshield","gps"]}],
+
+    ],
+
+    "beams": [
+          ["id1:", "id2:"],{"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":1895830,"beamDamp":244.4},
+          {"disableMeshBreaking":true,"disableTriangleBreaking":true},
+          {"deformGroup":"windshield_break", "deformationTriggerRatio":0.04},
+          {"beamDeform":7000,"beamStrength":"FLT_MAX"},
+          //windshield
+          {"deformLimitExpansion":""},
+          ["wi1","rf1"],
+          ["p1r","wi1"],
+          ["p1l","wi1"],
+          ["wi1","b6r"],
+          ["wi1","b6l"],
+          ["wi1","rf2"],
+          ["rf1r","wi1"],
+          ["rf1l","wi1"],
+
+          ["wi1","b6rr"],
+          ["wi1","b6ll"],
+
+          {"beamDeform":7000,"beamStrength":14952},
+          ["p1r","p1l"],
+          ["rf1r","b6r"],
+          ["rf1l","b6l"],
+
+          ["rf1","b6r"],
+          ["rf1","b6l"],
+
+          {"breakGroup":""},
+          {"disableMeshBreaking":false,"disableTriangleBreaking":false},
+          {"deformGroup":""},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"deformLimitExpansion":1.2},
+    ],
+},
+"cruiserj80_quarterglass_R": {
+    "information":{
+        "authors":"Omashida",
+        "name":"Right Quarter Glass",
+        "value":50,
+    },
+    "slotType" : "cruiserj80_quarterglass_R",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         //glass
+         {"deformGroup":"sideglass_R_break", "deformMaterialBase":"cruiserj80_glass", "deformMaterialDamaged":"cruiserj80_glass_dmg"},
+         ["cruiserj80_sideglass_R", ["cruiserj80_body"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound5", "deformVolume":0.7}],
+         {"deformGroup":"sideglass_R_break", "deformMaterialBase":"cruiserj80_glass_int", "deformMaterialDamaged":"cruiserj80_glass_dmg"},
+         ["cruiserj80_sideglass_R_int", ["cruiserj80_body"]],
+         {"deformGroup":""},
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":true},
+         {"collision":true},
+         {"frictionCoef":0.5},
+         //quarter glass
+         {"group":"cruiserj80_body"},
+         //roof
+         {"nodeWeight":3.572},
+         ["rf4r", -0.62393, 1.24754, 1.81927],
+
+         ["rf5r", -0.61927, 1.82000, 1.81927],
+
+         ["rf6r", -0.61462, 2.09835, 1.80208],
+
+         //c-pillar
+         {"nodeWeight":2.444},
+         ["p9r", -0.78224, 1.30754, 1.46000],
+
+         //d-pillar
+         ["p10r", -0.77954, 2.31000, 1.45000],
+
+         //quarter panel
+         {"nodeWeight":2.82},
+         ["q1r", -0.88981, 1.31877, 1.15000],
+         ["q2r", -0.88981, 2.00981, 1.15000],
+         ["q3r", -0.82878, 2.42473, 1.15000, {"group":["cruiserj80_body", "cruiserj80_dragwing_strut"]}],
+    ],
+
+    "beams": [
+          ["id1:", "id2:"],{"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":1895830,"beamDamp":244.4},
+          {"disableMeshBreaking":true,"disableTriangleBreaking":true},
+          {"deformGroup":"windshield_break", "deformationTriggerRatio":0.04},
+          //brittle glass beams
+          {"beamDeform":14700,"beamStrength":9968},
+          {"deformGroup":"sideglass_R_break"},
+          {"breakGroup":"sideglass_R"},
+          {"deformLimitExpansion":""},
+          ["rf5r", "q2r"],
+          ["p10r", "p9r"],
+          ["p9r", "q3r"],
+          ["p10r", "q1r"],
+          ["p10r", "rf4r"],
+          ["rf6r", "p9r"],
+          ["rf5r", "q3r"],
+          ["rf6r", "q2r"],
+          {"breakGroup":""},
+          {"disableMeshBreaking":false,"disableTriangleBreaking":false},
+          {"deformGroup":""},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"deformLimitExpansion":1.2},
+    ],
+},
+"cruiserj80_quarterglass_L": {
+    "information":{
+        "authors":"Omashida",
+        "name":"Left Quarter Glass",
+        "value":50,
+    },
+    "slotType" : "cruiserj80_quarterglass_L",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         //glass
+         {"deformGroup":"sideglass_L_break", "deformMaterialBase":"cruiserj80_glass", "deformMaterialDamaged":"cruiserj80_glass_dmg"},
+         ["cruiserj80_sideglass_L", ["cruiserj80_body"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound6", "deformVolume":0.7}],
+         {"deformGroup":"sideglass_L_break", "deformMaterialBase":"cruiserj80_glass_int", "deformMaterialDamaged":"cruiserj80_glass_dmg"},
+         ["cruiserj80_sideglass_L_int", ["cruiserj80_body"]],
+         {"deformGroup":""},
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":true},
+         {"collision":true},
+         {"frictionCoef":0.5},
+         //quarter glass
+         {"group":"cruiserj80_body"},
+         //roof
+         {"nodeWeight":3.572},
+         ["rf4l", 0.62393, 1.24754, 1.81927],
+
+         ["rf5l", 0.61927, 1.82000, 1.81927],
+
+         ["rf6l", 0.61462, 2.09835, 1.80208],
+
+         //c-pillar
+         {"nodeWeight":2.444},
+         ["p9l", 0.78224, 1.30754, 1.46000],
+
+         //d-pillar
+         ["p10l", 0.77701, 2.20023, 1.45000],
+
+         //quarter panel
+         {"nodeWeight":2.82},
+         ["q1l", 0.88981, 1.31877, 1.15000],
+         ["q2l", 0.85127, 1.98564, 1.15000],
+         ["q3l", 0.82962, 2.42473, 1.15000, {"group":["cruiserj80_body", "cruiserj80_dragwing_strut"]}],
+    ],
+
+    "beams": [
+          ["id1:", "id2:"],{"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":1895830,"beamDamp":244.4},
+          {"disableMeshBreaking":true,"disableTriangleBreaking":true},
+          {"deformGroup":"windshield_break", "deformationTriggerRatio":0.04},
+          //brittle glass beams
+          {"beamDeform":14700,"beamStrength":9968},
+          {"deformGroup":"sideglass_L_break"},
+          {"breakGroup":"sideglass_L"},
+          {"deformLimitExpansion":""},
+          ["rf5l", "q2l"],
+          ["p10l", "p9l"],
+          ["p9l", "q3l"],
+          ["p10l", "q1l"],
+          ["p10l", "rf4l"],
+          ["rf6l", "p9l"],
+          ["rf5l", "q3l"],
+          ["rf6l", "q2l"],
+          {"breakGroup":""},
+          {"disableMeshBreaking":false,"disableTriangleBreaking":false},
+          {"deformGroup":""},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"deformLimitExpansion":1.2},
+    ],
+},
+}

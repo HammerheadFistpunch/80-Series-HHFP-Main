@@ -1,0 +1,57 @@
+{
+    "header" : {
+        "version" : 1
+    },
+    "eventName" : "event:>Engine>default",
+    "samples" :
+    [
+        [
+            ["art/sound/engine/3urfe/800rpm_exhaustOFF.wav", 800],
+            ["art/sound/engine/3urfe/1000rpm_exhaustOFF.wav", 1000],
+            ["art/sound/engine/3urfe/1100rpm_exhaustOFF.wav", 1050],
+            ["art/sound/engine/3urfe/1400rpm_exhaustOFF.wav", 1400],
+            ["art/sound/engine/3urfe/1600rpm_exhaustOFF.wav", 1600],
+            ["art/sound/engine/3urfe/1800rpm_exhaustOFF.wav", 1850],
+            ["art/sound/engine/3urfe/2000rpm_exhaustOFF.wav", 2100],
+            ["art/sound/engine/3urfe/2200rpm_exhaustOFF.wav", 2200],
+            ["art/sound/engine/3urfe/2400rpm_exhaustOFF.wav", 2500],
+            ["art/sound/engine/3urfe/2700rpm_exhaustOFF.wav", 2700],
+            ["art/sound/engine/3urfe/3000rpm_exhaustOFF.wav", 3000],
+            ["art/sound/engine/3urfe/3200rpm_exhaustOFF.wav", 3200],
+            ["art/sound/engine/3urfe/3400rpm_exhaustOFF.wav", 3400],
+            ["art/sound/engine/3urfe/3700rpm_exhaustOFF.wav", 3500],
+            ["art/sound/engine/3urfe/3900rpm_exhaustOFF.wav", 3950],
+            ["art/sound/engine/3urfe/4100rpm_exhaustOFF.wav", 4100],
+            ["art/sound/engine/3urfe/4200rpm_exhaustOFF.wav", 4200],
+            ["art/sound/engine/3urfe/4400rpm_exhaustOFF.wav", 4400],
+            ["art/sound/engine/3urfe/4600rpm_exhaustOFF.wav", 4600],
+            ["art/sound/engine/3urfe/4700rpm_exhaustOFF.wav", 4700],
+            ["art/sound/engine/3urfe/4800rpm_exhaustOFF.wav", 4800],
+            ["art/sound/engine/3urfe/5000rpm_exhaustOFF.wav", 5000],
+        ],
+        [
+            ["art/sound/engine/3urfe/800rpm_exhaustON.wav", 800],
+            ["art/sound/engine/3urfe/1000rpm_exhaustON.wav", 1000],
+            ["art/sound/engine/3urfe/1100rpm_exhaustON.wav", 1050],
+            ["art/sound/engine/3urfe/1400rpm_exhaustON.wav", 1400],
+            ["art/sound/engine/3urfe/1600rpm_exhaustON.wav", 1600],
+            ["art/sound/engine/3urfe/1800rpm_exhaustON.wav", 1850],
+            ["art/sound/engine/3urfe/2000rpm_exhaustON.wav", 2100],
+            ["art/sound/engine/3urfe/2200rpm_exhaustON.wav", 2200],
+            ["art/sound/engine/3urfe/2400rpm_exhaustON.wav", 2500],
+            ["art/sound/engine/3urfe/2700rpm_exhaustON.wav", 2700],
+            ["art/sound/engine/3urfe/3000rpm_exhaustON.wav", 3000],
+            ["art/sound/engine/3urfe/3200rpm_exhaustON.wav", 3200],
+            ["art/sound/engine/3urfe/3400rpm_exhaustON.wav", 3400],
+            ["art/sound/engine/3urfe/3700rpm_exhaustON.wav", 3500],
+            ["art/sound/engine/3urfe/3900rpm_exhaustON.wav", 3950],
+            ["art/sound/engine/3urfe/4100rpm_exhaustON.wav", 4100],
+            ["art/sound/engine/3urfe/4200rpm_exhaustON.wav", 4200],
+            ["art/sound/engine/3urfe/4400rpm_exhaustON.wav", 4400],
+            ["art/sound/engine/3urfe/4600rpm_exhaustON.wav", 4600],
+            ["art/sound/engine/3urfe/4700rpm_exhaustON.wav", 4700],
+            ["art/sound/engine/3urfe/4800rpm_exhaustON.wav", 4800],
+            ["art/sound/engine/3urfe/5000rpm_exhaustON.wav", 5000],
+        ]
+    ]
+}

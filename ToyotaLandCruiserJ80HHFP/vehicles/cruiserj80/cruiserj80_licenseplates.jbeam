@@ -1,0 +1,166 @@
+{
+"cruiserj80_licenseplate_F_EU": {
+    "information":{
+        "authors":"Omashida",
+        "name":"EU Front License Plate",
+        "value":0,
+    },
+    "slotType" : "cruiserj80_licenseplate_F",
+    "licenseplateFormat": "52-11",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["licenseplate-52-11", ["cruiserj80_bumper_F"],[],{"pos":{"x":0.0, "y":-2.320, "z":0.570}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.2, "y":1.1, "z":1.2}}],
+    ],
+},
+"cruiserj80_licenseplate_F_EU_winch": {
+    "information":{
+        "authors":"Omashida",
+        "name":"EU Front License Plate",
+        "value":0,
+    },
+    "slotType" : "cruiserj80_licenseplate_F_winch",
+    "licenseplateFormat": "52-11",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["licenseplate-52-11", ["cruiserj80_bumper_F"],[],{"pos":{"x":0.55, "y":-2.289, "z":0.590}, "rot":{"x":0, "y":0, "z":06}, "scale":{"x":1.2, "y":1.1, "z":1.2}}],
+    ],
+},
+"cruiserj80_licenseplate_F": {
+    "information":{
+        "authors":"Omashida",
+        "name":"Front License Plate",
+        "value":0,
+    },
+    "slotType" : "cruiserj80_licenseplate_F",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["licenseplate", ["cruiserj80_bumper_F"],[],{"pos":{"x":0.0, "y":-2.320, "z":0.570}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.2, "y":1.1, "z":1.2}}],
+    ],
+},
+"cruiserj80_licenseplate_F_winch": {
+    "information":{
+        "authors":"Omashida",
+        "name":"Front License Plate",
+        "value":0,
+    },
+    "slotType" : "cruiserj80_licenseplate_F_winch",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["licenseplate", ["cruiserj80_bumper_F"],[],{"pos":{"x":0.50, "y":-2.289, "z":0.580}, "rot":{"x":0, "y":0, "z":06}, "scale":{"x":1.2, "y":1.1, "z":1.2}}],
+    ],
+},
+"cruiserj80_licenseplate_R": {
+    "information":{
+        "authors":"Omashida",
+        "name":"Rear License Plate",
+        "value":0,
+    },
+    "slotType" : "cruiserj80_licenseplate_R",
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
+        //numberplate lights
+{
+            "lightInnerAngle":0,
+            "lightOuterAngle":120,
+            "lightRange":0.80,
+            "lightColor":{"r":255, "g":255, "b":180, "a":255},
+            "lightAttenuation":{"x":0, "y":1, "z":1},
+            "lightCastShadows":false,
+            "cookieName":"art/special/BNG_light_cookie_headlight.dds"
+            "texSize":512,
+            "shadowSoftness":0.5,
+        },
+        ["lowhighbeam" ,         "SPOTLIGHT"        , "t4l", "t4", "t3l", {"x":-48, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.70, "y":0.20, "z":0.0},"flareScale":0.0005,"lightBrightness":1.7,"deformGroup":"reverselight_break"}],
+        ["lowhighbeam" ,         "SPOTLIGHT"        , "t4l", "t4", "t3l", {"x":-48, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":1.10, "y":0.20, "z":0.0},"flareScale":0.0005,"lightBrightness":1.7,"deformGroup":"reverselight_break"}],
+        ["lowhighbeam" ,         "SPOTLIGHT"        , "t4l", "t4", "t3l", {"x":-48, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":1.40, "y":0.20, "z":0.0},"flareScale":0.0005,"lightBrightness":1.7,"deformGroup":"reverselight_break"}],
+    ], 
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["licenseplate", ["cruiserj80_boot_lower"],[],{"pos":{"x":0.0, "y":2.455, "z":0.860}, "rot":{"x":4, "y":0, "z":180}, "scale":{"x":1.2, "y":1.1, "z":1.2}}],
+    ],
+},
+"cruiserj80_licenseplate_R_EU": {
+    "information":{
+        "authors":"Omashida",
+        "name":"Rear EU License Plate",
+        "value":0,
+    },
+    "slotType" : "cruiserj80_licenseplate_R",
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
+        //numberplate lights
+{
+            "lightInnerAngle":0,
+            "lightOuterAngle":120,
+            "lightRange":0.29,
+            "lightColor":{"r":255, "g":255, "b":180, "a":255},
+            "lightAttenuation":{"x":0, "y":1, "z":1},
+            "lightCastShadows":false,
+            "cookieName":"art/special/BNG_light_cookie_headlight.dds"
+            "texSize":512,
+            "shadowSoftness":0.5,
+        },
+        ["lowhighbeam" ,         "SPOTLIGHT"        , "t4l", "t4", "t3l", {"x":-48, "y":0, "z":-10} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.60, "y":-0.10, "z":0.0},"flareScale":0.0005,"lightBrightness":1.4,"deformGroup":"reverselight_break"}],
+        ["lowhighbeam" ,         "SPOTLIGHT"        , "t4r", "t4", "t3r", {"x":228, "y":0, "z":10} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.60, "y":-0.10, "z":-0.0},"flareScale":0.0005,"lightBrightness":1.4,"deformGroup":"reverselight_break"}],
+    ], 
+    "licenseplateFormat": "52-11",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["licenseplate-52-11", ["cruiserj80_boot_lower"],[],{"pos":{"x":0.0, "y":2.455, "z":0.860}, "rot":{"x":4, "y":0, "z":180}, "scale":{"x":1.2, "y":1.1, "z":1.2}}],
+    ],
+},
+"cruiserj80_licenseplate_R_alt": {
+    "information":{
+        "authors":"Omashida",
+        "name":"Rear License Plate",
+        "value":0,
+    },
+    "slotType" : "cruiserj80_licenseplate_R_alt",
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
+        //numberplate lights
+{
+            "lightInnerAngle":0,
+            "lightOuterAngle":120,
+            "lightRange":0.26,
+            "lightColor":{"r":255, "g":255, "b":180, "a":255},
+            "lightAttenuation":{"x":0, "y":1, "z":1},
+            "lightCastShadows":false,
+            "cookieName":"art/special/BNG_light_cookie_headlight.dds"
+            "texSize":512,
+            "shadowSoftness":0.5,
+        },
+        ["lowhighbeam" ,         "SPOTLIGHT"        , "t4l", "t4", "t3l", {"x":-48, "y":0, "z":-10} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.10, "y":-0.46, "z":-0.06},"flareScale":0.0005,"lightBrightness":1.4,"deformGroup":"reverselight_break"}],
+        ["lowhighbeam" ,         "SPOTLIGHT"        , "t4l", "t4", "t3l", {"x":-48, "y":0, "z":-10} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.37, "y":-0.46, "z":-0.06},"flareScale":0.0005,"lightBrightness":1.4,"deformGroup":"reverselight_break"}],
+    ], 
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["licenseplate", ["cruiserj80_boot_lower"],[],{"pos":{"x":0.40, "y":2.499, "z":0.803}, "rot":{"x":0, "y":0, "z":178}, "scale":{"x":1, "y":1, "z":1}}],
+    ],
+},
+"cruiserj80_licenseplate_R_barn": {
+    "information":{
+        "authors":"Omashida",
+        "name":"Rear License Plate",
+        "value":0,
+    },
+    "slotType" : "cruiserj80_licenseplate_R_barn",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["licenseplate", ["cruiserj80_reardoor_L"],[],{"pos":{"x":0.35, "y":2.483, "z":0.840}, "rot":{"x":0, "y":0, "z":178}, "scale":{"x":1, "y":1, "z":1}}],
+    ],
+},
+"cruiserj80_licenseplate_R_EU_barn": {
+    "information":{
+        "authors":"Omashida",
+        "name":"Rear EU License Plate",
+        "value":0,
+    },
+    "slotType" : "cruiserj80_licenseplate_R_barn",
+    "licenseplateFormat": "52-11",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["licenseplate-52-11", ["cruiserj80_reardoor_L"],[],{"pos":{"x":0.35, "y":2.483, "z":0.840}, "rot":{"x":0, "y":0, "z":178}, "scale":{"x":1, "y":1, "z":1}}],
+    ],
+},
+}

@@ -1,0 +1,69 @@
+{
+"pickup_transmission_A343F": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"4-Speed Automatic Transmission (A343F)",
+        "value":1350,
+    },
+    "slotType" : "pickup_transmission",
+    "slots": [
+        ["type", "default", "description"],
+        ["pickup_converter","pickup_converter","Torque Converter", {"coreSlot":true}],
+        ["pickup_transfer_case","pickup_transfer_case_4WD","Transfer Case", {"coreSlot":true}],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["torqueConverter", "torqueConverter", "mainEngine", 1],
+        ["automaticGearbox", "gearbox", "torqueConverter", 1],
+    ],
+    "gearbox": {
+        "uiName":"Gearbox",
+        "gearRatios":[-2.393, 0, 2.804, 1.530, 1.000, 0.753],
+        "parkLockTorque":3000,
+        "oneWayViscousCoef":60,
+        "friction": 15,
+        "gearboxNode:":"tra1",
+    },
+    "vehicleController": {
+        "automaticModes":"PRND321",
+        "calculateOptimalLoadShiftPoints": true,
+        "transmissionGearChangeDelay":0.5,
+        "gearboxDecisionSmoothingUp":2,
+        "gearboxDecisionSmoothingDown":2,
+        "aggressionSmoothingUp":0.5,
+        "aggressionSmoothingDown":0.5,
+        "aggressionHoldOffThrottleDelay":1.75,
+        "lowShiftDownRPM":1000,
+        "lowShiftUpRPM":1800,
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["gavril_v8_pickup_transmission", ["pickup_engine","pickup_transmission"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":false},
+         {"collision":true},
+         //--4 Speed Auto-
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"nodeWeight":32.9},
+         {"group":"pickup_transmission"},
+         ["tra1", 0.0, -0.41, 0.46],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //--TRANSMISSION CONE--
+          {"beamSpring":18800940,"beamDamp":470},
+          {"beamDeform":175000,"beamStrength":"FLT_MAX"},
+          ["tra1","e1r"],
+          ["tra1","e3r"],
+          ["tra1","e1l"],
+          ["tra1","e3l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+}
+}

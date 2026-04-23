@@ -1,0 +1,677 @@
+{
+  "pickup_engine_1hd": {
+    "information": {
+      "authors": "BeamNG",
+      "name": "4.2 I6 Engine (1HD-FT)",
+      "value": 2200
+    },
+    "slotType": "pickup_engine",
+    "slots": [
+      [ "type", "default", "description" ],
+      // TURBOCHARGER SLOT — slotType must match "slotType" in the turbo part below ("pickup_intake_1hd")
+      // default loads "Pickup_turbo_i6_4.2_diesel_1ht" automatically
+      [
+        "pickup_intake_1hd",
+        "Pickup_turbo_i6_4.2_diesel_1ht",
+        "Turbocharger",
+        { "coreSlot": true }
+      ],
+      [
+        "pickup_enginemounts",
+        "pickup_enginemounts",
+        "Engine Mounts",
+        { "coreSlot": true }
+      ],
+      [
+        "pickup_oilpan_i6",
+        "pickup_oilpan_i6",
+        "Oil Pan",
+        { "coreSlot": true }
+      ],
+      [
+        "pickup_header_i6",
+        "pickup_header_i6",
+        "Exhaust Manifold",
+        { "coreSlot": true }
+      ],
+      // ECU slot — stock ECU sets revLimiterRPM and can override wastegateStart
+      [
+        "pickup_engine_ecu_i6_4.2_diesel",
+        "pickup_engine_ecu_i6_4.2_diesel_base",
+        "Engine Management",
+        { "coreSlot": true }
+      ],
+      [ "n2o_system", "", "Nitrous Oxide System" ],
+      [
+        "pickup_engine_1hd-ft_internals",
+        "pickup_engine_1hd-ft_internals_stock",
+        "Engine Internals",
+        { "coreSlot": true }
+      ],
+      [ "pickup_transmission", "pickup_transmission_5M", "Transmission" ]
+    ],
+    "powertrain": [
+      [ "type", "name", "inputName", "inputIndex" ],
+      [ "combustionEngine", "mainEngine", "dummy", 0 ]
+    ],
+    "mainEngine": {
+      // BASE TORQUE CURVE — this is naturally aspirated torque
+      // The turbocharger multiplies this at boost
+      "torque": [
+        [ "rpm", "torque" ],
+        [ 0, 0 ],
+        [ 600, 145.6 ],
+        [ 800, 161.7 ],
+        [ 1000, 176.7 ],
+        [ 1200, 190.3 ],
+        [ 1400, 203.1 ],
+        [ 1600, 215.1 ],
+        [ 1800, 226.4 ],
+        [ 2000, 240.8 ],
+        [ 2200, 254.9 ],
+        [ 2400, 268.6 ],
+        [ 2500, 275.6 ],
+        [ 2600, 275.6 ],
+        [ 2800, 276.4 ],
+        [ 3000, 277.2 ],
+        [ 3200, 278.1 ],
+        [ 3400, 279.0 ],
+        [ 3600, 276.5 ],
+        [ 3800, 271.0 ],
+        [ 4000, 262.0 ], // shift point — power peaks here
+        [ 4200, 230.0 ],
+        [ 4400, 200.0 ] // for stage 2
+      ],
+      "idleRPM": 700,
+      "maxRPM": 4200,
+      "revLimiterRPM": 4200,
+      // inertia — flywheel feel, higher = slower revving
+      "inertia": 0.45,
+      // friction — base mechanical drag at idle (Nm)
+      "friction": 24,
+      // dynamicFriction — friction that scales with RPM
+      "dynamicFriction": 0.045,
+      // burnEfficiency — fuel efficiency curve [throttle%, efficiency]
+      // affects fuel consumption and heat generation, not power output directly
+      "burnEfficiency": [
+        [ 0, 0.12 ],
+        [ 0.05, 0.28 ],
+        [ 0.4, 0.42 ],
+        [ 0.7, 0.36 ],
+        [ 1, 0.26 ]
+      ],
+      // torqueReactionNodes — nodes the engine block torques against for body roll effect
+      "torqueReactionNodes": [ "e1l", "e2l", "e4r" ],
+      "energyStorage": [ "mainTank", "auxTank" ],
+      "requiredEnergyType": "diesel",
+      "thermalsEnabled": true,
+      "engineBlockMaterial": "iron",
+      "oilVolume": 11,
+      //exhaust
+      "particulates": 0.50,
+      "instantAfterFireCoef": 0.0,
+      "sustainedAfterFireCoef": 0.0,
+      // maxTorqueRating — torque at which engine internals start taking damage
+      "maxTorqueRating": 650,
+      // maxOverTorqueDamage — torque at which engine is destroyed
+      "maxOverTorqueDamage": 1100,
+      //engine durability
+      "cylinderWallTemperatureDamageThreshold": 150,
+      "headGasketDamageThreshold": 1500000,
+      "pistonRingDamageThreshold": 1500000,
+      "connectingRodDamageThreshold": 1500000,
+      //node beam interface
+      "waterDamage": { "[engineGroup]:": [ "engine_intake" ] },
+      "radiator": { "[engineGroup]:": [ "radiator" ] },
+      "engineBlock": { "[engineGroup]:": [ "engine_block" ] },
+      "breakTriggerBeam": "engine",
+      "uiName": "Engine",
+      "soundConfig": "soundConfig",
+      "soundConfigExhaust": "soundConfigExhaust"
+    },
+    "soundConfig": {
+      "sampleName": "I6D_2_Engine",
+      "intakeMuffling": 0.3,
+      "mainGain": -7,
+      "onLoadGain": 2.5,
+      "offLoadGain": 0.75,
+      "eqLowGain": -10,
+      "eqLowFreq": 450,
+      "eqLowWidth": 0.25,
+      "eqHighGain": -10,
+      "eqHighFreq": 2000,
+      "eqHighWidth": 0.5,
+      "lowShelfGain": 0,
+      "lowShelfFreq": 80,
+      "highShelfGain": 8,
+      "highShelfFreq": 6000,
+      "fundamentalFrequencyCylinderCount": 6
+    },
+    "soundConfigExhaust": {
+      "sampleName": "I6D_2_Exhaust",
+      "mainGain": -5,
+      "onLoadGain": 1.5,
+      "eqLowGain": 0,
+      "eqLowFreq": 3000,
+      "eqLowWidth": 0.3,
+      "eqHighGain": -8,
+      "eqHighFreq": 3000,
+      "eqHighWidth": 0.2,
+      "lowShelfGain": 8,
+      "lowShelfFreq": 220,
+      "highShelfGain": -5,
+      "highShelfFreq": 6000,
+      "offLoadGain": 0.55,
+      "fundamentalFrequencyCylinderCount": 6
+    },
+    "vehicleController": {
+      "clutchLaunchStartRPM": 1200,
+      "clutchLaunchTargetRPM": 1600,
+      //**highShiftDown can be overwritten by automatic transmissions**
+      "highShiftDownRPM": [ 0, 0, 0, 2550, 2850, 3050, 3200, 3200 ],
+      //**highShiftUp can be overwritten by intake modifications**
+      "highShiftUpRPM": 4000
+    },
+    "nodes": [
+      [ "id", "posX", "posY", "posZ" ],
+      { "selfCollision": false },
+      { "collision": true },
+      { "frictionCoef": 0.5 },
+      { "nodeMaterial": "|NM_METAL" },
+      { "nodeWeight": 13.62 },
+      { "group": "pickup_engine" },
+      { "engineGroup": "engine_block" },
+      // ENGINE NODE LAYOUT — 2x2 grid, r=right(-X) l=left(+X), 1=front 2=rear, lower row
+      [
+        "e1r",
+        -0.14,
+        -1.07,
+        0.43,
+        {
+          "chemEnergy": 1000,
+          "burnRate": 0.39,
+          "flashPoint": 800,
+          "specHeat": 0.1,
+          "selfIgnitionCoef": false,
+          "smokePoint": 650,
+          "baseTemp": "thermals",
+          "conductionRadius": 0.2
+        }
+      ],
+      [ "e1l", 0.14, -1.07, 0.43 ],
+      // isExhaust — marks exhaust outlet node, feeds turbocharger
+      [
+        "e2r",
+        -0.14,
+        -1.72,
+        0.43,
+        {
+          "chemEnergy": 1000,
+          "burnRate": 0.39,
+          "flashPoint": 800,
+          "specHeat": 0.1,
+          "selfIgnitionCoef": false,
+          "smokePoint": 650,
+          "baseTemp": "thermals",
+          "conductionRadius": 0.2,
+          "isExhaust": "mainEngine"
+        }
+      ],
+      [ "e2l", 0.14, -1.72, 0.43 ],
+      // upper row
+      { "engineGroup": [ "engine_block", "engine_intake" ] },
+      [
+        "e3r",
+        -0.15,
+        -1.07,
+        0.88,
+        {
+          "chemEnergy": 1000,
+          "burnRate": 0.39,
+          "flashPoint": 800,
+          "specHeat": 0.1,
+          "selfIgnitionCoef": false,
+          "smokePoint": 650,
+          "baseTemp": "thermals",
+          "conductionRadius": 0.2
+        }
+      ],
+      [ "e3l", 0.15, -1.07, 0.88 ],
+      [
+        "e4r",
+        -0.15,
+        -1.72,
+        0.88,
+        {
+          "selfCollision": true,
+          "chemEnergy": 1000,
+          "burnRate": 0.39,
+          "flashPoint": 800,
+          "specHeat": 0.1,
+          "selfIgnitionCoef": false,
+          "smokePoint": 600,
+          "baseTemp": "thermals",
+          "conductionRadius": 0.2
+        }
+      ],
+      [
+        "e4l",
+        0.15,
+        -1.72,
+        0.88,
+        { "selfCollision": true }
+      ],
+      { "engineGroup": "" },
+      { "group": "" },
+    ],
+    "beams": [
+      [ "id1:", "id2:" ],
+      // Engine block beams — very stiff, indestructible
+      {
+        "beamSpring": 18800940,
+        "beamDamp": 470
+      },
+      {
+        "beamDeform": 175000,
+        "beamStrength": "FLT_MAX"
+      },
+      // Full triangulation of all 8 engine nodes
+      [ "e1r", "e1l" ],
+      [ "e1r", "e2r" ],
+      [ "e1r", "e2l" ],
+      [ "e1r", "e3r" ],
+      [ "e1r", "e3l" ],
+      [ "e1r", "e4r" ],
+      [ "e1r", "e4l" ],
+      [ "e1l", "e2r" ],
+      [ "e1l", "e2l" ],
+      [ "e1l", "e3r" ],
+      [ "e1l", "e3l" ],
+      [ "e1l", "e4r" ],
+      [ "e1l", "e4l" ],
+      [ "e2r", "e2l" ],
+      [ "e2r", "e3r" ],
+      [ "e2r", "e3l" ],
+      [ "e2r", "e4r" ],
+      [ "e2r", "e4l" ],
+      [ "e2l", "e3r" ],
+      [ "e2l", "e3l" ],
+      [ "e2l", "e4r" ],
+      [ "e2l", "e4l" ],
+      [ "e3r", "e3l" ],
+      [ "e3r", "e4r" ],
+      [ "e3r", "e4l" ],
+      [ "e3l", "e4r" ],
+      [ "e3l", "e4l" ],
+      [ "e4r", "e4l" ]
+    ]
+  },
+
+  //ECU - Base
+  "pickup_engine_ecu_i6_4.2_diesel_base": {
+    "information": {
+      "authors": "BeamNG",
+      "name": "Factory Tune",
+      "value": 850
+    },
+    "slotType": "pickup_engine_ecu_i6_4.2_diesel",
+    "mainEngine": {
+      "revLimiterRPM": 4200,
+      "particulates": 0.25
+    },
+    "turbocharger": {
+    "wastegateStart": 8
+    }
+  },
+
+  // ============================================================
+  // TURBOCHARGER PART
+  // slotType must match the slot name in the engine ("pickup_intake_1hd")
+  // ============================================================
+  "Pickup_turbo_i6_4.2_diesel_1ht": {
+    "information": {
+      "authors": "BeamNG",
+      "name": "Stock Turbocharger",
+      "value": 1250
+    },
+    // This must match the slot type defined in the engine slots above
+    "slotType": "pickup_intake_1hd",
+    "turbocharger": {
+      // bovEnabled — blow-off valve. False on diesels (no throttle body to cause surge)
+      "bovEnabled": false,
+      //hiss and whine sfx
+      "hissLoopEvent": "event:>Vehicle>Forced_Induction>Turbo_01>turbo_hiss",
+      "whineLoopEvent": "event:>Vehicle>Forced_Induction>Turbo_01>turbo_spin",
+      "hissVolumePerPSI": 0.06,
+      "whineVolumePer10kRPM": 0.035,
+      "whinePitchPer10kRPM": 0.05,
+      // wastegateStart/Limit — boost PSI where wastegate opens/fully open
+      // NOTE: the ECU slot above will override wastegateStart at runtime
+      "wastegateStart": 8,
+      "wastegateLimit": 10,
+      // FIX: maxExhaustPower — caps the turbo shaft speed the exhaust can drive it to
+      // Original value was 14000 which is below the minimum pressurePSI threshold (24000)
+      // meaning the turbo could never spin fast enough to produce any boost
+      // 150000 is appropriate for a 4.2L diesel I6
+      "maxExhaustPower": 150000,
+      // FIX: backPressureCoef — how strongly exhaust gas drives the turbine
+      // Original value was 0.00002 (6x too low vs reference 1GD)
+      "backPressureCoef": 0.00012,
+      // FIX: frictionCoef — internal turbo bearing friction. Required for stable spool physics
+      // Missing entirely from original file. Value matched from working 1GD reference
+      "frictionCoef": 15.5,
+      // FIX: inertia — rotational inertia of the turbo shaft/wheel assembly
+      // Missing entirely from original file
+      // Higher = more lag, lower = snappier response
+      "inertia": 1.10,
+      // pressureRatePSI — how fast boost pressure can build per second (PSI/s)
+      "pressureRatePSI": 45,
+      // pressurePSI — maps turbo shaft RPM to boost pressure in PSI
+      // [turbineRPM, PSI] — turbo must exceed 24000 RPM before any positive boost
+      // With maxExhaustPower fixed, the turbo can now actually reach these speeds
+      "pressurePSI": [
+        [ 0, 0 ],
+        [ 24000, 5 ],
+        [ 60000, 12 ],
+        [ 90000, 18 ],
+        [ 150000, 25 ],
+        [ 200000, 28 ],
+        [ 240000, 30 ]
+      ],
+      // engineDef — maps engine RPM to [efficiency, exhaustFactor]
+      // efficiency: how well the compressor moves air at this RPM
+      // exhaustFactor: how much exhaust energy is available to drive the turbine
+      // The drop to 0.5 efficiency at 4200 RPM reflects real VGT behavior at high RPM
+      "engineDef": [
+        [ 0, 0.0, 0.1 ],
+        [ 650, 0.8, 0.8 ],
+        [ 1000, 0.9, 0.9 ],
+        [ 1700, 1.0, 1.0 ],
+        [ 4400, 0.5, 1.0 ]
+      ]
+    },
+    // Links the turbocharger block above to the mainEngine powertrain component
+    // "turbocharger" must match the key name of the turbocharger block above
+    "mainEngine": {
+      "turbocharger": "turbocharger"
+    },
+    "nodes": [
+      [ "id", "posX", "posY", "posZ" ],
+      { "nodeWeight": 3.76 },
+      { "group": "pickup_engine_intake" },
+      // intake1 — main turbo/intercooler node, attached to upper engine nodes
+      [ "intake1", 0.11, -1.35, 1.04 ],
+      // intake2 — airbox/inlet node
+      [ "intake2", 0.6,  -1.94, 1.04 ]
+    ],
+    "beams": [
+      [ "id1:", "id2:" ],
+      // Intake beams — softer than engine block, allows some flex without breaking
+      {
+        "beamSpring": 1880940,
+        "beamDamp": 235
+      },
+      {
+        "beamDeform": 105000,
+        "beamStrength": "FLT_MAX"
+      },
+      // intake1 attached to all four upper engine nodes for rigidity
+      [ "intake1", "e3r" ],
+      [ "intake1", "e3l" ],
+      [ "intake1", "e4r" ],
+      [ "intake1", "e4l" ],
+      // intake2 (airbox) hangs off the rear upper nodes
+      [ "intake2", "e4l" ],
+      [ "intake2", "e3l" ],
+      // beam between intake nodes to hold the assembly together
+      [ "intake1", "intake2" ]
+    ]
+  },
+
+  // ============================================================
+  // ECU — STAGE 1 (~250 HP)
+  // wastegateStart raised to 17 PSI (from 13) to compensate for
+  // BeamNG's friction model — dynamicFriction alone eats ~160 Nm
+  // at 3500 RPM, so ~20% extra boost is needed to hit the target
+  // at the crank. Pair with the Stage 1 18G turbo
+  // ============================================================
+  "pickup_engine_ecu_i6_4.2_diesel_stage1": {
+    "information": {
+      "authors": "BeamNG",
+      "name": "Stage 1 Tune (~250hp)",
+      "value": 1100
+    },
+    "slotType": "pickup_engine_ecu_i6_4.2_diesel",
+    "mainEngine": {
+      "revLimiterRPM": 4200,
+      // Heavy soot — aggressive fueling and higher boost push the diesel into visible smoke
+      "particulates": 0.65
+    },
+    "turbocharger": {
+      // 17 PSI target (~2.16 PR) — produces ~250hp after BeamNG friction losses
+      "wastegateStart": 17
+    }
+  },
+
+  // ============================================================
+  // ECU — STAGE 2 (~300 HP)
+  // wastegateStart at 22 PSI to compensate for BeamNG losses.
+  // Pair with the Stage 2 21G turbo
+  // ============================================================
+  "pickup_engine_ecu_i6_4.2_diesel_stage2": {
+    "information": {
+      "authors": "BeamNG",
+      "name": "Stage 2 Tune (~300hp)",
+      "value": 1450
+    },
+    "slotType": "pickup_engine_ecu_i6_4.2_diesel",
+    "mainEngine": {
+      "revLimiterRPM": 4400,
+      // Same heavy soot as Stage 1 — bigger turbo doesn't clean it up
+      "particulates": 0.75
+    },
+    "turbocharger": {
+      // 24 PSI target — produces ~300hp after BeamNG friction losses
+      "wastegateStart": 24
+    }
+  },
+
+  // ============================================================
+  // TURBOCHARGER — UFI 18G STAGE 1 (~250 HP)
+  //
+  // Based on the Mitsubishi TD06-18G compressor map.
+  // Pressure ratio targets derived from the chart:
+  //   55k RPM  → PR ~1.35 → ~5.1 PSI
+  //   75k RPM  → PR ~1.65 → ~9.6 PSI
+  //   90k RPM  → PR ~1.90 → ~13.2 PSI  ← wastegate opens here
+  //  105k RPM  → PR ~2.15 → ~17.0 PSI
+  //  120k RPM  → PR ~2.45 → ~21.3 PSI
+  //  130k RPM  → PR ~2.65 → ~24.0 PSI
+  //
+  // Wastegate target: 13-15 PSI (~1.88-2.00 PR) for ~250hp
+  // inertia: 0.82 — smaller wheel assembly, spools noticeably faster than
+  //   the stock unit. Expect boost by ~1500 RPM.
+  // frictionCoef: 13.5 — modern ball-bearing CHRA vs stock journal bearing
+  //
+  // IMPORTANT: Pair with the Stage 1 ECU or boost will be capped at 9 PSI
+  //   by the stock ECU override
+  // ============================================================
+  "Pickup_turbo_i6_4.2_diesel_18g_stage1": {
+    "information": {
+      "authors": "BeamNG",
+      "name": "UFI 18G Turbocharger - Stage 1 (~250hp)",
+      "value": 1850
+    },
+    "slotType": "pickup_intake_1hd",
+    "turbocharger": {
+      "bovEnabled": false,
+      "hissLoopEvent": "event:>Vehicle>Forced_Induction>Turbo_01>turbo_hiss",
+      "whineLoopEvent": "event:>Vehicle>Forced_Induction>Turbo_01>turbo_spin",
+      // 18G has a higher-pitched, more aggressive whine than the stock unit
+      "hissVolumePerPSI": 0.12,
+      "whineVolumePer10kRPM": 0.05,
+      "whinePitchPer10kRPM": 0.08,
+      // NOTE: ECU Stage 1 overrides wastegateStart to 17 PSI at runtime
+      "wastegateStart": 17,
+      "wastegateLimit": 20,
+      // 18G turbine is a good match for 4.2L diesel exhaust pulse energy
+      "maxExhaustPower": 165000,
+      // Slightly higher than stock — cleaner turbine wheel design
+      "backPressureCoef": 0.00013,
+      // Ball-bearing CHRA — lower friction, faster spool
+      "frictionCoef": 13.5,
+      // Lighter wheel assembly than the stock VGT unit
+      "inertia": 0.82,
+      // Builds boost faster than stock
+      "pressureRatePSI": 55,
+      // pressurePSI — physical capability of the TD06-18G compressor
+      // [turbineRPM, PSI]
+      "pressurePSI": [
+        [ 0,      0  ],
+        [ 20000,  2  ],
+        [ 55000,  5.1],
+        [ 75000,  9.6],
+        [ 90000,  13.2],
+        [ 105000, 17.0],
+        [ 120000, 21.3],
+        [ 130000, 24.0]
+      ],
+      // engineDef — [RPM, compressor efficiency, exhaust energy factor]
+      // 18G sits in its efficiency island between 1400-3200 RPM on this engine
+      "engineDef": [
+        [ 0,    0.0, 0.1 ],
+        [ 650,  0.75, 0.75],
+        [ 1000, 0.88, 0.88],
+        [ 1400, 1.0,  1.0 ],
+        [ 2800, 1.0,  1.0 ],
+        [ 3600, 0.85, 1.0 ],
+        [ 4400, 0.6,  1.0 ]
+      ]
+    },
+    "mainEngine": {
+      "turbocharger": "turbocharger"
+    },
+    "nodes": [
+      [ "id", "posX", "posY", "posZ" ],
+      { "nodeWeight": 3.76 },
+      { "group": "pickup_engine_intake" },
+      [ "intake1", 0.11, -1.35, 1.04 ],
+      [ "intake2", 0.6,  -1.94, 1.04 ]
+    ],
+    "beams": [
+      [ "id1:", "id2:" ],
+      {
+        "beamSpring": 1880940,
+        "beamDamp": 235
+      },
+      {
+        "beamDeform": 105000,
+        "beamStrength": "FLT_MAX"
+      },
+      [ "intake1", "e3r" ],
+      [ "intake1", "e3l" ],
+      [ "intake1", "e4r" ],
+      [ "intake1", "e4l" ],
+      [ "intake2", "e4l" ],
+      [ "intake2", "e3l" ],
+      [ "intake1", "intake2" ]
+    ]
+  },
+
+  // ============================================================
+  // TURBOCHARGER — UFI 21G STAGE 2 (~300 HP)
+  //
+  // Larger compressor wheel than the 18G. On a 4.2L diesel this
+  // means more top-end flow at the cost of slightly more spool lag.
+  // Physical pressure capability is higher throughout the RPM range.
+  //
+  // Pressure capability vs 18G (same shaft RPM):
+  //   55k RPM  → PR ~1.45 → ~6.6 PSI   (18G: 5.1)
+  //   75k RPM  → PR ~1.78 → ~11.5 PSI  (18G: 9.6)
+  //   90k RPM  → PR ~2.09 → ~16.0 PSI  (18G: 13.2)
+  //  105k RPM  → PR ~2.43 → ~21.0 PSI  (18G: 17.0)
+  //  120k RPM  → PR ~2.74 → ~25.5 PSI  (18G: 21.3)
+  //  130k RPM  → PR ~2.91 → ~28.0 PSI  (18G: 24.0)
+  //
+  // Wastegate target: 22-26 PSI for ~300hp after BeamNG friction losses
+  // inertia: 0.95 — heavier wheel, more lag than the 18G (0.82)
+  //
+  // IMPORTANT: Pair with the Stage 2 ECU
+  // ============================================================
+  "Pickup_turbo_i6_4.2_diesel_21g_stage2": {
+    "information": {
+      "authors": "BeamNG",
+      "name": "UFI 21G Turbocharger - Stage 2 (~300hp)",
+      "value": 2500
+    },
+    "slotType": "pickup_intake_1hd",
+    "turbocharger": {
+      "bovEnabled": false,
+      "hissLoopEvent": "event:>Vehicle>Forced_Induction>Turbo_01>turbo_hiss",
+      "whineLoopEvent": "event:>Vehicle>Forced_Induction>Turbo_01>turbo_spin",
+      "hissVolumePerPSI": 0.15,
+      "whineVolumePer10kRPM": 0.05,
+      "whinePitchPer10kRPM": 0.08,
+      // NOTE: ECU Stage 2 overrides wastegateStart to 24 PSI at runtime
+      "wastegateStart": 24,
+      "wastegateLimit": 26,
+      // Larger turbine wheel — can extract more exhaust energy
+      "maxExhaustPower": 175000,
+      // More aggressive fueling = more exhaust enthalpy driving the turbine
+      "backPressureCoef": 0.00015,
+      // Ball-bearing CHRA, same quality as 18G
+      "frictionCoef": 13.0,
+      // Heavier wheel assembly — noticeably more lag than the 18G
+      "inertia": 0.95,
+      "pressureRatePSI": 60,
+      // pressurePSI — 21G physical capability, higher than 18G throughout
+      "pressurePSI": [
+        [ 0,      0   ],
+        [ 20000,  2   ],
+        [ 55000,  6.6 ],
+        [ 75000,  11.5],
+        [ 90000,  16.0],
+        [ 105000, 21.0],
+        [ 120000, 25.5],
+        [ 130000, 28.0]
+      ],
+      "engineDef": [
+        [ 0,    0.0,  0.1 ],
+        [ 650,  0.72, 0.72],
+        [ 1000, 0.85, 0.85],
+        [ 1600, 1.0,  1.0 ],
+        [ 3200, 1.0,  1.0 ],
+        [ 3800, 0.88, 1.0 ],
+        [ 4400, 0.65, 1.0 ]
+      ]
+    },
+    "mainEngine": {
+      "turbocharger": "turbocharger"
+    },
+    "nodes": [
+      [ "id", "posX", "posY", "posZ" ],
+      { "nodeWeight": 3.76 },
+      { "group": "pickup_engine_intake" },
+      [ "intake1", 0.11, -1.35, 1.04 ],
+      [ "intake2", 0.6,  -1.94, 1.04 ]
+    ],
+    "beams": [
+      [ "id1:", "id2:" ],
+      {
+        "beamSpring": 1880940,
+        "beamDamp": 235
+      },
+      {
+        "beamDeform": 105000,
+        "beamStrength": "FLT_MAX"
+      },
+      [ "intake1", "e3r" ],
+      [ "intake1", "e3l" ],
+      [ "intake1", "e4r" ],
+      [ "intake1", "e4l" ],
+      [ "intake2", "e4l" ],
+      [ "intake2", "e3l" ],
+      [ "intake1", "intake2" ]
+    ]
+  }
+}

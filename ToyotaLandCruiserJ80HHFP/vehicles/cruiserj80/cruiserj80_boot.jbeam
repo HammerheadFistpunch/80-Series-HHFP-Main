@@ -1,0 +1,593 @@
+{
+"cruiserj80_tailgate": {
+    "information":{
+        "authors":"Omashida",
+        "name":"Tailgate",
+        "value":300,
+    },
+    "slotType" : "cruiserj80_tailgate",
+    "slots": [
+        ["type", "default", "description"],
+        ["cruiserj80_boot_upper","cruiserj80_boot_upper","Boot Upper"],
+        ["cruiserj80_boot_lower","cruiserj80_boot_lower","Boot Lower"],
+        ["cruiserj80_spareholder","","Spare Tire Holder"],
+    ],
+},
+"cruiserj80_rearfiller": {
+    "information":{
+        "authors":"Omashida",
+        "name":"Fiberglass Filler",
+        "value":300,
+    },
+    "slotType" : "cruiserj80_tailgate",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_rearfiller", ["cruiserj80_body"]],
+    ],
+},
+"cruiserj80_boot_upper": {
+    "information":{
+        "authors":"Finn W",
+        "name":"Upper Boot",
+        "value":395,
+    },
+    "slotType" : "cruiserj80_boot_upper",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_boot_upper", ["cruiserj80_boot_upper"]],  
+    ],
+    "slots": [
+        ["type", "default", "description"],
+        ["cruiserj80_bootglass","cruiserj80_bootglass","Boot Glass"],
+        ["cruiserj80_boot_emblem","cruiserj80_boot_emblem","Boot Emblem"],
+        ["cruiserj80_qatarsticker","","Stickers"],
+        ["cruiserj80_boot_badge","cruiserj80_boot_badge","Boot Badge"],
+    ],
+    "triggers":[
+        ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        ["boot", "", "t4l","t4","t4r", "box", {"x":0.1, "y":0.05, "z":0.05}, {"x":0.2, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.10, "y":0.39, "z":0.04}, {"deformGroup":"pickup_tailgate_R"}],
+    ],
+    "triggerEventLinks":[
+        ["triggerId:triggers", "action", "targetEventId:events"],
+        ["boot", "action0", "toggle_Boot"]
+    ],
+    "events":[
+        ["id", "title", "desc"],
+        ["toggle_Boot", "ui.inputActions.van.toggle_Boot.title", "ui.inputActions.van.toggle_Boot.description", {"onDown": "electrics.values.boot = 1-(electrics.values.boot or 0)", "order": 1}]
+    ],
+    "hydros": [
+        ["id1:", "id2:"],
+        {"beamDeform":7000,"beamStrength":14000},
+        {"beamLimitSpring":305000,"beamLimitDamp":400},
+        {"beamSpring":53000,"beamDamp":940},
+        {"beamPrecompression":1.0},
+        {"breakGroupType":1},
+        {"disableTriangleBreaking":true},
+        {"breakGroup":"topboothinges"},
+        ["t4rr","q6r", {"inputSource":"boot","inLimit":0,"outLimit":3.00,"inRate":1,"outRate":1.2,"inputFactor":1.0}],
+        {"breakGroup":"topboothinges"},
+        ["t4ll","q6l", {"inputSource":"boot","inLimit":0,"outLimit":3.00,"inRate":1,"outRate":1.2,"inputFactor":1.0}],
+        {"disableTriangleBreaking":false},
+        {"beamPrecompression":1.0},
+        {"breakGroupType":0},
+        {"breakGroup":""},
+    ], 
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"collision":true},
+         {"selfCollision":true},
+         {"frictionCoef":0.5},
+         //--upper boot--
+         {"nodeMaterial":"|NM_METAL"},
+         {"group":"cruiserj80_boot_upper"},
+         {"nodeWeight":1.17},
+         {"selfCollision":true},
+         ["t1", 0.00000, 2.14098, 1.80000],
+         ["t1l", 0.56353, 2.14098, 1.78000],
+         ["t1r", -0.56353, 2.14098, 1.78000],
+
+         ["t12", 0.00000, 2.39098, 1.73000],
+         ["t1l2", 0.54410, 2.33098, 1.70000],
+         ["t1r2", -0.54410, 2.33098, 1.70000],
+
+         ["t2l", 0.65098, 2.33098, 1.46000],
+         ["t2r", -0.65098, 2.33098, 1.46000],
+
+         ["t3", 0.00000, 2.50098, 1.28000],
+         ["t3l", 0.34978, 2.48098, 1.28000],
+         ["t3r", -0.34978, 2.48098, 1.28000],
+         ["t3ll", 0.69956, 2.39098, 1.29000],
+         ["t3rr", -0.69956, 2.39098, 1.29000],
+
+         ["t4", 0.00000, 2.49711, 1.04000],
+         ["t4l", 0.34978, 2.48711, 1.04000],
+         ["t4r", -0.34978, 2.48711, 1.04000],
+         ["t4ll", 0.69956, 2.45098, 1.04000],
+         ["t4rr", -0.69956, 2.45098, 1.04000],
+         
+         //rigidifier
+         {"collision":false},
+         {"selfCollision":false},
+         {"nodeWeight":2},
+         ["t5", 0.00000, 2.22112, 1.28000],
+
+         //latch
+         /*
+         {"group":""},
+         ["tl1", 0.00, 2.41, 1.02],
+
+         */
+         {"group":""},
+         {"collision":false},
+         {"selfCollision":false},
+    ],
+
+    "beams": [
+          ["id1:", "id2:"],{"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //--upper boot--
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":901000,"beamDamp":100},
+          {"beamDeform":32550,"beamStrength":"FLT_MAX"},
+          //upper boot main shape
+          //horizontal
+          ["t1","t1r"],
+          ["t1","t1l"],
+
+          ["t12","t1r2"],
+          ["t12","t1l2"],
+
+          ["t2l","t2r"],
+
+          ["t3","t3l"],
+          ["t3","t3r"],
+          ["t3l","t3ll"],
+          ["t3r","t3rr"],
+
+          ["t4","t4l"],
+          ["t4","t4r"],
+          ["t4l","t4ll"],
+          ["t4r","t4rr"],
+          
+          //vertical
+          ["t1l","t1l2"],
+          ["t1r","t1r2"],
+
+          ["t1l2","t2l"],
+          ["t1r2","t2r"],
+
+          ["t3","t4"],
+          ["t3l","t4l"],
+          ["t3r","t4r"],
+          ["t3ll","t4ll"],
+          ["t3rr","t4rr"],
+
+          //surficial crossing
+          {"deformLimitExpansion":""},
+          {"beamDeform":14550,"beamStrength":"FLT_MAX"},
+          ["t1l","t12"],
+          ["t1r","t12"],
+          ["t1l2","t1"],
+          ["t1r2","t1"],
+
+          ["t12","t2l"],
+          ["t12","t2r"],
+          ["t3","t2l"],
+          ["t3","t2r"],
+
+          ["t3ll","t4l"],
+          ["t3rr","t4r"],
+          ["t3l","t4ll"],
+          ["t3r","t4rr"],
+          ["t3l","t4"],
+          ["t3r","t4"],
+          ["t3","t4l"],
+          ["t3","t4r"],
+
+          //rigids
+          {"beamSpring":601000,"beamDamp":120},
+          {"beamDeform":5550,"beamStrength":"FLT_MAX"},
+          //horizontal
+          ["t1l","t1r"],
+
+          ["t3ll","t3rr"], 
+          ["t3l","t3r"],
+
+          ["t4ll","t4rr"], 
+          ["t4l","t4r"],
+
+          //vertical
+          ["t1r","t3rr"],
+          ["t1l","t3ll"],
+          ["t1r","t3r"],
+          ["t1l","t3l"],
+          ["t1r","t3"],
+          ["t1l","t3"],
+          ["t1","t3"],
+
+          ["t1r","t4rr"],
+          ["t1l","t4ll"],
+          ["t1r","t4r"],
+          ["t1l","t4l"],
+          ["t1r","t4"],
+          ["t1l","t4"],
+          ["t1","t4"],
+
+          ["t1r2","t3rr"],
+          ["t1l2","t3ll"],
+          ["t1r2","t3r"],
+          ["t1l2","t3l"],
+          ["t1r2","t3"],
+          ["t1l2","t3"],
+          ["t12","t3"],
+
+          ["t1r2","t4rr"],
+          ["t1l2","t4ll"],
+          ["t1r2","t4r"],
+          ["t1l2","t4l"],
+          ["t1r2","t4"],
+          ["t1l2","t4"],
+          ["t12","t4"],
+
+          ["t2r","t3rr"],
+          ["t2l","t3ll"],
+          ["t2r","t3r"],
+          ["t2l","t3l"],
+          ["t2r","t4"],
+          ["t2l","t4"],
+
+          ["t2r","t4rr"],
+          ["t2l","t4ll"],
+          ["t2r","t4r"],
+          ["t2l","t4l"],
+
+          //rigidifier
+          {"beamSpring":1051000,"beamDamp":150},
+          {"beamDeform":5000,"beamStrength":"FLT_MAX"},
+          ["t1","t5"],
+          ["t12","t5"],
+          ["t3","t5"],
+          ["t4","t5"],
+          ["t1l","t5"],
+          ["t1l2","t5"],
+          ["t2l","t5"],
+          ["t3l","t5"],
+          ["t4l","t5"],
+          ["t1r","t5"],
+          ["t1r2","t5"],
+          ["t2r","t5"],
+          ["t3r","t5"],
+          ["t4r","t5"],
+
+          //upper boot hinge
+          {"beamSpring":1701000,"beamDamp":120},
+          {"beamDeform":18000,"beamStrength":34000},
+          {"breakGroup":"topboothinges"},
+          ["t12","rf6l"],
+          ["t12","rf6r"],
+          ["t5","rf6r"],
+
+          {"breakGroup":"topboothinges"},
+          ["t1","rf6r"],
+          ["t5","rf6l"],
+
+          //pop open
+          {"breakGroupType":1},
+          {"beamSpring":500,"beamDamp":1500},
+          {"beamDeform":4000,"beamStrength":34000},
+          {"beamPrecompression":5},
+          {"breakGroup":"topboothinges"},
+          ["p11r","t3rr"],
+          {"breakGroup":"topboothinges"},
+          ["p11l","t3ll"],
+          {"beamPrecompression":1},
+          {"breakGroupType":0},
+          {"breakGroup":""},
+
+          //latches to the sides
+          //{"beamSpring":985190,"beamDamp":97.76},
+          //{"beamDeform":12600,"beamStrength":10350},
+          //left
+          //{"breakGroup":"bootlatch_sides"},
+          //["t3ll","q3l"],
+          //["t3ll","q7l"],
+          //["t4ll","q3l"],
+          //["t4ll","q7l"],
+          //right
+          //["t3rr","q3r"],
+          //["t3rr","q7r"],
+          //["t4rr","q3r"],
+          //["t4rr","q7r"],
+
+          //damping
+          {"beamDeform":27600,"beamStrength":34000},
+          {"beamSpring":0,"beamDamp":50},
+          {"breakGroup":"topboothinges"},
+          ["t3rr","f9r"],
+          ["t3ll","f9l"],
+          {"breakGroup":""},
+
+          //supports
+          {"beamType":"|SUPPORT", "beamLongBound":4},
+          {"beamSpring":1001000,"beamDamp":50},
+          {"beamDeform":7500,"beamStrength":230000},
+          {"disableTriangleBreaking":true},
+          {"breakGroup":"topboothinges"},
+          ["t3rr","q2r"],
+          ["t3ll","q2l"],
+
+          ["t3rr","q9r"],
+          ["t3ll","q9l"],
+
+          ["t4r","q9r"],
+          ["t4l","q9l"],
+
+          {"breakGroup":""},
+          {"optional":false},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"deformLimitExpansion":1.2},
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            //upper boot
+            {"groundModel":"metal"},
+            {"group":"cruiserj80_boot_upper"},
+            {"dragCoef":2},
+            ["t1l", "t12", "t1"],
+            ["t1l", "t1l2", "t12"],
+            ["t1l2", "t2l", "t12"],
+            ["t2l", "t3ll", "t3l"],
+            ["t2l", "t3l", "t3"],
+
+            ["t2l", "t2r", "t12"],
+            ["t2l", "t3", "t2r"],
+
+            ["t1r", "t1", "t12"],
+            ["t1r", "t12", "t1r2"],
+            ["t1r2", "t12", "t2r"],
+            ["t2r", "t3r", "t3rr"],
+            ["t2r", "t3", "t3r"],
+
+            ["t3ll", "t4ll", "t3l"],
+            ["t4l", "t3l", "t4ll"],
+            ["t3l", "t4l", "t3"],
+            ["t4", "t3", "t4l"],
+
+            ["t4rr", "t3rr", "t3r"],
+            ["t3r", "t4r", "t4rr"],
+            ["t4r", "t3r", "t3"],
+            ["t3", "t4", "t4r"],
+
+            ["t1r", "t1r2", "t2r"],
+            ["t1l2", "t1l", "t2l"],
+            {"group":""},
+    ],
+},
+"cruiserj80_boot_lower": {
+    "information":{
+        "authors":"Finn W",
+        "name":"Lower Boot",
+        "value":395,
+    },
+    "slotType" : "cruiserj80_boot_lower",
+    "slots": [
+        ["type", "default", "description"],
+        ["cruiserj80_licenseplate_R","cruiserj80_licenseplate_R_EU", "Rear License Plate"],
+        ["cruiserj80_boot_trim","cruiserj80_boot_trim_vx","Trim"],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_boot_lower", ["cruiserj80_boot_lower"]],
+    ],
+    "hydros": [
+        ["id1:", "id2:"],
+        {"beamDeform":7000,"beamStrength":14000},
+        {"beamLimitSpring":305000,"beamLimitDamp":400},
+        {"beamSpring":45000,"beamDamp":940},
+        {"beamPrecompression":1.0},
+        {"breakGroupType":1},
+        {"disableTriangleBreaking":true},
+        {"breakGroup":"bottomboothinge_R"},
+        ["t6rr","q6r", {"inputSource":"boot","inLimit":0,"outLimit":2.0,"inRate":1,"outRate":0.6,"inputFactor":1.0}],
+        {"breakGroup":"bottomboothinge_L"},
+        ["t6ll","q6l", {"inputSource":"boot","inLimit":0,"outLimit":2.0,"inRate":1,"outRate":0.6,"inputFactor":1.0}],
+        {"disableTriangleBreaking":false},
+        {"beamPrecompression":1.0},
+        {"breakGroupType":0},
+        {"breakGroup":""},
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"collision":true},
+         {"selfCollision":true},
+         {"frictionCoef":0.5},
+         //--lower boot--
+         {"nodeMaterial":"|NM_METAL"},
+         {"group":"cruiserj80_boot_lower"},
+         {"nodeWeight":1.6},
+         {"selfCollision":true},
+         ["t6", 0.00000, 2.46098, 1.06000],
+         ["t6l", 0.36921, 2.46098, 1.06000],
+         ["t6r", -0.36921, 2.46098, 1.06000],
+         ["t6ll", 0.72750, 2.44426, 1.04000],
+         ["t6rr", -0.72750, 2.44426, 1.04000],
+
+         ["t7", 0.00000, 2.51972, 0.60185],
+         ["t7l", 0.44384, 2.50972, 0.60185],
+         ["t7r", -0.44384, 2.50972, 0.60185],
+         ["t7ll", 0.70080, 2.48972, 0.60185],
+         ["t7rr", -0.70080, 2.48972, 0.60185],
+
+         //rigidifier
+         {"collision":false},
+         {"selfCollision":false},
+         {"nodeWeight":2},
+         ["t8", 0.00000, 2.37112, 0.90000],
+
+         //latch
+         /*
+         {"group":""},
+         ["tl2", 0.00, 2.41, 1.02],
+         */
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //--TAILGATE--
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":1201000,"beamDamp":100},
+          {"beamDeform":32550,"beamStrength":"FLT_MAX"},
+          //tailgate main shape
+          {"deformLimitExpansion":1.1},
+          {"deformationTriggerRatio":0.05},
+          //horizontal
+          ["t6","t6r"],
+          ["t6","t6l"],
+          ["t6r","t6rr"],
+          ["t6l","t6ll"],
+
+          ["t7","t7r"],
+          ["t7","t7l"],
+          ["t7r","t7rr"],
+          ["t7l","t7ll"],
+
+          //vertical
+          ["t6ll","t7ll"],
+          ["t6l","t7l"],
+          ["t6","t7"],
+          ["t6r","t7r"],
+          ["t6rr","t7rr"],
+
+          //surficial crossing
+          {"deformLimitExpansion":""},
+          {"beamDeform":14550,"beamStrength":"FLT_MAX"},
+          ["t6rr","t7r"],
+          ["t6r","t7rr"],
+          ["t6r","t7"],
+          ["t6","t7r"],
+          ["t6ll","t7l"],
+          ["t6l","t7ll"],
+          ["t6l","t7"],
+          ["t6","t7l"],
+
+          //rigids
+          {"beamSpring":801000,"beamDamp":120},
+          {"beamDeform":5550,"beamStrength":"FLT_MAX"},
+          ["t6","t6ll"],
+          ["t6","t6rr"],
+          ["t7","t7ll"],
+          ["t7","t7rr"],
+          ["t7","t6ll"],
+          ["t7","t6rr"],
+          ["t6","t7ll"],
+          ["t6","t7rr"],
+
+          //rigidifier
+          {"beamSpring":1751000,"beamDamp":150},
+          {"beamDeform":5000,"beamStrength":"FLT_MAX"},
+          {"deformationTriggerRatio":0.05},
+          ["t6","t8"],
+          ["t7","t8"],
+          ["t6l","t8"],
+          ["t7l","t8"],
+          ["t6r","t8"],
+          ["t7r","t8"],
+          ["t6ll","t8"],
+          ["t7ll","t8"],
+          ["t6rr","t8"],
+          ["t7rr","t8"],
+
+          //lower boot hinge
+          {"beamSpring":2001000,"beamDamp":120},
+          {"beamDeform":18000,"beamStrength":24000},
+          {"breakGroup":"bottomboothinge_R"},
+          ["t7rr","tb4r"],
+          ["t7r","tb4r"],
+          ["t7","tb4r"],
+          ["t7rr","f20r"],
+          ["t7r","f20r"],
+          ["t7","f20r"],
+
+
+          {"breakGroup":"bottomboothinge_L"},
+          ["t7ll","tb4l"],
+          ["t7l","tb4l"],
+          ["t7","tb4l"],
+          ["t7ll","f20l"],
+          ["t7l","f20l"],
+          ["t7","f20l"],
+
+          //supports
+          {"beamType":"|SUPPORT", "beamLongBound":4},
+          {"beamSpring":1001000,"beamDamp":50},
+          {"beamDeform":7500,"beamStrength":230000},
+          {"disableTriangleBreaking":true},
+          {"breakGroup":"bootlatch_lowersides"},
+          ["tb1l","t6ll"],
+          ["tb1r","t6rr"]
+          ["tb1l","t6l"],
+          ["tb1r","t6r"],
+          ["tb1l","t6"],
+          ["tb1r","t6"],
+          ["tb1l","t7ll"],
+          ["tb1r","t7rr"]
+          ["tb1l","t7l"],
+          ["tb1r","t7r"],
+          ["tb1l","t7"],
+          ["tb1r","t7"],
+
+          {"breakGroup":""},
+          {"deformGroup":""},
+          {"disableTriangleBreaking":false},
+          {"optional":false},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"deformLimitExpansion":1.1},
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            //tailgate
+            {"groundModel":"metal"},
+            {"breakGroup":""},
+            {"group":"cruiserj80_boot_lower"},
+            {"dragCoef":2},
+            ["t7rr",  "t6rr", "t7r"],
+            ["t6rr",  "t6r", "t7r"],
+            ["t7r",  "t6r", "t6"],
+            ["t6",  "t7", "t7r"],
+            ["t7ll",  "t7l", "t6ll"],
+            ["t6ll",  "t7l", "t6l"],
+            ["t7l",  "t6", "t6l"],
+            ["t6",  "t7l", "t7"],
+
+            {"group":""},
+            {"dragCoef":0},
+    ],
+},
+"cruiserj80_boot_badge": {
+    "information":{
+        "authors":"Omashida",
+        "name":"TOYOTA Badge",
+        "value":300,
+    },
+    "slotType" : "cruiserj80_boot_badge",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_boot_upper_markplate", ["cruiserj80_boot_upper"]],
+    ],
+},
+"cruiserj80_licenseplateHolder": {
+    "information":{
+        "authors":"Omashida",
+        "name":"License Plate Holder",
+        "value":300,
+    },
+    "slotType" : "cruiserj80_licenseplate_R",
+    "slots": [
+        ["type", "default", "description"],
+        ["cruiserj80_licenseplate_R_alt","cruiserj80_licenseplate_R_alt", "Rear License Plate"],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_licenseplateHolder", ["cruiserj80_boot_lower"]],
+    ],
+},
+}

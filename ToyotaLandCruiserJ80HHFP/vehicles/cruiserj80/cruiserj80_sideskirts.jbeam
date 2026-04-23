@@ -1,0 +1,66 @@
+{
+"cruiserj80_sideskirt": {
+    "information":{
+        "authors":"Omashida",
+        "name":"Plastic Side Skirts",
+        "value":300,
+    },
+    "slotType" : "cruiserj80_sideskirts",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_sideskirt_FL", ["cruiserj80_fender_L"]],
+         ["cruiserj80_sideskirt_FR", ["cruiserj80_fender_R"]],
+         ["cruiserj80_sideskirt_R", ["cruiserj80_bumper_R"]],
+
+    ],
+},
+"cruiserj80_sideskirt_alt": {
+    "information":{
+        "authors":"Omashida",
+        "name":"Plastic Side Skirts",
+        "value":300,
+    },
+    "slotType" : "cruiserj80_sideskirts_alt",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_sideskirt_FL", ["cruiserj80_fender_L"]],
+         ["cruiserj80_sideskirt_FR", ["cruiserj80_fender_R"]],
+         ["cruiserj80_sideskirt_R", ["cruiserj80_bumper_R"]],
+
+    ],
+},
+"cruiserj80_fenderflare": {
+    "information":{
+        "authors":"Omashida",
+        "name":"Fender Flares (Body Colored)",
+        "value":300,
+    },
+    "slotType" : "cruiserj80_sideskirts",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_fenderflare_FL", ["cruiserj80_fender_L"]],
+         ["cruiserj80_fenderflare_FR", ["cruiserj80_fender_R"]],
+         ["cruiserj80_fenderflare_RL", ["cruiserj80_body"]],
+         ["cruiserj80_fenderflare_RR", ["cruiserj80_body"]],
+         ["cruiserj80_fenderflare_RLD", ["cruiserj80_door_RL"]],
+         ["cruiserj80_fenderflare_RRD", ["cruiserj80_door_RR"]],
+    ],
+},
+"cruiserj80_fenderflare_alt": {
+    "information":{
+        "authors":"Omashida",
+        "name":"Fender Flares (Body Colored)",
+        "value":300,
+    },
+    "slotType" : "cruiserj80_sideskirts_alt",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_fenderflare_FL", ["cruiserj80_fender_L"]],
+         ["cruiserj80_fenderflare_FR", ["cruiserj80_fender_R"]],
+         ["cruiserj80_fenderflare_RL", ["cruiserj80_body"]],
+         ["cruiserj80_fenderflare_RR", ["cruiserj80_body"]],
+         ["cruiserj80_fenderflare_RLD", ["cruiserj80_body"]],
+         ["cruiserj80_fenderflare_RRD", ["cruiserj80_body"]],
+    ],
+},
+}

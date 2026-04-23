@@ -1,0 +1,106 @@
+{
+"cruiserj80_model": {
+    "information":{
+        "authors":"Omashida",
+        "name":"Full Option Trim",
+        "value":300,
+    },
+    "slotType" : "cruiserj80_model",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_body_model", ["cruiserj80_body"]],
+         ["cruiserj80_door_FL_model", ["cruiserj80_door_FL"]],
+         ["cruiserj80_door_FR_model", ["cruiserj80_door_FR"]],
+         ["cruiserj80_door_RL_model", ["cruiserj80_door_RL"]],
+         ["cruiserj80_door_RR_model", ["cruiserj80_door_RR"]],
+    ],
+},
+"cruiserj80_model_ext": {
+    "information":{
+        "authors":"Omashida",
+        "name":"Full Option Trim",
+        "value":300,
+    },
+    "slotType" : "cruiserj80_model_ext",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_body_model_ext", ["cruiserj80_body"]],
+    ],
+},
+"cruiserj80_model_alt": {
+    "information":{
+        "authors":"Omashida",
+        "name":"Standard Trim",
+        "value":300,
+    },
+    "slotType" : "cruiserj80_model",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_body_model_alt", ["cruiserj80_body"]],
+         ["cruiserj80_door_FL_model_alt", ["cruiserj80_door_FL"]],
+         ["cruiserj80_door_FR_model_alt", ["cruiserj80_door_FR"]],
+         ["cruiserj80_door_RL_model_alt", ["cruiserj80_door_RL"]],
+         ["cruiserj80_door_RR_model_alt", ["cruiserj80_door_RR"]],
+    ],
+},
+"cruiserj80_model_ext_alt": {
+    "information":{
+        "authors":"Omashida",
+        "name":"Standard Trim",
+        "value":300,
+    },
+    "slotType" : "cruiserj80_model_ext",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_body_model_ext_alt", ["cruiserj80_body"]],
+    ],
+},
+"cruiserj80_trim": {
+    "information":{
+        "authors":"Omashida",
+        "name":"Plastic Trim (Grey)",
+        "value":300,
+    },
+    "slotType" : "cruiserj80_trim",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_body_trim", ["cruiserj80_body"]],
+         ["cruiserj80_door_FL_trim", ["cruiserj80_door_FL"]],
+         ["cruiserj80_door_FR_trim", ["cruiserj80_door_FR"]],
+         ["cruiserj80_door_RL_trim", ["cruiserj80_door_RL"]],
+         ["cruiserj80_door_RR_trim", ["cruiserj80_door_RR"]],
+         ["cruiserj80_fender_R_trim", ["cruiserj80_fender_R"]],
+         ["cruiserj80_fender_L_trim", ["cruiserj80_fender_L"]],
+    ],
+},
+"cruiserj80_trim_alt": {
+    "information":{
+        "authors":"Omashida",
+        "name":"Plastic Trim (Body Colored)",
+        "value":300,
+    },
+    "slotType" : "cruiserj80_trim",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_body_trim_alt", ["cruiserj80_body"]],
+         ["cruiserj80_door_FL_trim_alt", ["cruiserj80_door_FL"]],
+         ["cruiserj80_door_FR_trim_alt", ["cruiserj80_door_FR"]],
+         ["cruiserj80_door_RL_trim_alt", ["cruiserj80_door_RL"]],
+         ["cruiserj80_door_RR_trim_alt", ["cruiserj80_door_RR"]],
+         ["cruiserj80_fender_R_trim_alt", ["cruiserj80_fender_R"]],
+         ["cruiserj80_fender_L_trim_alt", ["cruiserj80_fender_L"]],
+    ],
+},
+"cruiserj80_qatarsticker": {
+    "information":{
+        "authors":"Omashida",
+        "name":"Qatar Aesthetic Sticker",
+        "value":300,
+    },
+    "slotType" : "cruiserj80_qatarsticker",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_qatarsticker", ["cruiserj80_boot_upper"]],
+    ],
+},
+}

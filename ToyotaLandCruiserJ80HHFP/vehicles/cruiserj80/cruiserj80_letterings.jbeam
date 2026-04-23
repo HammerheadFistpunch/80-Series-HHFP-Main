@@ -1,0 +1,236 @@
+{
+"cruiserj80_boot_emblem_early": {
+    "information":{
+        "authors":"Omashida",
+        "name":"Early Emblem",
+        "value":300,
+    },
+    "slotType" : "cruiserj80_boot_emblem",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_boot_emblem_alt", ["cruiserj80_boot_upper"]],
+    ],
+},
+"cruiserj80_boot_emblem": {
+    "information":{
+        "authors":"Omashida",
+        "name":"Late Emblem",
+        "value":300,
+    },
+    "slotType" : "cruiserj80_boot_emblem",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_boot_emblem", ["cruiserj80_boot_upper"]],
+    ],
+},
+"cruiserj80_boot_trim_G": {
+    "information":{
+        "authors":"Omashida",
+        "name":"G Trim",
+        "value":300,
+    },
+    "slotType" : "cruiserj80_boot_trim",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_boot_emblem_g", ["cruiserj80_boot_lower"]],
+         ["cruiserj80_boot_emblem_4wd", ["cruiserj80_boot_lower"]],
+         ["cruiserj80_boot_emblem_24v", ["cruiserj80_boot_lower"]],
+    ],
+},
+"cruiserj80_boot_trim_G_alt": {
+    "information":{
+        "authors":"Omashida",
+        "name":"G Trim (Spare Tire)",
+        "value":300,
+    },
+    "slotType" : "cruiserj80_boot_trim",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_boot_emblem_g_alt", ["cruiserj80_boot_lower"]],
+         ["cruiserj80_boot_emblem_4wd_alt", ["cruiserj80_boot_lower"]],
+         ["cruiserj80_boot_emblem_24v_alt", ["cruiserj80_boot_lower"]],
+    ],
+},
+"cruiserj80_boot_trim_G_barn": {
+    "information":{
+        "authors":"Omashida",
+        "name":"G Trim",
+        "value":300,
+    },
+    "slotType" : "cruiserj80_barn_trim",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_boot_emblem_g_alt", ["cruiserj80_reardoor_L"]],
+         ["cruiserj80_boot_emblem_4wd_alt", ["cruiserj80_reardoor_L"]],
+         ["cruiserj80_boot_emblem_24v_alt", ["cruiserj80_reardoor_L"]],
+    ],
+},
+"cruiserj80_boot_trim_vx": {
+    "information":{
+        "authors":"Omashida",
+        "name":"VX Trim",
+        "value":300,
+    },
+    "slotType" : "cruiserj80_boot_trim",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_boot_emblem_vx", ["cruiserj80_boot_lower"]],
+         ["cruiserj80_boot_emblem_4wd", ["cruiserj80_boot_lower"]],
+         ["cruiserj80_boot_emblem_24v", ["cruiserj80_boot_lower"]],
+    ],
+},
+"cruiserj80_boot_trim_gx": {
+    "information":{
+        "authors":"Omashida",
+        "name":"GX Trim",
+        "value":300,
+    },
+    "slotType" : "cruiserj80_boot_trim",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_boot_emblem_gx", ["cruiserj80_boot_lower"]],
+         ["cruiserj80_boot_emblem_4wd", ["cruiserj80_boot_lower"]],
+         ["cruiserj80_boot_emblem_24v", ["cruiserj80_boot_lower"]],
+    ],
+},
+"cruiserj80_boot_trim_vxr": {
+    "information":{
+        "authors":"Omashida",
+        "name":"VXR Trim",
+        "value":300,
+    },
+    "slotType" : "cruiserj80_boot_trim",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_boot_emblem_vxr", ["cruiserj80_boot_lower"]],
+         ["cruiserj80_boot_emblem_4wd", ["cruiserj80_boot_lower"]],
+         ["cruiserj80_boot_emblem_24v", ["cruiserj80_boot_lower"]],
+    ],
+},
+"cruiserj80_boot_trim_gxr": {
+    "information":{
+        "authors":"Omashida",
+        "name":"GXR Trim",
+        "value":300,
+    },
+    "slotType" : "cruiserj80_boot_trim",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_boot_emblem_gxr", ["cruiserj80_boot_lower"]],
+         ["cruiserj80_boot_emblem_4wd", ["cruiserj80_boot_lower"]],
+         ["cruiserj80_boot_emblem_24v", ["cruiserj80_boot_lower"]],
+    ],
+},
+"cruiserj80_boot_trim_vx_alt": {
+    "information":{
+        "authors":"Omashida",
+        "name":"VX Trim (Spare Tire)",
+        "value":300,
+    },
+    "slotType" : "cruiserj80_boot_trim",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_boot_emblem_vx_alt", ["cruiserj80_boot_lower"]],
+         ["cruiserj80_boot_emblem_4wd_alt", ["cruiserj80_boot_lower"]],
+         ["cruiserj80_boot_emblem_24v_alt", ["cruiserj80_boot_lower"]],
+    ],
+},
+"cruiserj80_boot_trim_gx_alt": {
+    "information":{
+        "authors":"Omashida",
+        "name":"GX Trim (Spare Tire)",
+        "value":300,
+    },
+    "slotType" : "cruiserj80_boot_trim",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_boot_emblem_gx_alt", ["cruiserj80_boot_lower"]],
+         ["cruiserj80_boot_emblem_4wd_alt", ["cruiserj80_boot_lower"]],
+         ["cruiserj80_boot_emblem_24v_alt", ["cruiserj80_boot_lower"]],
+    ],
+},
+"cruiserj80_boot_trim_vxr_alt": {
+    "information":{
+        "authors":"Omashida",
+        "name":"VXR Trim (Spare Tire)",
+        "value":300,
+    },
+    "slotType" : "cruiserj80_boot_trim",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_boot_emblem_vxr_alt", ["cruiserj80_boot_lower"]],
+         ["cruiserj80_boot_emblem_4wd_alt", ["cruiserj80_boot_lower"]],
+         ["cruiserj80_boot_emblem_24v_alt", ["cruiserj80_boot_lower"]],
+    ],
+},
+"cruiserj80_boot_trim_gxr_alt": {
+    "information":{
+        "authors":"Omashida",
+        "name":"GXR Trim (Spare Tire)",
+        "value":300,
+    },
+    "slotType" : "cruiserj80_boot_trim",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_boot_emblem_gxr_alt", ["cruiserj80_boot_lower"]],
+         ["cruiserj80_boot_emblem_4wd_alt", ["cruiserj80_boot_lower"]],
+         ["cruiserj80_boot_emblem_24v_alt", ["cruiserj80_boot_lower"]],
+    ],
+},
+"cruiserj80_boot_trim_vxr_barn": {
+    "information":{
+        "authors":"Omashida",
+        "name":"VXR Trim",
+        "value":300,
+    },
+    "slotType" : "cruiserj80_barn_trim",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_boot_emblem_vxr_alt", ["cruiserj80_reardoor_L"]],
+         ["cruiserj80_boot_emblem_4wd_alt", ["cruiserj80_reardoor_L"]],
+         ["cruiserj80_boot_emblem_24v_alt", ["cruiserj80_reardoor_L"]],
+    ],
+},
+"cruiserj80_boot_trim_gxr_barn": {
+    "information":{
+        "authors":"Omashida",
+        "name":"GXR Trim",
+        "value":300,
+    },
+    "slotType" : "cruiserj80_barn_trim",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_boot_emblem_gxr_alt", ["cruiserj80_reardoor_L"]],
+         ["cruiserj80_boot_emblem_4wd_alt", ["cruiserj80_reardoor_L"]],
+         ["cruiserj80_boot_emblem_24v_alt", ["cruiserj80_reardoor_L"]],
+    ],
+},
+"cruiserj80_boot_trim_vx_barn": {
+    "information":{
+        "authors":"Omashida",
+        "name":"VX Trim",
+        "value":300,
+    },
+    "slotType" : "cruiserj80_barn_trim",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_boot_emblem_vx_alt", ["cruiserj80_reardoor_L"]],
+         ["cruiserj80_boot_emblem_4wd_alt", ["cruiserj80_reardoor_L"]],
+         ["cruiserj80_boot_emblem_24v_alt", ["cruiserj80_reardoor_L"]],
+    ],
+},
+"cruiserj80_boot_trim_gx_barn": {
+    "information":{
+        "authors":"Omashida",
+        "name":"GX Trim",
+        "value":300,
+    },
+    "slotType" : "cruiserj80_barn_trim",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_boot_emblem_gx_alt", ["cruiserj80_reardoor_L"]],
+         ["cruiserj80_boot_emblem_4wd_alt", ["cruiserj80_reardoor_L"]],
+         ["cruiserj80_boot_emblem_24v_alt", ["cruiserj80_reardoor_L"]],
+    ],
+},
+}

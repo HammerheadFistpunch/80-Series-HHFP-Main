@@ -1,0 +1,15 @@
+{
+  "black": {
+    "name": "black",
+    "mapTo": "black",
+    "class": "Material",
+    "persistentId": "bb0a84ab-01f1-4560-acd3-51cb76e64f3e",
+    "Stages": [
+      {},
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None"
+  }
+}

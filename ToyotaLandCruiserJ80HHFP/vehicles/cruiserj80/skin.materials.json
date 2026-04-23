@@ -1,0 +1,400 @@
+{
+  "cruiserj80.skin.skin1": {
+    "name": "cruiserj80.skin.skin1",
+    "mapTo": "cruiserj80.skin.skin1",
+    "class": "Material",
+    "persistentId": "7eef0689-da23-4a2a-93b1-263430933fc6",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/cruiserj80/pbr/cruiserj80_main_ao.data.DDS",
+        "baseColorFactor": null,
+        "baseColorMap": "/vehicles/cruiserj80/pbr/cruiserj80_main_b.color.DDS",
+        "clearCoatBottomNormalMap": "/vehicles/cruiserj80/pbr/cruiserj80_main_n.normal.DDS",
+        "clearCoatFactor": 1,
+        "clearCoatRoughnessFactor": 0,
+        "instanceDiffuse": true,
+        "metallicFactor": 1,
+        "normalMap": "/vehicles/cruiserj80/pbr/cruiserj80_main_n.normal.DDS",
+        "opacityMapUseUV": null,
+        "roughnessMap": "/vehicles/cruiserj80/pbr/cruiserj80_main_r.data.DDS"
+      },
+      {
+        "baseColorFactor": [
+          0.832175016,
+          0.832167029,
+          0.832167029,
+          1
+        ],
+        "baseColorMap": "/vehicles/cruiserj80/skins/cruiserj80_skin1.png",
+        "clearCoatBottomNormalMap": "/vehicles/cruiserj80/pbr/cruiserj80_main_n.normal.DDS",
+        "clearCoatFactor": null,
+        "clearCoatRoughnessFactor": null,
+        "colorPaletteMap": "/vehicles/cruiserj80/skins/cruiserj80_skin1_p.png",
+        "instanceDiffuse": null,
+        "metallicFactor": 1,
+        "opacityMapUseUV": 1
+      },
+      {
+        "baseColorFactor": null,
+        "clearCoatFactor": null,
+        "clearCoatRoughnessFactor": null,
+        "instanceDiffuse": null,
+        "metallicFactor": null,
+        "opacityMapUseUV": null
+      },
+      {
+        "baseColorFactor": null,
+        "clearCoatFactor": null,
+        "clearCoatRoughnessFactor": null,
+        "instanceDiffuse": null,
+        "metallicFactor": null,
+        "opacityMapUseUV": null
+      }
+    ],
+    "activeLayers": 2,
+    "doubleSided": true,
+    "dynamicCubemap": true,
+    "invertBackFaceNormals": true,
+    "version": 1.5
+  },
+  "cruiserj80.skin.skin2": {
+    "name": "cruiserj80.skin.skin2",
+    "mapTo": "cruiserj80.skin.skin2",
+    "class": "Material",
+    "persistentId": "9db0a707-70cf-4f9e-8e4a-4168e5df6918",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/cruiserj80/pbr/cruiserj80_main_ao.data.DDS",
+        "baseColorFactor": null,
+        "baseColorMap": "/vehicles/cruiserj80/pbr/cruiserj80_main_b.color.DDS",
+        "clearCoatBottomNormalMap": "/vehicles/cruiserj80/pbr/cruiserj80_main_n.normal.DDS",
+        "clearCoatFactor": 1,
+        "clearCoatRoughnessFactor": 0,
+        "instanceDiffuse": true,
+        "metallicFactor": 1,
+        "normalMap": "/vehicles/cruiserj80/pbr/cruiserj80_main_n.normal.DDS",
+        "opacityMapUseUV": null,
+        "roughnessMap": "/vehicles/cruiserj80/pbr/cruiserj80_main_r.data.DDS"
+      },
+      {
+        "baseColorFactor": [
+          0.832175016,
+          0.832167029,
+          0.832167029,
+          1
+        ],
+        "baseColorMap": "/vehicles/cruiserj80/skins/cruiserj80_skin2.png",
+        "clearCoatBottomNormalMap": "/vehicles/cruiserj80/pbr/cruiserj80_main_n.normal.DDS",
+        "clearCoatFactor": null,
+        "clearCoatRoughnessFactor": null,
+        "colorPaletteMap": "/vehicles/cruiserj80/skins/cruiserj80_skin2_p.png",
+        "instanceDiffuse": null,
+        "metallicFactor": 1,
+        "opacityMapUseUV": 1
+      },
+      {
+        "baseColorFactor": null,
+        "clearCoatFactor": null,
+        "clearCoatRoughnessFactor": null,
+        "instanceDiffuse": null,
+        "metallicFactor": null,
+        "opacityMapUseUV": null
+      },
+      {
+        "baseColorFactor": null,
+        "clearCoatFactor": null,
+        "clearCoatRoughnessFactor": null,
+        "instanceDiffuse": null,
+        "metallicFactor": null,
+        "opacityMapUseUV": null
+      }
+    ],
+    "activeLayers": 2,
+    "doubleSided": true,
+    "dynamicCubemap": true,
+    "invertBackFaceNormals": true,
+    "version": 1.5
+  },
+  "cruiserj80.skin.skin3": {
+    "name": "cruiserj80.skin.skin3",
+    "mapTo": "cruiserj80.skin.skin3",
+    "class": "Material",
+    "persistentId": "f3d685ba-23e0-4757-b5a1-623800cfb0ef",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/cruiserj80/pbr/cruiserj80_main_ao.data.DDS",
+        "baseColorFactor": null,
+        "baseColorMap": "/vehicles/cruiserj80/pbr/cruiserj80_main_b.color.DDS",
+        "clearCoatBottomNormalMap": "/vehicles/cruiserj80/pbr/cruiserj80_main_n.normal.DDS",
+        "clearCoatFactor": 1,
+        "clearCoatRoughnessFactor": 0,
+        "instanceDiffuse": true,
+        "metallicFactor": 1,
+        "normalMap": "/vehicles/cruiserj80/pbr/cruiserj80_main_n.normal.DDS",
+        "opacityMapUseUV": null,
+        "roughnessMap": "/vehicles/cruiserj80/pbr/cruiserj80_main_r.data.DDS"
+      },
+      {
+        "baseColorFactor": [
+          0.832175016,
+          0.832167029,
+          0.832167029,
+          1
+        ],
+        "baseColorMap": "/vehicles/cruiserj80/skins/cruiserj80_skin3.png",
+        "clearCoatBottomNormalMap": "/vehicles/cruiserj80/pbr/cruiserj80_main_n.normal.DDS",
+        "clearCoatFactor": null,
+        "clearCoatRoughnessFactor": null,
+        "colorPaletteMap": "/vehicles/cruiserj80/skins/cruiserj80_skin3_p.png",
+        "instanceDiffuse": null,
+        "metallicFactor": 1,
+        "opacityMapUseUV": 1
+      },
+      {
+        "baseColorFactor": null,
+        "clearCoatFactor": null,
+        "clearCoatRoughnessFactor": null,
+        "instanceDiffuse": null,
+        "metallicFactor": null,
+        "opacityMapUseUV": null
+      },
+      {
+        "baseColorFactor": null,
+        "clearCoatFactor": null,
+        "clearCoatRoughnessFactor": null,
+        "instanceDiffuse": null,
+        "metallicFactor": null,
+        "opacityMapUseUV": null
+      }
+    ],
+    "activeLayers": 2,
+    "doubleSided": true,
+    "dynamicCubemap": true,
+    "invertBackFaceNormals": true,
+    "version": 1.5
+  },
+  "cruiserj80.skin.skin4": {
+    "name": "cruiserj80.skin.skin4",
+    "mapTo": "cruiserj80.skin.skin4",
+    "class": "Material",
+    "persistentId": "9e550a2f-7bd4-4315-a4e6-32fc1bec0816",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/cruiserj80/pbr/cruiserj80_main_ao.data.DDS",
+        "baseColorFactor": null,
+        "baseColorMap": "/vehicles/cruiserj80/pbr/cruiserj80_main_b.color.DDS",
+        "clearCoatBottomNormalMap": "/vehicles/cruiserj80/pbr/cruiserj80_main_n.normal.DDS",
+        "clearCoatFactor": 1,
+        "clearCoatRoughnessFactor": 0,
+        "instanceDiffuse": true,
+        "metallicFactor": 1,
+        "normalMap": "/vehicles/cruiserj80/pbr/cruiserj80_main_n.normal.DDS",
+        "opacityMapUseUV": null,
+        "roughnessMap": "/vehicles/cruiserj80/pbr/cruiserj80_main_r.data.DDS"
+      },
+      {
+        "baseColorFactor": [
+          0.832175016,
+          0.832167029,
+          0.832167029,
+          1
+        ],
+        "clearCoatBottomNormalMap": "/vehicles/cruiserj80/pbr/cruiserj80_main_n.normal.DDS",
+        "clearCoatFactor": null,
+        "clearCoatRoughnessFactor": null,
+        "colorPaletteMap": "/vehicles/cruiserj80/skins/cruiserj80_skin4_p.png",
+        "instanceDiffuse": null,
+        "metallicFactor": 1,
+        "opacityMapUseUV": 1
+      },
+      {
+        "baseColorFactor": null,
+        "clearCoatFactor": null,
+        "clearCoatRoughnessFactor": null,
+        "instanceDiffuse": null,
+        "metallicFactor": null,
+        "opacityMapUseUV": null
+      },
+      {
+        "baseColorFactor": null,
+        "clearCoatFactor": null,
+        "clearCoatRoughnessFactor": null,
+        "instanceDiffuse": null,
+        "metallicFactor": null,
+        "opacityMapUseUV": null
+      }
+    ],
+    "activeLayers": 2,
+    "doubleSided": true,
+    "dynamicCubemap": true,
+    "invertBackFaceNormals": true,
+    "version": 1.5
+  },
+  "cruiserj80.skin.skin5": {
+    "name": "cruiserj80.skin.skin5",
+    "mapTo": "cruiserj80.skin.skin5",
+    "class": "Material",
+    "persistentId": "0e718d54-aa88-460f-b11f-97d218f4c589",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/cruiserj80/pbr/cruiserj80_main_ao.data.DDS",
+        "baseColorFactor": null,
+        "baseColorMap": "/vehicles/cruiserj80/pbr/cruiserj80_main_b.color.DDS",
+        "clearCoatBottomNormalMap": "/vehicles/cruiserj80/pbr/cruiserj80_main_n.normal.DDS",
+        "clearCoatFactor": 1,
+        "clearCoatRoughnessFactor": 0,
+        "instanceDiffuse": true,
+        "metallicFactor": 1,
+        "normalMap": "/vehicles/cruiserj80/pbr/cruiserj80_main_n.normal.DDS",
+        "opacityMapUseUV": null,
+        "roughnessMap": "/vehicles/cruiserj80/pbr/cruiserj80_main_r.data.DDS"
+      },
+      {
+        "baseColorFactor": [
+          0.832175016,
+          0.832167029,
+          0.832167029,
+          1
+        ],
+        "baseColorMap": "/vehicles/cruiserj80/skins/cruiserj80_skin5.png",
+        "clearCoatBottomNormalMap": "/vehicles/cruiserj80/pbr/cruiserj80_main_n.normal.DDS",
+        "clearCoatFactor": null,
+        "clearCoatRoughnessFactor": null,
+        "colorPaletteMap": "/vehicles/cruiserj80/skins/cruiserj80_skin5_p.png",
+        "instanceDiffuse": null,
+        "metallicFactor": 1,
+        "opacityMapUseUV": 1
+      },
+      {
+        "baseColorFactor": null,
+        "clearCoatFactor": null,
+        "clearCoatRoughnessFactor": null,
+        "instanceDiffuse": null,
+        "metallicFactor": null,
+        "opacityMapUseUV": null
+      },
+      {
+        "baseColorFactor": null,
+        "clearCoatFactor": null,
+        "clearCoatRoughnessFactor": null,
+        "instanceDiffuse": null,
+        "metallicFactor": null,
+        "opacityMapUseUV": null
+      }
+    ],
+    "activeLayers": 2,
+    "doubleSided": true,
+    "dynamicCubemap": true,
+    "invertBackFaceNormals": true,
+    "version": 1.5
+  },
+  "cruiserj80.skin.skin6": {
+    "name": "cruiserj80.skin.skin6",
+    "mapTo": "cruiserj80.skin.skin6",
+    "class": "Material",
+    "persistentId": "f779e1c2-7e69-4609-8c2e-3321265cddf0",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/cruiserj80/pbr/cruiserj80_main_ao.data.DDS",
+        "baseColorFactor": null,
+        "baseColorMap": "/vehicles/cruiserj80/pbr/cruiserj80_main_b.color.DDS",
+        "clearCoatBottomNormalMap": "/vehicles/cruiserj80/pbr/cruiserj80_main_n.normal.DDS",
+        "clearCoatFactor": 1,
+        "clearCoatRoughnessFactor": 0,
+        "metallicFactor": 1,
+        "normalMap": "/vehicles/cruiserj80/pbr/cruiserj80_main_n.normal.DDS",
+        "opacityMapUseUV": null,
+        "roughnessFactor": null,
+        "roughnessMap": "/vehicles/cruiserj80/pbr/cruiserj80_main_r.data.DDS"
+      },
+      {
+        "baseColorFactor": [
+          1,
+          0.999989986,
+          0.999989986,
+          1
+        ],
+        "baseColorMap": "/vehicles/cruiserj80/skins/cruiserj80_skin6.png",
+        "clearCoatBottomNormalMap": "/vehicles/cruiserj80/pbr/cruiserj80_main_n.normal.DDS",
+        "clearCoatFactor": null,
+        "clearCoatRoughnessFactor": null,
+        "metallicFactor": 0.446999997,
+        "opacityMapUseUV": 1,
+        "roughnessFactor": 0.157000005
+      },
+      {
+        "baseColorFactor": null,
+        "clearCoatFactor": null,
+        "clearCoatRoughnessFactor": null,
+        "metallicFactor": null,
+        "opacityMapUseUV": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "clearCoatFactor": null,
+        "clearCoatRoughnessFactor": null,
+        "metallicFactor": null,
+        "opacityMapUseUV": null,
+        "roughnessFactor": null
+      }
+    ],
+    "activeLayers": 2,
+    "doubleSided": true,
+    "dynamicCubemap": true,
+    "invertBackFaceNormals": true,
+    "version": 1.5
+  },
+  "cruiserj80_interior.skin_interior.brown": {
+    "name": "cruiserj80_interior.skin_interior.brown",
+    "mapTo": "cruiserj80_interior.skin_interior.brown",
+    "class": "Material",
+    "persistentId": "86a5d6d9-a887-46a4-9c48-1b3ecf7aa7a0",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/common/pickup/roamer_interior_brown_ao.data.png",
+        "baseColorFactor": [
+          0.842046976,
+          0.842038989,
+          0.842038989,
+          1.30980396
+        ],
+        "baseColorMap": "/vehicles/common/pickup/roamer_interior_brown_b.color.png",
+        "clearCoatRoughnessFactor": 0,
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/common/pickup/roamer_interior_brown_m.data.png",
+        "normalMap": "/vehicles/common/pickup/roamer_interior_brown_nm.normal.png",
+        "opacityFactor": 0,
+        "pixelSpecular": true,
+        "roughnessMap": "/vehicles/common/pickup/roamer_interior_brown_r.data.png"
+      },
+      {
+        "baseColorFactor": null,
+        "clearCoatRoughnessFactor": null,
+        "metallicFactor": null,
+        "opacityFactor": null,
+        "pixelSpecular": null
+      },
+      {
+        "baseColorFactor": null,
+        "clearCoatRoughnessFactor": null,
+        "metallicFactor": null,
+        "opacityFactor": null,
+        "pixelSpecular": null
+      },
+      {
+        "baseColorFactor": null,
+        "clearCoatRoughnessFactor": null,
+        "metallicFactor": null,
+        "opacityFactor": null,
+        "pixelSpecular": null
+      }
+    ],
+    "doubleSided": true,
+    "dynamicCubemap": true,
+    "invertBackFaceNormals": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  }
+}

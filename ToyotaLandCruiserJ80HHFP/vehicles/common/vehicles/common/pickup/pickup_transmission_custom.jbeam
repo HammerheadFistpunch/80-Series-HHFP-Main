@@ -1,0 +1,511 @@
+{
+"pickup_transfer_case_AWD_custom": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Full-time 4WD Transfer Case",
+        "value":1650,
+    },
+    "slotType" : "pickup_transfer_case",
+    "slots": [
+        ["type", "default","description"],
+        ["centerDiff","pickup_center_diff","Center Differential", {"coreSlot":true}],
+        ["rangeGears","rangeBox","Low Range Gearing", {"coreSlot":true}],
+    ],
+    "controller": [
+        ["fileName"],
+        ["driveModes", {"name":"transfercaseControl"}]
+        ["full4wd", {"driveModesTransfercaseNames":["transfercaseControl"], "driveModesRangeNames":["transfercaseControl"]}]
+    ],
+	
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        //permanently connected front shaft
+        ["shaft", "transfercase_F", "transfercase", 2, {"canDisconnect":false, "friction":0.44, "dynamicFriction":0.00048, "uiName":"Front Output Shaft"}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["pickup_transfer_case", ["pickup_transmission","pickup_engine"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":false},
+         {"collision":true},
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"nodeWeight":18},
+         {"group":"pickup_transmission"},
+         ["tra2", -0.12, -0.78, 0.425],
+         ["tra3", 0.18, -0.78, 0.425],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":12600840,"beamDamp":390},
+          {"beamDeform":99750,"beamStrength":"FLT_MAX"},
+          ["tra2","tra1"],
+
+          ["tra2","e1r"],
+          ["tra2","e1l"],
+          ["tra2","e3r"],
+          ["tra2","e3l"],
+
+          ["tra3","e1r"],
+          ["tra3","e1l"],
+          ["tra3","e3r"],
+          ["tra3","e3l"],
+
+          ["tra3","tra2"],
+          ["tra3","tra1"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+"pickup_transfer_case_4WD_torquesplit": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Full-time 4WD Transfer Case w. Tunable Torque Split",
+        "value":1650,
+    },
+    "slotType" : "pickup_transfer_case",
+    "slots": [
+        ["type", "default","description"],
+        ["centerDiff","pickup_center_diff_test","Center Differential"],
+        ["rangeGears","rangeBox","Low Range Gearing"],
+    ],
+    "controller": [
+        ["fileName"],
+        ["driveModes", {"name":"transfercaseControl"}]
+        ["full4wd", {"driveModesTransfercaseNames":["transfercaseControl"], "driveModesRangeNames":["transfercaseControl"]}]
+    ],
+    
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        //permanently connected front shaft
+        ["shaft", "transfercase_F", "transfercase", 2, {"canDisconnect":false, "friction":0.44, "dynamicFriction":0.00048, "uiName":"Front Output Shaft"}],
+    ],
+	
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$diffTorqueSplit", "range", "", "Differentials", 0.5, 0.3, 0.7, "Torque split", "Rear torque bias", {"subCategory":"Center Differential", "minDis":30, "maxDis":70}],
+    ],
+
+    "transfercase" : {
+        "diffTorqueSplit":"$diffTorqueSplit",
+    },
+	
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["pickup_transfer_case", ["pickup_transmission","pickup_engine"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":false},
+         {"collision":true},
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"nodeWeight":18},
+         {"group":"pickup_transmission"},
+         ["tra2", -0.12, -0.78, 0.425],
+         ["tra3", 0.18, -0.78, 0.425],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":12600840,"beamDamp":390},
+          {"beamDeform":99750,"beamStrength":"FLT_MAX"},
+          ["tra2","tra1"],
+
+          ["tra2","e1r"],
+          ["tra2","e1l"],
+          ["tra2","e3r"],
+          ["tra2","e3l"],
+
+          ["tra3","e1r"],
+          ["tra3","e1l"],
+          ["tra3","e3r"],
+          ["tra3","e3l"],
+
+          ["tra3","tra2"],
+          ["tra3","tra1"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+
+"rangeBox": {
+    "information":{
+        "authors":"Spython",
+        "name":"Stock 1 / 2.488:1",
+        "value":2650,
+    },
+    "slotType" : "rangeGears",
+	
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+		["rangeBox", "rangebox", "gearbox", 1, {"uiSimpleModeControl":false, "gearRatios":[1,2.488]}],
+	],
+},
+
+"rangeBox_2": {
+    "information":{
+        "authors":"Spython",
+        "name":"Sumo 1 / 3.113",
+        "value":2650,
+    },
+    "slotType" : "rangeGears",
+	
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+		["rangeBox", "rangebox", "gearbox", 1, {"uiSimpleModeControl":false, "gearRatios":[1,3.313]}],
+	],
+},
+
+"rangeBox_3": {
+    "information":{
+        "authors":"Spython",
+        "name":"Sumo 1.097 / 2.488",
+        "value":2650,
+    },
+    "slotType" : "rangeGears",
+    
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+		["rangeBox", "rangebox", "gearbox", 1, {"uiSimpleModeControl":false, "gearRatios":[1.097,2.488]}],
+	],
+},
+
+"rangeBox_4": {
+    "information":{
+        "authors":"Spython",
+        "name":"Sumo 1.097 / 3.113",
+        "value":2650,
+    },
+    "slotType" : "rangeGears",
+    
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+		["rangeBox", "rangebox", "gearbox", 1, {"uiSimpleModeControl":false, "gearRatios":[1.097,3.113]}],
+	],
+},
+
+"rangeBox_crawler": {
+    "information":{
+        "authors":"Spython",
+        "name":"Overdrive 0.97 / 2.488",
+        "value":2650,
+    },
+    "slotType" : "rangeGears",
+    
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+		["rangeBox", "rangebox", "gearbox", 1, {"uiSimpleModeControl":false, "gearRatios":[0.97,2.488]}],
+	],
+},
+
+"rangeBox_crawler2": {
+    "information":{
+        "authors":"Spython",
+        "name":"Overdrive 0.93 / 2.488",
+        "value":2650,
+    },
+    "slotType" : "rangeGears",
+    
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+		["rangeBox", "rangebox", "gearbox", 1, {"uiSimpleModeControl":false, "gearRatios":[0.93,2.488]}],
+	],
+},
+
+"pickup_center_diff": {
+    "information":{
+        "authors":"Spython",
+        "name":"Locking Center Differential",
+        "value":2650,
+    },
+    "slotType" : "centerDiff",
+
+    "transfercaseControl":{
+        "uiName": "Transfercase"
+        "quickAccessTitle":"Transfercase"
+        "quickAccessIcon":"radial_highrangebox"
+        "quickAccessLevel":"/powertrain/"
+        "enabledModes":["4H", "4HLc", "4LLc"]
+        "defaultMode": "4H"
+        "modes": {
+            "4H": {
+                "name": "4WD High Range",
+                "order": 10,
+                "settings": [
+                    ["type"]
+                    ["powertrainDeviceMode", {"deviceName":"rangebox", "mode":"high"}]
+                    ["powertrainDeviceMode", {"deviceName":"transfercase", "mode":"open"}]
+                    ["electricsValue", {"electricsName":"transfercase_state", "value":1}]
+                    ["simpleControlButton", {"buttonId":"transfercase", "icon":"powertrain_transfercase_high-4", "uiName":"Transfercase"}]
+                    ["quickAccess", {"icon":"powertrain_transfercase_high-2"}]
+                ],
+            },
+            "4HLc": {
+                "name": "4WD High Range Locked",
+                "order": 20,
+                "settings": [
+                    ["type"]
+                    ["powertrainDeviceMode", {"deviceName":"rangebox", "mode":"high"}]
+                    ["powertrainDeviceMode", {"deviceName":"transfercase", "mode":"locked"}]
+                    ["electricsValue", {"electricsName":"transfercase_state", "value":0.33}]
+                    ["simpleControlButton", {"buttonId":"transfercase", "icon":"powertrain_transfercase_high-4", "uiName":"Transfercase"}]
+                    ["quickAccess", {"icon":"powertrain_transfercase_high-4"}]
+                ],
+            },
+            "4LLc": {
+                "name": "4WD Low Range Locked",
+                "order": 30,
+                "settings": [
+                    ["type"]
+                    ["powertrainDeviceMode", {"deviceName":"rangebox", "mode":"low"}]
+                    ["powertrainDeviceMode", {"deviceName":"transfercase", "mode":"locked"}]
+                    ["electricsValue", {"electricsName":"transfercase_state", "value":-1}]
+                    ["simpleControlButton", {"buttonId":"transfercase", "icon":"powertrain_transfercase_low-4", "uiName":"Transfercase"}]
+                    ["quickAccess", {"icon":"powertrain_transfercase_low-4"}]
+                ],
+            },
+        }
+    }
+	
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        //locking center diff
+        ["transfercaseDiff", "transfercase", "rangebox", 1, {"diffType":["open","locked"], "lockTorque":20000, "friction":5, "uiName":"Center Differential", "defaultVirtualInertia":0.1, "speedLimitCoef":0.1}],
+    ],
+},
+
+"pickup_center_diff_viscous": {
+    "information":{
+        "authors":"Spython",
+        "name":"Locking Center Differential (viscous)",
+        "value":2650,
+    },
+    "slotType" : "centerDiff",
+    
+    "transfercaseControl":{
+        "uiName": "Transfercase"
+        "quickAccessTitle":"Transfercase"
+        "quickAccessIcon":"radial_highrangebox"
+        "quickAccessLevel":"/powertrain/"
+        "enabledModes":["4H", "4HLc", "4LLc"]
+        "defaultMode": "4H"
+        "modes": {
+            "4H": {
+                "name": "4WD High Range",
+                "order": 10,
+                "settings": [
+                    ["type"]
+                    ["powertrainDeviceMode", {"deviceName":"rangebox", "mode":"high"}]
+                    ["powertrainDeviceMode", {"deviceName":"transfercase", "mode":"viscous"}]
+                    ["electricsValue", {"electricsName":"transfercase_state", "value":1}]
+                    ["simpleControlButton", {"buttonId":"transfercase", "icon":"powertrain_transfercase_high-4", "uiName":"Transfercase"}]
+                    ["quickAccess", {"icon":"powertrain_transfercase_high-2"}]
+                ],
+            },
+            "4HLc": {
+                "name": "4WD High Range Locked",
+                "order": 20,
+                "settings": [
+                    ["type"]
+                    ["powertrainDeviceMode", {"deviceName":"rangebox", "mode":"high"}]
+                    ["powertrainDeviceMode", {"deviceName":"transfercase", "mode":"locked"}]
+                    ["electricsValue", {"electricsName":"transfercase_state", "value":0.33}]
+                    ["simpleControlButton", {"buttonId":"transfercase", "icon":"powertrain_transfercase_high-4", "uiName":"Transfercase"}]
+                    ["quickAccess", {"icon":"powertrain_transfercase_high-4"}]
+                ],
+            },
+            "4LLc": {
+                "name": "4WD Low Range Locked",
+                "order": 30,
+                "settings": [
+                    ["type"]
+                    ["powertrainDeviceMode", {"deviceName":"rangebox", "mode":"low"}]
+                    ["powertrainDeviceMode", {"deviceName":"transfercase", "mode":"locked"}]
+                    ["electricsValue", {"electricsName":"transfercase_state", "value":-1}]
+                    ["simpleControlButton", {"buttonId":"transfercase", "icon":"powertrain_transfercase_low-4", "uiName":"Transfercase"}]
+                    ["quickAccess", {"icon":"powertrain_transfercase_low-4"}]
+                ],
+            },
+        }
+    }
+    
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        //viscous coupling + lock
+        ["transfercaseDiff", "transfercase", "rangebox", 1, {"diffType":["viscous","locked"], "viscousCoef":25, "viscousTorque":500, "lockTorque":10000, "friction":0.44, "dynamicFriction":0.00048, "torqueLossCoef":0.012, "uiName":"Center Differential", "defaultVirtualInertia":0.1, "speedLimitCoef":0.1}],        
+    ],
+},
+"pickup_center_diff_viscous_heavy": {
+    "information":{
+        "authors":"Spython",
+        "name":"Heavy Duty Locking C. Differential (viscous)",
+        "value":2650,
+    },
+    "slotType" : "centerDiff",
+    
+    "transfercaseControl":{
+        "uiName": "Transfercase"
+        "quickAccessTitle":"Transfercase"
+        "quickAccessIcon":"radial_highrangebox"
+        "quickAccessLevel":"/powertrain/"
+        "enabledModes":["4H", "4HLc", "4LLc"]
+        "defaultMode": "4H"
+        "modes": {
+            "4H": {
+                "name": "4WD High Range",
+                "order": 10,
+                "settings": [
+                    ["type"]
+                    ["powertrainDeviceMode", {"deviceName":"rangebox", "mode":"high"}]
+                    ["powertrainDeviceMode", {"deviceName":"transfercase", "mode":"viscous"}]
+                    ["electricsValue", {"electricsName":"transfercase_state", "value":1}]
+                    ["simpleControlButton", {"buttonId":"transfercase", "icon":"powertrain_transfercase_high-4", "uiName":"Transfercase"}]
+                    ["quickAccess", {"icon":"powertrain_transfercase_high-2"}]
+                ],
+            },
+            "4HLc": {
+                "name": "4WD High Range Locked",
+                "order": 20,
+                "settings": [
+                    ["type"]
+                    ["powertrainDeviceMode", {"deviceName":"rangebox", "mode":"high"}]
+                    ["powertrainDeviceMode", {"deviceName":"transfercase", "mode":"locked"}]
+                    ["electricsValue", {"electricsName":"transfercase_state", "value":0.33}]
+                    ["simpleControlButton", {"buttonId":"transfercase", "icon":"powertrain_transfercase_high-4", "uiName":"Transfercase"}]
+                    ["quickAccess", {"icon":"powertrain_transfercase_high-4"}]
+                ],
+            },
+            "4LLc": {
+                "name": "4WD Low Range Locked",
+                "order": 30,
+                "settings": [
+                    ["type"]
+                    ["powertrainDeviceMode", {"deviceName":"rangebox", "mode":"low"}]
+                    ["powertrainDeviceMode", {"deviceName":"transfercase", "mode":"locked"}]
+                    ["electricsValue", {"electricsName":"transfercase_state", "value":-1}]
+                    ["simpleControlButton", {"buttonId":"transfercase", "icon":"powertrain_transfercase_low-4", "uiName":"Transfercase"}]
+                    ["quickAccess", {"icon":"powertrain_transfercase_low-4"}]
+                ],
+            },
+        }
+    }
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        //viscous coupling + lock
+        ["transfercaseDiff", "transfercase", "rangebox", 1, {"diffType":["viscous","locked"], "viscousCoef":30, "viscousTorque":800, "lockTorque":20000, "friction":0.44, "dynamicFriction":0.00048, "torqueLossCoef":0.012, "uiName":"Center Differential","defaultVirtualInertia":0.1, "speedLimitCoef":0.1}],        
+    ],
+},
+"pickup_center_diff_torsenLock": {
+    "information":{
+        "authors":"Spython",
+        "name":" Locking Center Differential (torsen)",
+        "value":2650,
+    },
+    "slotType" : "centerDiff",
+	
+    "transfercaseControl":{
+        "uiName": "Transfercase"
+        "quickAccessTitle":"Transfercase"
+        "quickAccessIcon":"radial_highrangebox"
+        "quickAccessLevel":"/powertrain/"
+        "enabledModes":["4H", "4HLc", "4LLc"]
+        "defaultMode": "4H"
+        "modes": {
+            "4H": {
+                "name": "4WD High Range",
+                "order": 10,
+                "settings": [
+                    ["type"]
+                    ["powertrainDeviceMode", {"deviceName":"rangebox", "mode":"high"}]
+                    ["powertrainDeviceMode", {"deviceName":"transfercase", "mode":"lsd"}]
+                    ["electricsValue", {"electricsName":"transfercase_state", "value":1}]
+                    ["simpleControlButton", {"buttonId":"transfercase", "icon":"powertrain_transfercase_high-4", "uiName":"Transfercase"}]
+                    ["quickAccess", {"icon":"powertrain_transfercase_high-2"}]
+                ],
+            },
+            "4HLc": {
+                "name": "4WD High Range Locked",
+                "order": 20,
+                "settings": [
+                    ["type"]
+                    ["powertrainDeviceMode", {"deviceName":"rangebox", "mode":"high"}]
+                    ["powertrainDeviceMode", {"deviceName":"transfercase", "mode":"locked"}]
+                    ["electricsValue", {"electricsName":"transfercase_state", "value":0.33}]
+                    ["simpleControlButton", {"buttonId":"transfercase", "icon":"powertrain_transfercase_high-4", "uiName":"Transfercase"}]
+                    ["quickAccess", {"icon":"powertrain_transfercase_high-4"}]
+                ],
+            },
+            "4LLc": {
+                "name": "4WD Low Range Locked",
+                "order": 30,
+                "settings": [
+                    ["type"]
+                    ["powertrainDeviceMode", {"deviceName":"rangebox", "mode":"low"}]
+                    ["powertrainDeviceMode", {"deviceName":"transfercase", "mode":"locked"}]
+                    ["electricsValue", {"electricsName":"transfercase_state", "value":-1}]
+                    ["simpleControlButton", {"buttonId":"transfercase", "icon":"powertrain_transfercase_low-4", "uiName":"Transfercase"}]
+                    ["quickAccess", {"icon":"powertrain_transfercase_low-4"}]
+                ],
+            },
+        }
+    }
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        //torsen + lock
+        ["transfercaseDiff", "transfercase", "rangebox", 1, {"diffType":["lsd","locked"], "lsdPreload":10, "lsdLockCoef":0.42, "lsdRevLockCoef":0.40, "lockTorque":20000, "friction":0.44, "dynamicFriction":0.00048, "torqueLossCoef":0.012, "uiName":"Center Differential","defaultVirtualInertia":0.1, "speedLimitCoef":0.1}],        
+    ],
+},
+
+"pickup_center_diff_torsen": {
+    "information":{
+        "authors":"Spython",
+        "name":" Torsen Center Differential",
+        "value":2650,
+    },
+    "slotType" : "centerDiff",
+    
+    "transfercaseControl":{
+        "uiName": "Transfercase"
+        "quickAccessTitle":"Transfercase"
+        "quickAccessIcon":"radial_highrangebox"
+        "quickAccessLevel":"/powertrain/"
+        "enabledModes":["4H", "4HLc", "4LLc"]
+        "defaultMode": "4H"
+        "modes": {
+            "4H": {
+                "name": "4WD High Range",
+                "order": 10,
+                "settings": [
+                    ["type"]
+                    ["powertrainDeviceMode", {"deviceName":"rangebox", "mode":"high"}]
+                    ["powertrainDeviceMode", {"deviceName":"transfercase", "mode":"lsd"}]
+                    ["electricsValue", {"electricsName":"transfercase_state", "value":1}]
+                    ["simpleControlButton", {"buttonId":"transfercase", "icon":"powertrain_transfercase_high-4", "uiName":"Transfercase"}]
+                    ["quickAccess", {"icon":"powertrain_transfercase_high-4"}]
+                ],
+            },
+            "4LLc": {
+                "name": "4WD Low Range",
+                "order": 30,
+                "settings": [
+                    ["type"]
+                    ["powertrainDeviceMode", {"deviceName":"rangebox", "mode":"low"}]
+                    ["powertrainDeviceMode", {"deviceName":"transfercase", "mode":"lsd"}]
+                    ["electricsValue", {"electricsName":"transfercase_state", "value":-1}]
+                    ["simpleControlButton", {"buttonId":"transfercase", "icon":"powertrain_transfercase_low-4", "uiName":"Transfercase"}]
+                    ["quickAccess", {"icon":"powertrain_transfercase_low-4"}]
+                ],
+            },
+        }
+    }
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        //torsen
+        ["transfercaseDiff", "transfercase", "rangebox", 1, {"diffType":"lsd", "lsdPreload":10, "lsdLockCoef":0.42, "lsdRevLockCoef":0.40, "friction":0.32, "dynamicFriction":0.00048, "torqueLossCoef":0.01, "uiName":"Center Differential","defaultVirtualInertia":0.1, "speedLimitCoef":0.1}],        
+    ],
+},
+}

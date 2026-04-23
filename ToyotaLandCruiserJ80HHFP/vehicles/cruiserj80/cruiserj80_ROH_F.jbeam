@@ -1,0 +1,69 @@
+{
+"cruiserj80_ROH_F": {
+    "information":{
+        "authors":"Omashida",
+        "name":"16x7 Land Cruiser J80 ROH Wheels",
+        "value":300,
+    },
+    "slotType" : "wheel_F_6",
+    "slots": [
+        ["type", "default", "description"],
+        ["tire_F_16x7_alt","maxxis900_16_F", "Front Tires"],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        //wheels
+        ["cruiserj80_ROH", ["wheel_FR","wheelhub_FR"], [], {"pos":{"x":-0.54, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1.03, "y":0.98, "z":0.98}}],
+        ["cruiserj80_ROH", ["wheel_FL","wheelhub_FL"], [], {"pos":{"x": 0.5250, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1.03, "y":0.98, "z":0.98}}],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        {"frictionCoef":0.5},
+        {"nodeMaterial":"|NM_METAL"},
+        {"chemEnergy":200,"burnRate":0.5,"flashPoint":300,"smokePoint":200,"selfIgnition":0,"specHeat":1},
+        {"collision":true},
+        {"selfCollision":true},
+        {"nodeWeight":6.0},
+        {"group":"wheelhub_FR"},
+        ["fw1r", -0.32, 0.0, 0.0, {"staticCollision":false}],
+        {"group":"wheelhub_FL"},
+        ["fw1l", 0.32, 0.0, 0.0, {"staticCollision":false}],
+        {"group":"wheelhub_FR"},
+        ["fw1rr", -0.65, 0.0, 0.0, {"staticCollision":false}],
+        {"group":"wheelhub_FL"},
+        ["fw1ll", 0.65, 0.0, 0.0, {"staticCollision":false}],
+        {"chemEnergy":false,"burnRate":false,"flashPoint":false,"smokePoint":false,"selfIgnition":false,"specHeat":false},
+        {"collision":true},
+        {"group":""},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //hub
+        {"beamSpring":1501000,"beamDamp":25},
+        {"beamDeform":100000,"beamStrength":1100000},
+        ["fw1r","fw1rr"],
+        ["fw1l","fw1ll"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        {"disableMeshBreaking":false,"disableHubMeshBreaking":false,"enableHubcaps":false,"hasTire":false},
+
+        //general settings
+        {"hubRadius":0.235},
+        {"wheelOffset":-0.075},
+        {"hubWidth":0.26},
+        {"numRays":20},
+
+        //hub options
+        {"hubTreadBeamSpring":1201000, "hubTreadBeamDamp":25},
+        {"hubPeripheryBeamSpring":1401000, "hubPeripheryBeamDamp":25},
+        {"hubSideBeamSpring":1751000, "hubSideBeamDamp":25},
+        {"hubBeamDeform":75000, "hubBeamStrength":125000},
+        {"hubNodeWeight":0.68},
+        {"hubNodeMaterial":"|NM_METAL"},
+        {"hubFrictionCoef":0.5},
+    ],
+},
+}

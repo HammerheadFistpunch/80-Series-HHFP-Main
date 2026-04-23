@@ -1,0 +1,17 @@
+{
+  "bindings":[
+    {
+      "action":"toggle_Boot",
+      "control":"o"
+    },
+    {
+      "action":"toggle_hood",
+      "control":"shift y"
+    }
+  ],
+  "devicetype":"keyboard",
+  "guid":"{6F1D2B61-D5A0-11CF-BFC7-444553540000}",
+  "name":"Keyboard",
+  "version":1,
+  "vidpid":"6F1D2B61"
+}

@@ -1,0 +1,461 @@
+{
+  // ============================================================
+  // TOYOTA 1HZ — 4.2L I6 NATURALLY ASPIRATED DIESEL
+  // Based on 1HD-FT node/beam structure. No turbocharger in base engine.
+  // Torque curve sourced from Toyota 1HZ Engine Data Provided.xlsx
+  //
+  // PARTS IN THIS FILE:
+  //   pickup_engine_1hz                      — base NA engine block
+  //   pickup_engine_ecu_i6_4.2_na_stock      — stock ECU (4400 RPM limiter)
+  //   pickup_engine_ecu_i6_4.2_na_stg1       — stage 1 tune (4600 RPM, light fueling)
+  //   pickup_engine_ecu_i6_4.2_na_stg2       — stage 2 tune (4800 RPM, aggressive fueling)
+  //   pickup_turbo_1hz_lowboost              — low pressure turbocharger (~8 PSI)
+  //   pickup_supercharger_1hz                — roots-type supercharger (~7 PSI)
+  // ============================================================
+
+  "pickup_engine_1hz": {
+    "information": {
+      "authors": "BeamNG",
+      "name": "4.2L I6 Engine (1HZ)",
+      "value": 1800
+    },
+    "slotType": "pickup_engine",
+    "slots": [
+      [ "type", "default", "description" ],
+      // INTAKE SLOT — accepts turbo or supercharger parts below
+      // Default is empty string = no forced induction (NA config)
+      // Swap in "pickup_turbo_1hz_lowboost" or "pickup_supercharger_1hz" for FI builds
+      // NOTE: slotType "pickup_intake_1hz" is unique to this engine — no conflict with 1GD/1HD
+      [ "pickup_intake_1hz", "", "Forced Induction", { "coreSlot": false } ],
+      [
+        "pickup_enginemounts",
+        "pickup_enginemounts",
+        "Engine Mounts",
+        { "coreSlot": true }
+      ],
+      [
+        "pickup_oilpan_i6",
+        "pickup_oilpan_i6",
+        "Oil Pan",
+        { "coreSlot": true }
+      ],
+      [
+        "pickup_header_i6",
+        "pickup_header_i6",
+        "Exhaust Manifold",
+        { "coreSlot": true }
+      ],
+      // ECU SLOT — swap between stock/stg1/stg2 below
+      // All three ECU parts share slotType "pickup_engine_ecu_i6_4.2_na"
+      [
+        "pickup_engine_ecu_i6_4.2_na",
+        "pickup_engine_ecu_i6_4.2_na_stock",
+        "Engine Management",
+        { "coreSlot": true }
+      ],
+      [ "n2o_system", "", "Nitrous Oxide System" ],
+      [
+        "pickup_engine_1hz_internals",
+        "pickup_engine_1hz_internals_stock",
+        "Engine Internals",
+        { "coreSlot": true }
+      ],
+      [ "pickup_transmission", "pickup_transmission_5M", "Transmission" ]
+    ],
+    "powertrain": [
+      [ "type", "name", "inputName", "inputIndex" ],
+      [ "combustionEngine", "mainEngine", "dummy", 0 ]
+    ],
+    "mainEngine": {
+      // BASE TORQUE CURVE — naturally aspirated, from Toyota 1HZ data sheet
+      // Values in lb-ft. Peak torque 210 lb-ft @ 2200 RPM, peak power 129 hp @ 3800 RPM
+      // This is the NA baseline — turbo/supercharger parts ADD boost on top of this
+      "torque": [
+        [ "rpm", "torque" ],
+        [ 0, 0 ],
+        [ 600, 229.58 ],
+        [ 800, 253.26 ],
+        [ 1000, 255.99 ],
+        [ 1200, 265.70 ],
+        [ 1400, 275.42 ],
+        [ 1600, 287.84 ],
+        [ 1800, 302.97 ],
+        [ 2000, 318.11 ],
+        [ 2200, 337.31 ], // Peak raw torque: 280 lb-ft 
+        [ 2400, 340.69 ],
+        [ 2600, 341.00 ], // Corrected peak torque
+        [ 2800, 338.24 ],
+        [ 3000, 335.48 ],
+        [ 3200, 327.83 ],
+        [ 3400, 320.19 ],
+        [ 3600, 309.02 ],
+        [ 3800, 294.32 ], // Peak raw power: 129 hp [cite: 9, 11]
+        [ 4000, 274.21 ],
+        [ 4200, 258.16 ],
+        [ 4400, 243.46 ], // Standard redline [cite: 11]
+        [ 4600, 221.99 ], // Governor max [cite: 11]
+        [ 4800, 200.52 ], // Extrapolated drop-off
+        [ 5000, 179.04 ] // Extrapolated drop-off
+      ],
+      // idleRPM — 650 per data sheet (manual transmission spec)
+      "idleRPM": 650,
+      // maxRPM — hard cap slightly above governor max for safety margin
+      "maxRPM": 4700,
+      // inertia — slightly lower than 1HD-FT (0.45) since 1HZ is NA, lighter rotating assembly
+      "inertia": 0.42,
+      // friction — base mechanical drag. Slightly less than 1HD (24) since no turbo drag
+      "friction": 22,
+      "dynamicFriction": 0.04,
+      // burnEfficiency — diesel NA curve. Peaks at 40% throttle, drops off at WOT
+      // Slightly less efficient than 1HD-FT at high load since no charge cooling
+      "burnEfficiency": [
+        [ 0, 0.1 ],
+        [ 0.05, 0.25 ],
+        [ 0.4, 0.40 ],
+        [ 0.7, 0.34 ],
+        [ 1, 0.24 ]
+      ],
+      "torqueReactionNodes": [ "e1l", "e2l", "e4r" ],
+      "energyStorage": [ "mainTank", "auxTank" ],
+      "requiredEnergyType": "diesel",
+      "thermalsEnabled": true,
+      "engineBlockMaterial": "iron",
+      // oilVolume — 1HZ takes 9.5L with filter change
+      "oilVolume": 9.5,
+      // maxTorqueRating — 1HZ block is strong but NA, less beef than turbocharged 1HD
+      "maxTorqueRating": 500,
+      "maxOverTorqueDamage": 900,
+      //engine durability
+      "cylinderWallTemperatureDamageThreshold":150,
+      "headGasketDamageThreshold":1500000,
+      "pistonRingDamageThreshold":1500000,
+      "connectingRodDamageThreshold":1500000,
+      //exhaust
+      "particulates":0.20,
+      //node beam interface
+      "waterDamage": {"[engineGroup]:":["engine_intake"]},
+      "radiator": {"[engineGroup]:":["radiator"]},
+      "engineBlock": {"[engineGroup]:":["engine_block"]},
+      "breakTriggerBeam":"engine",
+      "uiName": "Engine",
+      "soundConfig": "soundConfig",
+      "soundConfigExhaust": "soundConfigExhaust"
+    },
+    "soundConfig": {
+      // 1HZ uses same I6 diesel sample family as 1HD-FT
+      "sampleName": "I6D_2_Engine",
+      "mainGain": -8,
+      "onLoadGain": 1.1,
+      "offLoadGain": 0.7,
+      "fundamentalFrequencyCylinderCount": 6
+    },
+    "soundConfigExhaust": {
+      "sampleName": "I6D_2_Exhaust",
+      "mainGain": -6,
+      "onLoadGain": 1.4,
+      "offLoadGain": 0.5,
+      "fundamentalFrequencyCylinderCount": 6
+    },
+    "nodes": [
+      [ "id", "posX", "posY", "posZ" ],
+      {"selfCollision":false},
+      {"collision":true},
+      {"frictionCoef":0.5},
+      {"nodeMaterial":"|NM_METAL"},
+      {"nodeWeight":13.62},
+      {"group":"pickup_engine"},
+      {"engineGroup":"engine_block"},
+      // ENGINE NODES — identical layout to 1HD-FT (same block footprint)
+      // r = right (-X), l = left (+X), 1 = front, 2 = rear
+      ["e1r", -0.14, -1.07, 0.43, {"chemEnergy":1000,"burnRate":0.39,"flashPoint":800,"specHeat":0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.2}],
+      ["e1l",  0.14, -1.07, 0.43],
+      // isExhaust — exhaust outlet node for FI parts. baseTemp ties node into thermal simulation.
+      // Present even on NA config so turbo/SC slots work when installed.
+      ["e2r", -0.14, -1.72, 0.43, {"chemEnergy":1000,"burnRate":0.39,"flashPoint":800,"specHeat":0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.2,"isExhaust":"mainEngine"}],
+      ["e2l",  0.14, -1.72, 0.43],
+      {"engineGroup":["engine_block","engine_intake"]},
+      ["e3r", -0.15, -1.07, 0.88, {"chemEnergy":1000,"burnRate":0.39,"flashPoint":800,"specHeat":0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.2}],
+      ["e3l",  0.15, -1.07, 0.88],
+      ["e4r", -0.15, -1.72, 0.88, {"selfCollision":true,"chemEnergy":1000,"burnRate":0.39,"flashPoint":800,"specHeat":0.1,"selfIgnitionCoef":false,"smokePoint":600,"baseTemp":"thermals","conductionRadius":0.2}],
+      ["e4l",  0.15, -1.72, 0.88, {"selfCollision":true}],
+      {"engineGroup":""},
+      {"group":""},
+    ],
+    "beams": [
+      [ "id1:", "id2:" ],
+      // Engine block — very stiff, indestructible structural cage
+      { "beamSpring": 18800940, "beamDamp": 470 },
+      { "beamDeform": 175000, "beamStrength": "FLT_MAX" },
+      // Full triangulation of all 8 nodes
+      [ "e1r", "e1l" ],
+      [ "e1r", "e2r" ],
+      [ "e1r", "e2l" ],
+      [ "e1r", "e3r" ],
+      [ "e1r", "e3l" ],
+      [ "e1r", "e4r" ],
+      [ "e1r", "e4l" ],
+      [ "e1l", "e2r" ],
+      [ "e1l", "e2l" ],
+      [ "e1l", "e3r" ],
+      [ "e1l", "e3l" ],
+      [ "e1l", "e4r" ],
+      [ "e1l", "e4l" ],
+      [ "e2r", "e2l" ],
+      [ "e2r", "e3r" ],
+      [ "e2r", "e3l" ],
+      [ "e2r", "e4r" ],
+      [ "e2r", "e4l" ],
+      [ "e2l", "e3r" ],
+      [ "e2l", "e3l" ],
+      [ "e2l", "e4r" ],
+      [ "e2l", "e4l" ],
+      [ "e3r", "e3l" ],
+      [ "e3r", "e4r" ],
+      [ "e3r", "e4l" ],
+      [ "e3l", "e4r" ],
+      [ "e3l", "e4l" ],
+      [ "e4r", "e4l" ]
+    ]
+  },
+
+
+  // ============================================================
+  // STOCK ECU
+  // Rev limiter at 4400 RPM (Toyota factory spec redline)
+  // Governor softens power above 4400, hard cut at 4600
+  // ============================================================
+  "pickup_engine_ecu_i6_4.2_na_stock": {
+    "information": {
+      "authors": "BeamNG",
+      "name": "Stock ECU (1HZ)",
+      "value": 400
+    },
+    "slotType": "pickup_engine_ecu_i6_4.2_na",
+    "mainEngine": {
+      // Factory redline per data sheet
+      "revLimiterRPM": 4400
+    }
+  },
+
+
+  // ============================================================
+  // STAGE 1 ECU TUNE
+  // Raises rev limiter to governor max (4600 RPM)
+  // Reduces dynamicFriction slightly — represents improved injection timing
+  // giving more usable power across the RPM range
+  // Gains: ~8-10 hp, broader torque delivery
+  // ============================================================
+  "pickup_engine_ecu_i6_4.2_na_stg1": {
+    "information": {
+      "authors": "BeamNG",
+      "name": "Stage 1 ECU Tune (1HZ)",
+      "value": 650
+    },
+    "slotType": "pickup_engine_ecu_i6_4.2_na",
+    "mainEngine": {
+      // Raised to governor max — uses the full RPM range Toyota built into the engine
+      "revLimiterRPM": 4600,
+      // Reduced dynamic friction — represents optimized injection timing reducing pumping losses
+      // Lower value = less internal drag = more power to the flywheel
+      "dynamicFriction": 0.035,
+      // Slightly reduced base friction — cleaner fuel map reduces parasitic loss
+      "friction": 20
+    },
+    // If a turbo is installed, Stage 1 ECU raises wastegate slightly
+    // Remove this block if running NA only to avoid a harmless but unnecessary override
+    "turbocharger": {
+      "wastegateStart": 9
+    }
+  },
+
+
+  // ============================================================
+  // STAGE 2 ECU TUNE
+  // Aggressive fueling, raised limiter to 4800 RPM
+  // Represents a full remap with injector timing, duration, and pressure changes
+  // Gains: ~18-22 hp over stock, noticeably stronger mid-range
+  // WARNING: Not recommended with stock internals long-term
+  // ============================================================
+  "pickup_engine_ecu_i6_4.2_na_stg2": {
+    "information": {
+      "authors": "BeamNG",
+      "name": "Stage 2 ECU Tune (1HZ)",
+      "value": 950
+    },
+    "slotType": "pickup_engine_ecu_i6_4.2_na",
+    "mainEngine": {
+      // Pushed past governor max — requires mechanical governor bypass in real life
+      "revLimiterRPM": 4800,
+      // Aggressively reduced friction — full remap squeezes every bit out of the combustion cycle
+      "dynamicFriction": 0.028,
+      "friction": 18,
+      // burnEfficiency override — richer fuel map trades economy for power at high load
+      // Note the higher peak efficiency but faster drop-off at WOT (richer mixture)
+      "burnEfficiency": [
+        [ 0,    0.10 ],
+        [ 0.05, 0.26 ],
+        [ 0.4,  0.44 ],
+        [ 0.7,  0.38 ],
+        [ 1,    0.30 ]
+      ]
+    },
+    // Stage 2 ECU opens the wastegate later for more boost when turbo is installed
+    "turbocharger": {
+      "wastegateStart": 11,
+      "wastegateLimit": 13
+    }
+  },
+
+
+  // ============================================================
+  // LOW PRESSURE TURBOCHARGER
+  // Mild street turbo — ~8 PSI peak boost, conservative spool
+  // Designed for use with stock 1HZ internals
+  // Slot: pickup_intake_1hz (unique to this engine, no conflict with 1GD/1HD)
+  // ============================================================
+  "pickup_turbo_1hz_lowboost": {
+    "information": {
+      "authors": "BeamNG",
+      "name": "Low Pressure Turbocharger (1HZ)",
+      "value": 1800
+    },
+    "slotType": "pickup_intake_1hz",
+    "turbocharger": {
+      // No BOV on a diesel — no throttle plate to cause compressor surge
+      "bovEnabled": false,
+      // wastegateStart — 6 PSI, safely within stock 1HZ internals
+      "wastegateStart": 6,
+      "wastegateLimit": 7.5,
+      // maxExhaustPower — lower than 1HD-FT (150000) since this is a smaller, milder turbo
+      // High enough to reach the pressurePSI curve thresholds
+      "maxExhaustPower": 100000,
+      // backPressureCoef — how hard exhaust drives the turbine
+      // Slightly lower than 1HD (0.00012) to represent smaller turbine housing
+      "backPressureCoef": 0.00009,
+      // frictionCoef — bearing friction, governs spool stability
+      "frictionCoef": 15.5,
+      // inertia — lower than 1HD turbo for quicker spool on a smaller unit
+      "inertia": 0.85,
+      // pressureRatePSI — how fast boost builds (PSI per second). Conservative rate.
+      "pressureRatePSI": 35,
+      // pressurePSI — [turbineRPM, boostPSI]
+      // Peaks at 6 PSI, soft ceiling at 7.5 — well within stock bottom end limits
+      "pressurePSI": [
+        [ 0,      0   ],
+        [ 20000,  2   ],
+        [ 45000,  4.5 ],
+        [ 70000,  6   ],
+        [ 100000, 6.5 ],
+        [ 150000, 7   ]
+      ],
+      // engineDef — [engineRPM, compressorEfficiency, exhaustFactor]
+      // 1HZ is a lower-revving engine than 1HD so efficiency falls off sooner
+      "engineDef": [
+        [ 0,    0.0, 0.1 ],
+        [ 650,  0.7, 0.7 ],
+        [ 1000, 0.85, 0.85 ],
+        [ 1700, 1.0, 1.0 ],
+        [ 2200, 1.0, 1.0 ],
+        [ 3500, 0.8, 1.0 ],
+        [ 4400, 0.4, 1.0 ]
+      ]
+    },
+    // Links this turbocharger block to the mainEngine powertrain component
+    "mainEngine": {
+      "turbocharger": "turbocharger"
+    },
+    "nodes": [
+      [ "id", "posX", "posY", "posZ" ],
+      { "nodeWeight": 3.76 },
+      { "group": "pickup_engine_intake" },
+      // intake1 — turbo/intercooler assembly node, bolts to upper engine nodes
+      [ "intake1", 0.11, -1.35, 1.04 ],
+      // intake2 — airbox/inlet pipe node
+      [ "intake2", 0.6,  -1.94, 1.04 ]
+    ],
+    "beams": [
+      [ "id1:", "id2:" ],
+      // Intake beams — softer than engine block, allows flex without cracking
+      { "beamSpring": 1880940, "beamDamp": 235 },
+      { "beamDeform": 105000, "beamStrength": "FLT_MAX" },
+      [ "intake1", "e3r" ],
+      [ "intake1", "e3l" ],
+      [ "intake1", "e4r" ],
+      [ "intake1", "e4l" ],
+      [ "intake2", "e4l" ],
+      [ "intake2", "e3l" ],
+      [ "intake1", "intake2" ]
+    ]
+  },
+
+
+  // ============================================================
+  // ROOTS-TYPE SUPERCHARGER
+  // Mechanically driven — boost builds with engine RPM, no lag
+  // ~7 PSI peak, linear power delivery
+  // Unlike turbo: pressurePSI maps to ENGINE RPM not turbine RPM
+  // because it is driven directly off the crank, not by exhaust
+  // ============================================================
+  "pickup_supercharger_1hz": {
+    "information": {
+      "authors": "BeamNG",
+      "name": "Roots Supercharger (1HZ)",
+      "value": 2200
+    },
+    "slotType": "pickup_intake_1hz",
+    "supercharger": {
+      "whineLoopEvent": "event:>Vehicle>Forced_Induction>Supercharger_03>supercharger",
+      "whineVolumePerPSI": 0.05,       // Roots blower whine, audible but not screamy on a diesel
+      "whinePitchPer10kRPM": 0.65,     // 1HZ revs lower than 1FZ, slightly lower pitch rise
+      "gearRatio": 1.45,               // Belt drive ratio off crank pulley — tuned for ~7 PSI peak at 3500 RPM
+      "clutchEngageRPM": 0,            // Always engaged — no electromagnetic clutch on this kit
+      "pressureRatePSI": 6.0,          // Boost response rate (PSI/s) — same as 1FZ TRD kit
+      "pressurePSIPer1kRPM": 2.0,      // ~7 PSI at 3500 RPM → tracks well with diesel powerband
+      "crankLossPer1kRPM": 0.030,      // Parasitic crank drag — same modest draw as 1FZ unit
+      "type": "roots",
+      "lobes": 3,                      // 3-lobe Eaton-derived rotor
+      "twistedLobes": true,            // Helical lobes — reduces pulsation, smoother boost delivery
+      "boostController": [
+        // throttle %, boost factor
+        // Diesel has no throttle plate but BeamNG still uses this table as a load-based bleed map
+        [ 0,   0.10 ],                 // Light bleed at no-load idle
+        [ 20,  0.50 ],
+        [ 60,  0.85 ],
+        [ 100, 1.0  ]
+      ]
+    },
+    // Links supercharger block to the mainEngine powertrain component
+    // "supercharger" key — correct for BeamNG's supercharger component (unlike turbocharger which uses "turbocharger")
+    "mainEngine": {
+      "supercharger": "supercharger",
+      "$+idleRPMRoughness": 80,
+      "$*instantAfterFireCoef": 1.5,
+      "$*sustainedAfterFireCoef": 1.2,
+      "$+particulates": 0.08             // diesels already smoke; SC adds a bit more under boost
+    },
+    "nodes": [
+      [ "id", "posX", "posY", "posZ" ],
+      { "nodeWeight": 5.2 },   // heavier than turbo — blower housing + belt drive hardware
+      { "group": "pickup_engine_intake" },
+      // intake1 — supercharger body, mounts directly to top of engine
+      // Positioned slightly closer to engine center than turbo (top-mount blower)
+      [ "intake1", 0.0,  -1.35, 1.08 ],
+      // intake2 — inlet snorkel/airbox
+      [ "intake2", 0.5,  -1.90, 1.04 ]
+    ],
+    "beams": [
+      [ "id1:", "id2:" ],
+      // Supercharger beams — slightly stiffer than turbo since it's rigidly crank-driven
+      // A loose supercharger mount would destroy the belt/pulley
+      { "beamSpring": 2500000, "beamDamp": 300 },
+      { "beamDeform": 120000, "beamStrength": "FLT_MAX" },
+      [ "intake1", "e3r" ],
+      [ "intake1", "e3l" ],
+      [ "intake1", "e4r" ],
+      [ "intake1", "e4l" ],
+      [ "intake2", "e4l" ],
+      [ "intake2", "e3l" ],
+      [ "intake1", "intake2" ]
+    ]
+  }
+}

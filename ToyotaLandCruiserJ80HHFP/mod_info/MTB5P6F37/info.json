@@ -1,0 +1,356 @@
+{
+    "attachments": [
+        {
+            "data_filename": "742853.png",
+            "original_filename": "upload_2020-11-30_21-54-56.png",
+            "thumb_filename": "thumbs\/742853.jpg"
+        },
+        {
+            "data_filename": "742854.png",
+            "original_filename": "upload_2020-11-30_21-58-32.png",
+            "thumb_filename": "thumbs\/742854.jpg"
+        }
+    ],
+    "resource_id": 15410,
+    "current_version_id": 33957,
+    "download_count": 0,
+    "resource_version_id": 36532,
+    "version_string": "1.8 Merry Christmas!",
+    "last_update": 1628581812,
+    "rating_avg": 4.76923,
+    "rating_count": 0,
+    "rating_sum": 0,
+    "resource_category_id": 7,
+    "resource_date": 1606937452,
+    "review_count": 57,
+    "tag_line": "A Land Rover will get you there, but a Land Cruiser will get you back.",
+    "update_count": 9,
+    "path": "MTB5P6F37\/33957\/",
+    "filename": "toyotatruckengines_starb.zip",
+    "title": "Toyota Truck Engines",
+    "user_id": 236952,
+    "username": "starblockset",
+    "tagid": "MTB5P6F37",
+    "message": "[B]Hey guys, \nI'm happy to release my mod to the public. I've been working on this off and on for a couple of months, so it's by no means perfect. I'll list a few features below. [\/B]\n(just an FYI, I'm in school therefore I don't have much time to make my mods which is why the updates are so far apart)\n[B]Features:[\/B]\n[LIST]\n[*]Semi-custom sounds for the V6 and V8s.\n[*]A variety of transmissions, including an AB60F 6-speed drag transmission with a trans brake.\n[*]8 new engines + the 1FZ-FE.\n[*]ESC including tow-haul mode and a tow-haul torque converter.\n[*]Diesel and Gasoline long-range fuel tanks.\n[*]I also do have some sound files from an actual tundra, however, whenever I put them in the game, they don't sound good one bit. Do what you please with them. They are under the \"art\" folder.\n[*]All engines are available for the D-Series and Roamer.\n[\/LIST]\n\n[B]Engines:\n[\/B]\n[LIST]\n[*]1FZ-FE - 4.5L I6 used in 80s Series Land Cruisers. Merged that mod with this one since it makes more sense.\n[*]1GR-FE 4.0L V6 used in Tacomas and 4Runners and some of the Tundras.\n[*]5VZ-FE 3.4L V6 used in Tacomas, Tundras, T100s, and 4Runners.\n[*]1UR-FE - 4.6L V8 used in the newer generation of Tundras, but was sadly discontinued a couple of years back.\n[*]2UZ-FE - 4.7L V8. Toyota's heavy-weight motor. These motors are known to last a long time and some even make it to a million miles (1.6 million kilometers). It was used in Tundras, Sequoias, and Land Cruisers.\n[*]3UR-FE - 5.7L V8 used in the newest Tundras, Sequoias, and Land Cruisers. This motor is the beast of the pack and I personally spent most of my time on it.\n[*]3UR-FE Custom Sound - Comes with custom sound from a real Tundra.\n[*]2GR-FE - 3.5L V6 used in the newest Tacomas. An engine that generally has more torque in the top end.\n[*]1GD-FTV - 2.8L I4 diesel used in the newest Hiluxes. Makes a great amount of torque.\n[*]22-RE - Incredibly reliable and well-known 2.4L I4 engine powering many Toyota cars and trucks.\n[*]V35A - Newest engine from Toyota, found in the new LC300 and Tundra. 3.5L twin-turbo V6.\n[\/LIST]\n[B]Transmissions:\n[\/B]\n[LIST]\n[*]A343F - 4-Speed auto used in 80s Series Land Cruisers.\n[*]A750F - 5-Speed auto used for vehicles holding the 4.7L V8.\n[*]AA80F - 8-Speed auto used in the newest-gen Land Cruiser.\n[*]AB60F - 6-Speed auto used in Tundras and Sequoias.\n[*]AB60F Drag Transmission w\/ Transbrake - exactly as the name implies.\n[*]H-Series transmissions - a few Toyota pickup transmissions\n[*]AWR10L65 - super-smart and fast shifting 10 speed auto.\n[\/LIST]\n[B]Fuel Tanks:[\/B]\n[LIST]\n[*]38 Gallon Gasoline fuel tank\n[*]38 Gallon Diesel fuel tank\n[\/LIST]\n[B]ESC: [\/B]It is found in the \"Additional Modifications\" selector and it is named ESC & PCM.\n\n\n[B]Credits: BeamNG staff[\/B] for making such an easy-to-use platform and the engine models.\nOne last thank is to [B]rocketbobbycarrizal [\/B]for testing the mod and suggesting features.\n\n[B]Feedback: Let me know in the reviews of any bugs\/issues and any features you would like to see implemented!\n\nThere are currently no models, sadly, but if you are willing to model for me, PM me and we can work from there. :)\n[ATTACH=full]742853[\/ATTACH]\n[ATTACH=full]742854[\/ATTACH][\/B]",
+    "category_title": "",
+    "prefix_title": "Beta",
+    "via": "packed by repo on Fri, 24 Dec 2021 19:00:51 GMT",
+    "hashes": [
+        [
+            "art\/sound\/blends\/3urfe.sfxBlend2D.json",
+            "0031edd3785e3475"
+        ],
+        [
+            "art\/sound\/engine\/3urfe\/4600rpm_exhaustOFF.wav",
+            "7a1336c00f5aa658"
+        ],
+        [
+            "art\/sound\/engine\/3urfe\/2000rpm_exhaustON.wav",
+            "fc95ff4c2950c1cd"
+        ],
+        [
+            "art\/sound\/engine\/3urfe\/2200rpm_exhaustON.wav",
+            "b10823ff284261da"
+        ],
+        [
+            "art\/sound\/engine\/3urfe\/2400rpm_exhaustOFF.wav",
+            "f48485a75c89da43"
+        ],
+        [
+            "art\/sound\/engine\/3urfe\/4600rpm_exhaustON.wav",
+            "58e4e4ad94fa3063"
+        ],
+        [
+            "art\/sound\/engine\/3urfe\/1800rpm_exhaustON.wav",
+            "d46f43728a918d1c"
+        ],
+        [
+            "art\/sound\/engine\/3urfe\/5000rpm_exhaustOFF.wav",
+            "5539affc924bd3fe"
+        ],
+        [
+            "art\/sound\/engine\/3urfe\/4200rpm_exhaustON.wav",
+            "5cacb1f317c10db5"
+        ],
+        [
+            "art\/sound\/engine\/3urfe\/3000rpm_exhaustON.wav",
+            "9d10ae0277b8e347"
+        ],
+        [
+            "art\/sound\/engine\/3urfe\/1100rpm_exhaustOFF.wav",
+            "ecda449c2b5114d0"
+        ],
+        [
+            "art\/sound\/engine\/3urfe\/1400rpm_exhaustON.wav",
+            "5561f0de304c328f"
+        ],
+        [
+            "art\/sound\/engine\/3urfe\/4100rpm_exhaustOFF.wav",
+            "0bede49b66a7600d"
+        ],
+        [
+            "art\/sound\/engine\/3urfe\/1100rpm_exhaustON.wav",
+            "215f6b97c0d4c6b8"
+        ],
+        [
+            "art\/sound\/engine\/3urfe\/3200rpm_exhaustOFF.wav",
+            "e986990165204762"
+        ],
+        [
+            "art\/sound\/engine\/3urfe\/3700rpm_exhaustON.wav",
+            "114be869e4f506e0"
+        ],
+        [
+            "art\/sound\/engine\/3urfe\/1600rpm_exhaustON.wav",
+            "61d6c903bfb80728"
+        ],
+        [
+            "art\/sound\/engine\/3urfe\/1800rpm_exhaustOFF.wav",
+            "61fb890c37abc310"
+        ],
+        [
+            "art\/sound\/engine\/3urfe\/3000rpm_exhaustOFF.wav",
+            "a131ef7ee0b36693"
+        ],
+        [
+            "art\/sound\/engine\/3urfe\/2700rpm_exhaustOFF.wav",
+            "dc65e8ff86719868"
+        ],
+        [
+            "art\/sound\/engine\/3urfe\/1000rpm_exhaustON.wav",
+            "117f86fca97edf72"
+        ],
+        [
+            "art\/sound\/engine\/3urfe\/2700rpm_exhaustON.wav",
+            "b607ff5ba19c9fce"
+        ],
+        [
+            "art\/sound\/engine\/3urfe\/4800rpm_exhaustON.wav",
+            "dade9324e59be673"
+        ],
+        [
+            "art\/sound\/engine\/3urfe\/3900rpm_exhaustOFF.wav",
+            "799cb98b12d460dd"
+        ],
+        [
+            "art\/sound\/engine\/3urfe\/3400rpm_exhaustON.wav",
+            "3bac381c5b02bef8"
+        ],
+        [
+            "art\/sound\/engine\/3urfe\/800rpm_exhaustOFF.wav",
+            "fd1a9155f7c29554"
+        ],
+        [
+            "art\/sound\/engine\/3urfe\/1600rpm_exhaustOFF.wav",
+            "3b51a6c32dde88dd"
+        ],
+        [
+            "art\/sound\/engine\/3urfe\/4200rpm_exhaustOFF.wav",
+            "2bc2b83322aa2022"
+        ],
+        [
+            "art\/sound\/engine\/3urfe\/4800rpm_exhaustOFF.wav",
+            "4413c98547be69fb"
+        ],
+        [
+            "art\/sound\/engine\/3urfe\/5000rpm_exhaustON.wav",
+            "c5e89c4d99972736"
+        ],
+        [
+            "art\/sound\/engine\/3urfe\/4400rpm_exhaustON.wav",
+            "de86ca3951fa60ec"
+        ],
+        [
+            "art\/sound\/engine\/3urfe\/4700rpm_exhaustOFF.wav",
+            "e264df7b03ce33f1"
+        ],
+        [
+            "art\/sound\/engine\/3urfe\/3900rpm_exhaustON.wav",
+            "ce6d750904602107"
+        ],
+        [
+            "art\/sound\/engine\/3urfe\/3700rpm_exhaustOFF.wav",
+            "4c01c2f6db610b6a"
+        ],
+        [
+            "art\/sound\/engine\/3urfe\/1400rpm_exhaustOFF.wav",
+            "7a7437bb378645ae"
+        ],
+        [
+            "art\/sound\/engine\/3urfe\/2200rpm_exhaustOFF.wav",
+            "e9cda7606eacdaea"
+        ],
+        [
+            "art\/sound\/engine\/3urfe\/1000rpm_exhaustOFF.wav",
+            "094e01001ed4e7e6"
+        ],
+        [
+            "art\/sound\/engine\/3urfe\/2000rpm_exhaustOFF.wav",
+            "c1b69d89750db485"
+        ],
+        [
+            "art\/sound\/engine\/3urfe\/4100rpm_exhaustON.wav",
+            "5c6c9f61ecef5173"
+        ],
+        [
+            "art\/sound\/engine\/3urfe\/800rpm_exhaustON.wav",
+            "7befae9ab666e5cd"
+        ],
+        [
+            "art\/sound\/engine\/3urfe\/3200rpm_exhaustON.wav",
+            "b7ecc2d9271ffff6"
+        ],
+        [
+            "art\/sound\/engine\/3urfe\/4700rpm_exhaustON.wav",
+            "d2ea424270b8fed1"
+        ],
+        [
+            "art\/sound\/engine\/3urfe\/4400rpm_exhaustOFF.wav",
+            "5d29f74e5fd3619c"
+        ],
+        [
+            "art\/sound\/engine\/3urfe\/2400rpm_exhaustON.wav",
+            "8f1d43a24e8a79b4"
+        ],
+        [
+            "art\/sound\/engine\/3urfe\/3400rpm_exhaustOFF.wav",
+            "13bb664de3111288"
+        ],
+        [
+            "vehicles\/common\/esc\/toyotatruckengines_esc.jbeam",
+            "00dac02e3c1f0849"
+        ],
+        [
+            "vehicles\/common\/pickup\/muffler\/pickup_muffler_trd.jbeam",
+            "8fa6a9a0992e06a3"
+        ],
+        [
+            "vehicles\/common\/pickup\/Engines\/22re_starb.jbeam",
+            "7b09c074f9acac94"
+        ],
+        [
+            "vehicles\/common\/pickup\/Engines\/1urfe_starb.jbeam",
+            "c2b2e4072f887ed2"
+        ],
+        [
+            "vehicles\/common\/pickup\/Engines\/2uzfe_starb.jbeam",
+            "8087408999ca271c"
+        ],
+        [
+            "vehicles\/common\/pickup\/Engines\/pickup_engine_v35a.jbeam",
+            "1e10b78a45b07ab1"
+        ],
+        [
+            "vehicles\/common\/pickup\/Engines\/5VZ-FE_starb.jbeam",
+            "1a9b5e4335235333"
+        ],
+        [
+            "vehicles\/common\/pickup\/Engines\/pickup_engine_2grfe.jbeam",
+            "d04095f2078a6eac"
+        ],
+        [
+            "vehicles\/common\/pickup\/Engines\/1fz-fe_starb.jbeam",
+            "4eecb4c7b11417ee"
+        ],
+        [
+            "vehicles\/common\/pickup\/Engines\/1grfe_starb.jbeam",
+            "74e4720cfd5090cf"
+        ],
+        [
+            "vehicles\/common\/pickup\/Engines\/3urfe_withsound.jbeam",
+            "e79c9774e4d30c6f"
+        ],
+        [
+            "vehicles\/common\/pickup\/Engines\/pickup_engine_1gd.jbeam",
+            "7d5a8819f0d7dbf2"
+        ],
+        [
+            "vehicles\/common\/pickup\/Engines\/pickup_3urfe_starb.jbeam",
+            "d927d7243063baff"
+        ],
+        [
+            "vehicles\/common\/diff\/toyota_diff_starb.jbeam",
+            "2ed4821088afbae6"
+        ],
+        [
+            "vehicles\/common\/Fuel tanks\/pickup_fueltank_longrange.jbeam",
+            "824870eb73b67f82"
+        ],
+        [
+            "vehicles\/common\/Fuel tanks\/diesel_fueltank_longrange.jbeam",
+            "90043dd33062c3e3"
+        ],
+        [
+            "vehicles\/common\/Transmissions\/pickup_transmission_aa80f.jbeam",
+            "3461f597b9aebaf4"
+        ],
+        [
+            "vehicles\/common\/Transmissions\/pickup_transmission_a760f.jbeam",
+            "add80fc1f5e983a8"
+        ],
+        [
+            "vehicles\/common\/Transmissions\/pickup_transmission_A343F.jbeam",
+            "152c33302dbb2c06"
+        ],
+        [
+            "vehicles\/common\/Transmissions\/pickup_transmission_awr10l65.jbeam",
+            "a4f64c07a8667b36"
+        ],
+        [
+            "vehicles\/common\/Transmissions\/pickup_transmission_a750f.jbeam",
+            "9b593aa51cc11b05"
+        ],
+        [
+            "vehicles\/common\/Transmissions\/r_series_toyotas_starb.jbeam",
+            "1645f110cc1a7d5f"
+        ],
+        [
+            "vehicles\/common\/Transmissions\/pickup_transmission_ab60f.jbeam",
+            "805cbf9d9e3c2136"
+        ],
+        [
+            "vehicles\/pessima\/pessima_engine_22re.jbeam",
+            "2cfeec6567224011"
+        ],
+        [
+            "vehicles\/pessima\/pessima_1fz-fe_starb.jbeam",
+            "9033367d8a062f20"
+        ],
+        [
+            "vehicles\/roamer\/toyotatruckengines_esc.jbeam",
+            "6d2737d6469ca1d4"
+        ],
+        [
+            "vehicles\/fullsize\/pickup_transmission_a760f.jbeam",
+            "a6dafcdf205887bc"
+        ],
+        [
+            "vehicles\/fullsize\/fullsize_1fz-fe_starb.jbeam",
+            "2342c1e8b913190e"
+        ],
+        [
+            "vehicles\/vivace\/vivace_5VZ-FE_starb.jbeam",
+            "22aa1432a3103c15"
+        ],
+        [
+            "vehicles\/coupe\/MO_POWAH_BABY_radiator.jbeam",
+            "7d8667694df52837"
+        ],
+        [
+            "vehicles\/coupe\/coupe_1fz-fe_starb.jbeam",
+            "5449ae706cb3e5fe"
+        ],
+        [
+            "vehicles\/coupe\/coupe_engine_22re.jbeam",
+            "bb6e07fadcf5ccd9"
+        ],
+        [
+            "vehicles\/etki\/etki_1fz-fe_starb.jbeam",
+            "348687e95515e97d"
+        ],
+        [
+            "vehicles\/prasu\/prasu_engine_1fzfe.jbeam",
+            "d8fa587633050f7d"
+        ]
+    ]
+}

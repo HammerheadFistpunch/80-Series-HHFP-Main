@@ -1,0 +1,14 @@
+{
+"cruiserj80_kostky1": {
+    "information":{
+        "authors":"completly useless tbh",
+        "name":"Black Dice",
+        "value":60,
+    },
+    "slotType" : "cruiserj80_dice",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_3gal", ["cruiserj80_body"], [],{"pos":{"x":0.0,"y":0.0,"z":0.0}}],
+    ],
+},
+}

@@ -1,0 +1,114 @@
+{
+"pickup_modslot_starb": {
+    "information":{
+        "authors":"starb",
+        "name":"ESC & PCM",
+    }
+    "slotType" : "roamer_mod",
+ 
+    "slots": [
+        ["type", "default", "description"]
+        ["roamer_ESC_tundra","roamer_ESC_tundra_mod", "Traction Control"],
+    ],
+}
+    "roamer_ESC_tundra_mod": {
+        "information":{
+            "authors":"Diamondback",
+            "name":"Electronics",
+            "value":250,
+        },
+        "slotType" : "roamer_ESC_tundra",
+        "controller": [
+            ["fileName"],
+            ["esc"],
+        ],
+        "esc": {
+            "actionedWheels": ["FL", "FR", "RR", "RL"],
+            "isDebugMode": 0,
+            "defaultConfig": 1,
+            "configurations": {
+                "Regular ESC": {
+                    //ESC
+                    "escEnabled": true,
+                    "escConfigurationEnabled": true,
+                    "order":10,
+                    "activeColor":"98FB00",
+
+                    "maxSideAcceleration": 10,
+                    "brakeForceMultiplier": 1,
+                    "escThreshold": 0.2,
+                    "characteristicSpeed": -1,
+                    "proportionalFactor": 0.95,
+                    "integralFactor": 2.0,
+                    "maxIntegralPart": 2.0,
+                    "skewStiffnessFront": 128000,
+                    "skewStiffnessRear": 114000,
+                    "desiredYawRateSmoothing": 570,
+                    //TCS
+                    "slipThreshold": 0.05,
+                    "minThrottleFactor": 0.05,
+                    "maxBrakingFactor": 0.85,
+                    "throttleProportionalFactor": 3.5,
+                    "throttleIntegralFactor": 5,
+                    "brakingProportionalFactor": 2,
+                    "brakingIntegralFactor": 1,
+                    "brakeThrottleSwitchThreshold": 20,
+                },
+                "Tow-Haul ESC": {
+                    //ESC
+                    "escEnabled": true,
+                    "escConfigurationEnabled": true,
+                    "order":20,
+                    "activeColor":"3096F1",
+
+                    "maxSideAcceleration":12,
+                    "brakeForceMultiplier":1.1,
+                    "escThreshold":0.4,
+                    "characteristicSpeed":1,
+                    "proportionalFactor": 0.6,
+                    "integralFactor": 1.5,
+                    "maxIntegralPart": 3.0,
+                    "skewStiffnessFront":128000,
+                    "skewStiffnessRear":114000,
+                    "desiredYawRateSmoothing":570,
+                    "escThrottleReduceCoef":0.2,
+                    //TCS
+                    "slipThreshold": 0.21,
+                    "minThrottleFactor": 0.3,
+                    "maxBrakingFactor": 1,
+                    "throttleProportionalFactor": 4,
+                    "throttleIntegralFactor": 5.5,
+                    "brakingProportionalFactor": 2.2,
+                    "brakingIntegralFactor": 1.1,
+                    "brakeThrottleSwitchThreshold": 25,
+					"mainEngine":{
+						"revLimiterRPM":6000,
+						"revLimiterType":"rpmDrop",
+						"revLimiterRPMDrop":250,
+						"torqueModMult":[
+							["rpm", "torque"],
+							[0,       1],
+							[1000, 1.1],
+							[2000, 1.1],
+							[3000, 1.1],
+							[4000, 1.1],
+							[5000, 1.1],
+							[6000, 1.1],
+							[7000, 1.1],
+					],
+				},
+                },
+                "ESC Off":{
+                    //ESC
+                    "escEnabled": false,
+                    "order":40,
+                    "escConfigurationEnabled": true,
+                    "activeColor":"AA3939",
+                    //UI
+                    "overrideESCPulse": 1,
+                    "overrideTCSPulse": 1,
+                },
+            },
+        },
+    },
+}

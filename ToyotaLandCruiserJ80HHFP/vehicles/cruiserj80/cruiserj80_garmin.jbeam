@@ -1,0 +1,40 @@
+{
+"cruiserj80_garmin": {
+    "information":{
+        "authors":"Omashida",
+        "name":"Garmin 276c",
+        "value":250,
+    },
+    "slotType" : "cruiserj80_garmin",
+    "controller": [
+        ["fileName"],
+        ["beamNavigator"],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_garmin", ["gps"], [],{"pos":{"x":0,"y":0,"z":0}}],
+    ],
+    "glowMap":{
+        "screen_gps":{"simpleFunction":{"ignitionLevel":0.5}, "off":"screen_off","on":"beamnav_naviscreen_accessory", "on_intense":"screen_gps"},
+    },
+},
+"cruiserj80_garmin_RHD": {
+    "information":{
+        "authors":"Omashida",
+        "name":"Garmin 276c",
+        "value":250,
+    },
+    "slotType" : "cruiserj80_garmin_RHD",
+    "controller": [
+        ["fileName"],
+        ["beamNavigator"],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["cruiserj80_garmin_RHD", ["gps"], [],{"pos":{"x":0,"y":0,"z":0}}],
+    ],
+    "glowMap":{
+        "screen_gps":{"simpleFunction":{"ignitionLevel":0.5}, "off":"screen_off","on":"beamnav_naviscreen_accessory", "on_intense":"screen_gps"},
+    },
+},
+}

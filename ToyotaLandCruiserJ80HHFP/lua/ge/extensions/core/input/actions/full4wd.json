@@ -1,0 +1,6 @@
+{
+"togglefull4WDStatus"         :{"cat":"vehicle",       "order": 330.2, "ctx": "vlua", "onDown"  :"for _,v in pairs(controller.getControllersByType('full4wd')) do v.toggle4WD() end", "title": "ui.inputActions.vehicle.toggle4WDStatus.title", "desc": "ui.inputActions.vehicle.toggle4WDStatus.description" },
+"togglefullRangeStatus"       :{"cat":"vehicle",       "order": 330.3, "ctx": "vlua", "onDown"  :"for _,v in pairs(controller.getControllersByType('full4wd')) do v.toggleRange() end", "title": "ui.inputActions.vehicle.toggleRangeStatus.title", "desc": "ui.inputActions.vehicle.toggleRangeStatus.description" },
+}
+
+

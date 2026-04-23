@@ -1,0 +1,244 @@
+{
+  "pickup_differential_R_LSD_toyota": {
+    "information": {
+      "authors": "BeamNG",
+      "name": "Toyota Limited Slip Rear Differential",
+      "value": 750
+    },
+    "slotType": "pickup_differential_R",
+    "slots": [
+      [ "type", "default", "description" ],
+      //["pickup_driveshaft_R","pickup_driveshaft_R","Rear Driveshaft"],
+      [
+        "pickup_finaldrive_R",
+        "pickup_finaldrive_R_355",
+        "Rear Final Drive",
+        { "coreSlot": true }
+      ]
+    ],
+    "powertrain": [
+      [ "type", "name", "inputName", "inputIndex" ],
+      //rear diff
+      [
+        "differential",
+        "differential_R",
+        "driveshaft",
+        1,
+        {
+          "diffType": "lsd",
+          "lsdPreload": 200,
+          "lsdLockCoef": 0.60,
+          "lsdRevLockCoef": 0.50,
+          "friction": 4,
+          "uiName": "Rear Differential",
+          "defaultVirtualInertia": 0.5
+        }
+      ]
+    ]
+  },
+  "pickup_differential_toy_locking": {
+    "information": {
+      "authors": "CJD",
+      "name": "Toyota Locking Rear Differential",
+      "value": 450
+    },
+    "slotType": "pickup_differential_R",
+    "slots": [
+      [ "type", "default", "description" ],
+      //["pickup_driveshaft_R","pickup_driveshaft_R","Rear Driveshaft"],
+      [
+        "pickup_finaldrive_R",
+        "pickup_finaldrive_R_355",
+        "Rear Final Drive",
+        { "coreSlot": true }
+      ]
+    ],
+    "powertrain": [
+      [ "type", "name", "inputName", "inputIndex" ],
+      [
+        "differential",
+        "differential_R",
+        "driveshaft",
+        1,
+        {
+          "diffType": [ "lsd", "locked" ],
+          "lockTorque": 25000,
+          "lsdPreload": "200",
+          "lsdLockCoef": "0.60",
+          "lsdRevLockCoef": "0.50",
+          "friction": 3,
+          "uiName": "Rear Differential",
+          "defaultVirtualInertia": 0.5
+        }
+      ]
+    ]
+  },
+  "pickup_finaldrive_R_411": {
+    "information": {
+      "authors": "BeamNG",
+      "name": "4.11:1 Rear Final Drive",
+      "value": 150
+    },
+
+    "slotType": "pickup_finaldrive_R",
+
+    "differential_R": {
+      "gearRatio": 4.11
+    }
+  },
+  "pickup_finaldrive_R_430": {
+    "information": {
+      "authors": "BeamNG",
+      "name": "4.30:1 Rear Final Drive",
+      "value": 150
+    },
+
+    "slotType": "pickup_finaldrive_R",
+
+    "differential_R": {
+      "gearRatio": 4.30
+    }
+  },
+  "pickup_finaldrive_R_3.31": {
+    "information": {
+      "authors": "BeamNG",
+      "name": "3.31:1 Rear Final Drive",
+      "value": 150
+    },
+
+    "slotType": "pickup_finaldrive_R",
+
+    "differential_R": {
+      "gearRatio": 3.31
+    }
+  },
+  "pickup_finaldrive_F_3.31": {
+    "information": {
+      "authors": "BeamNG",
+      "name": "3.31:1 Front Final Drive",
+      "value": 150
+    },
+
+    "slotType": "pickup_finaldrive_F",
+
+    "torsionReactorF": {
+      "gearRatio": 3.31
+    }
+  },
+  "pickup_differential_F_LSD_toy": {
+    "information": {
+      "authors": "BeamNG",
+      "name": "Toyota Limited Slip Front Differential",
+      "value": 750
+    },
+    "slotType": "pickup_differential_F",
+    "slots": [
+      [ "type", "default", "description" ],
+      [ "pickup_driveshaft_F", "pickup_driveshaft_F", "Front Driveshaft" ],
+      [ "pickup_halfshafts_F", "pickup_halfshafts_F", "Front Halfshafts" ],
+      [
+        "pickup_finaldrive_F",
+        "pickup_finaldrive_F_355",
+        "Front Final Drive",
+        { "coreSlot": true }
+      ]
+    ],
+    "flexbodies": [
+      [ "mesh", "[group]:", "nonFlexMaterials" ],
+      [
+        "pickup_diff_F",
+        [ "pickup_diff_F", "pickup_frame", "pickup_lowermounts" ]
+      ]
+    ],
+    "powertrain": [
+      [ "type", "name", "inputName", "inputIndex" ],
+      //front diff
+      [ "torsionReactor", "torsionReactorF", "driveshaft_F", 1 ],
+      [
+        "differential",
+        "differential_F",
+        "torsionReactorF",
+        1,
+        {
+          "diffType": "lsd",
+          "gearRatio": 1,
+          "lsdPreload": 200,
+          "lsdLockCoef": 0.6,
+          "lsdRevLockCoef": 0.5,
+          "uiName": "Front Differential",
+          "defaultVirtualInertia": 0.5
+        }
+      ]
+    ],
+    "differential_F": {
+      "friction": 3.72,
+      "dynamicFriction": 0.00163,
+      "torqueLossCoef": 0.03
+    },
+    "torsionReactorF": {
+      "torqueReactionNodes:": [ "fx2l", "fx2r", "fx1r" ]
+    },
+    "nodes": [
+      [ "id", "posX", "posY", "posZ" ],
+      //--diff weight--
+      { "selfCollision": false },
+      { "collision": false },
+      { "nodeMaterial": "|NM_METAL" },
+      { "frictionCoef": 0.5 },
+      { "group": "pickup_diff_F" },
+      { "nodeWeight": 23.5 },
+      [ "fdiffl", 0.3, -1.463, 0.42 ],
+      [ "fdiffr", -0.3, -1.463, 0.42 ],
+      { "group": "" }
+    ],
+    "beams": [
+      [ "id1:", "id2:" ],
+      {
+        "beamType": "|NORMAL",
+        "beamLongBound": 1.0,
+        "beamShortBound": 1.0
+      },
+
+      { "deformLimitExpansion": 1.2 },
+      {
+        "beamSpring": 2820940,
+        "beamDamp": 235
+      },
+      {
+        "beamDeform": 17500,
+        "beamStrength": "FLT_MAX"
+      },
+      [ "fdiffr", "fdiffl" ],
+      { "deformLimitExpansion": "" },
+      {
+        "beamSpring": 1101000,
+        "beamDamp": 350
+      },
+      {
+        "beamDeform": 12000,
+        "beamStrength": "FLT_MAX"
+      },
+      [ "fdiffl", "fx2l" ],
+      [ "fdiffl", "fx1l" ],
+      [ "fdiffl", "f3l" ],
+      [ "fdiffl", "f2l" ],
+      [ "fdiffr", "fx2r" ],
+      [ "fdiffr", "fx1r" ],
+      [ "fdiffr", "f3r" ],
+      [ "fdiffr", "f2r" ],
+      [ "fdiffr", "f3l" ],
+      [ "fdiffr", "f2l" ],
+      [ "fdiffl", "f3r" ],
+      [ "fdiffl", "f2r" ],
+
+      [ "fdiffl", "f13l" ],
+      [ "fdiffl", "f12l" ],
+      [ "fdiffr", "f13r" ],
+      [ "fdiffr", "f12r" ],
+      [ "fdiffr", "f13l" ],
+      [ "fdiffr", "f12l" ],
+      [ "fdiffl", "f13r" ],
+      [ "fdiffl", "f12r" ]
+    ]
+  }
+}

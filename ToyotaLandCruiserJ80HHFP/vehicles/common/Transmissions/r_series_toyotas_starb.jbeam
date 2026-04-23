@@ -1,0 +1,239 @@
+{
+"pickup_transmission_r155f": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"5-Speed Manual Transmission (R155F)",
+        "value":320,
+    },
+    "slotType" : "pickup_transmission",
+    "slots": [
+        ["type", "default","description"],
+        ["pickup_flywheel","pickup_flywheel","Flywheel", {"coreSlot":true}],
+        ["pickup_transfer_case","pickup_transfer_case_4WD","Transfer Case", {"coreSlot":true}],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["frictionClutch", "clutch", "mainEngine", 1],
+        ["manualGearbox", "gearbox", "clutch", 1],
+    ],
+    "gearbox": {
+        "uiName":"Gearbox",
+        "gearRatios":[-4.22, 0, 3.95, 2.06, 1.44, 1.0, 0.81],
+        "friction": 10,
+        "gearboxNode:":"tra1",
+
+        "gearWhineCoefsInput":  [0.80, 0.00, 0.30, 0.27, 0.24, 0.20, 0.24],
+        "gearWhineCoefsOutput": [0.00, 0.00, 0.32 0.32, 0.32, 0.27, 0.32],
+        "gearWhineInputEvent": "event:>Vehicle>Transmission>helical_01>twine_in_tuned",
+        "gearWhineOutputEvent": "event:>Vehicle>Transmission>helical_01>twine_out_tuned",
+
+        "forwardInputPitchCoef":0.95
+        "forwardOutputPitchCoef":0.95
+        //"reverseInputPitchCoef":0.7
+        //"reverseOutputPitchCoef":0.7
+
+        //"gearWhineInputPitchCoefSmoothing":50
+        //"gearWhineOutputPitchCoefSmoothing":50
+        //"gearWhineInputVolumeCoefSmoothing":10
+        //"gearWhineOutputVolumeCoefSmoothing":10
+
+        //"gearWhineFixedCoefOutput": 0.7
+        //"gearWhineFixedCoefInput": 0.4
+    },
+    "clutch": {
+        "uiName":"Clutch",
+    },
+    "vehicleController": {
+        "calculateOptimalLoadShiftPoints": true,
+        "shiftDownRPMOffsetCoef":1.1,
+        "lowShiftDownRPM":[0,0,0,1300,1500,1400,1300,1100],
+        "lowShiftUpRPM":[0,0,2800,2600,2500,2300,2000],
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["gavril_v8_pickup_transmission", ["pickup_engine","pickup_transmission"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":false},
+         {"collision":true},
+         //--5 Speed Manual-
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"nodeWeight":32.9},
+         {"group":"pickup_transmission"},
+         ["tra1", 0.0, -0.41, 0.46],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //--TRANSMISSION CONE--
+          {"beamSpring":18800940,"beamDamp":470},
+          {"beamDeform":175000,"beamStrength":"FLT_MAX"},
+          ["tra1","e1r"],
+          ["tra1","e3r"],
+          ["tra1","e1l"],
+          ["tra1","e3l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+"pickup_transmission_r156f": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"5-Speed Manual Transmission (R156F)",
+        "value":320,
+    },
+    "slotType" : "pickup_transmission",
+    "slots": [
+        ["type", "default","description"],
+        ["pickup_flywheel","pickup_flywheel","Flywheel", {"coreSlot":true}],
+        ["pickup_transfer_case","pickup_transfer_case_4WD","Transfer Case", {"coreSlot":true}],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["frictionClutch", "clutch", "mainEngine", 1],
+        ["manualGearbox", "gearbox", "clutch", 1],
+    ],
+    "gearbox": {
+        "uiName":"Gearbox",
+        "gearRatios":[-4.22, 0, 4.31, 2.33, 1.44, 1.0, 0.79],
+        "friction": 10,
+        "gearboxNode:":"tra1",
+
+        "gearWhineCoefsInput":  [0.80, 0.00, 0.30, 0.27, 0.24, 0.20, 0.24],
+        "gearWhineCoefsOutput": [0.00, 0.00, 0.32 0.32, 0.32, 0.27, 0.32],
+        "gearWhineInputEvent": "event:>Vehicle>Transmission>helical_01>twine_in_tuned",
+        "gearWhineOutputEvent": "event:>Vehicle>Transmission>helical_01>twine_out_tuned",
+
+        "forwardInputPitchCoef":0.95
+        "forwardOutputPitchCoef":0.95
+        //"reverseInputPitchCoef":0.7
+        //"reverseOutputPitchCoef":0.7
+
+        //"gearWhineInputPitchCoefSmoothing":50
+        //"gearWhineOutputPitchCoefSmoothing":50
+        //"gearWhineInputVolumeCoefSmoothing":10
+        //"gearWhineOutputVolumeCoefSmoothing":10
+
+        //"gearWhineFixedCoefOutput": 0.7
+        //"gearWhineFixedCoefInput": 0.4
+    },
+    "clutch": {
+        "uiName":"Clutch",
+    },
+    "vehicleController": {
+        "calculateOptimalLoadShiftPoints": true,
+        "shiftDownRPMOffsetCoef":1.1,
+        "lowShiftDownRPM":[0,0,0,1300,1500,1400,1300,1100],
+        "lowShiftUpRPM":[0,0,2800,2600,2500,2300,2000],
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["gavril_v8_pickup_transmission", ["pickup_engine","pickup_transmission"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":false},
+         {"collision":true},
+         //--5 Speed Manual-
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"nodeWeight":32.9},
+         {"group":"pickup_transmission"},
+         ["tra1", 0.0, -0.41, 0.46],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //--TRANSMISSION CONE--
+          {"beamSpring":18800940,"beamDamp":470},
+          {"beamDeform":175000,"beamStrength":"FLT_MAX"},
+          ["tra1","e1r"],
+          ["tra1","e3r"],
+          ["tra1","e1l"],
+          ["tra1","e3l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+"pickup_transmission_r151f": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"5-Speed Manual Transmission (R151F)",
+        "value":320,
+    },
+    "slotType" : "pickup_transmission",
+    "slots": [
+        ["type", "default","description"],
+        ["pickup_flywheel","pickup_flywheel","Flywheel", {"coreSlot":true}],
+        ["pickup_transfer_case","pickup_transfer_case_4WD","Transfer Case", {"coreSlot":true}],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["frictionClutch", "clutch", "mainEngine", 1],
+        ["manualGearbox", "gearbox", "clutch", 1],
+    ],
+    "gearbox": {
+        "uiName":"Gearbox",
+        "gearRatios":[-4.22, 0, 4.313, 2.33, 1.436, 1.0, 0.838],
+        "friction": 10,
+        "gearboxNode:":"tra1",
+
+        "gearWhineCoefsInput":  [0.80, 0.00, 0.30, 0.27, 0.24, 0.20, 0.24],
+        "gearWhineCoefsOutput": [0.00, 0.00, 0.32 0.32, 0.32, 0.27, 0.32],
+        "gearWhineInputEvent": "event:>Vehicle>Transmission>helical_01>twine_in_tuned",
+        "gearWhineOutputEvent": "event:>Vehicle>Transmission>helical_01>twine_out_tuned",
+
+        "forwardInputPitchCoef":0.95
+        "forwardOutputPitchCoef":0.95
+        //"reverseInputPitchCoef":0.7
+        //"reverseOutputPitchCoef":0.7
+
+        //"gearWhineInputPitchCoefSmoothing":50
+        //"gearWhineOutputPitchCoefSmoothing":50
+        //"gearWhineInputVolumeCoefSmoothing":10
+        //"gearWhineOutputVolumeCoefSmoothing":10
+
+        //"gearWhineFixedCoefOutput": 0.7
+        //"gearWhineFixedCoefInput": 0.4
+    },
+    "clutch": {
+        "uiName":"Clutch",
+    },
+    "vehicleController": {
+        "calculateOptimalLoadShiftPoints": true,
+        "shiftDownRPMOffsetCoef":1.1,
+        "lowShiftDownRPM":[0,0,0,1300,1500,1400,1300,1100],
+        "lowShiftUpRPM":[0,0,2800,2600,2500,2300,2000],
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["gavril_v8_pickup_transmission", ["pickup_engine","pickup_transmission"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":false},
+         {"collision":true},
+         //--5 Speed Manual-
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"nodeWeight":32.9},
+         {"group":"pickup_transmission"},
+         ["tra1", 0.0, -0.41, 0.46],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //--TRANSMISSION CONE--
+          {"beamSpring":18800940,"beamDamp":470},
+          {"beamDeform":175000,"beamStrength":"FLT_MAX"},
+          ["tra1","e1r"],
+          ["tra1","e3r"],
+          ["tra1","e1l"],
+          ["tra1","e3l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+}

@@ -1,0 +1,54 @@
+{
+"cruiserj80_steer": {
+    "information":{
+        "authors":"Omashida",
+        "name":"Stock Steering Wheel",
+        "value":450,
+    },
+    "slotType" : "cruiserj80_steer",
+    "props": [
+        ["func",     "mesh",         "idRef:","idX:","idY:", "baseRotation",           "rotation",            "translation",         "min", "max", "offset", "multiplier"],
+        //steering wheel
+        ["steering", "cruiserj80_steer", "dsh","dshl","dsh2",       {"x":27 "y":180, "z":180}, {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -1000, 1000, 0, 1],
+     ],
+}
+"cruiserj80_steer_standard": {
+    "information":{
+        "authors":"Omashida",
+        "name":"Standard Steering Wheel",
+        "value":450,
+    },
+    "slotType" : "cruiserj80_steer",
+    "props": [
+        ["func",     "mesh",         "idRef:","idX:","idY:", "baseRotation",           "rotation",            "translation",         "min", "max", "offset", "multiplier"],
+        //steering wheel
+        ["steering", "cruiserj80_steer_standard", "dsh","dshl","dsh2",       {"x":27 "y":180, "z":180}, {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -1000, 1000, 0, 1],
+     ],
+}
+"cruiserj80_steer_RHD": {
+    "information":{
+        "authors":"Omashida",
+        "name":"Stock Steering Wheel",
+        "value":450,
+    },
+    "slotType" : "cruiserj80_steer_RHD",
+    "props": [
+        ["func",     "mesh",         "idRef:","idX:","idY:", "baseRotation",           "rotation",            "translation",         "min", "max", "offset", "multiplier"],
+        //steering wheel
+        ["steering", "cruiserj80_steer_RHD", "dsh","dshl","dsh2",       {"x":27 "y":180, "z":180}, {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -1000, 1000, 0, 1],
+     ],
+}
+"cruiserj80_steer_standard_RHD": {
+    "information":{
+        "authors":"Omashida",
+        "name":"Standard Steering Wheel",
+        "value":450,
+    },
+    "slotType" : "cruiserj80_steer_RHD",
+    "props": [
+        ["func",     "mesh",         "idRef:","idX:","idY:", "baseRotation",           "rotation",            "translation",         "min", "max", "offset", "multiplier"],
+        //steering wheel
+        ["steering", "cruiserj80_steer_standard_RHD", "dsh","dshl","dsh2",       {"x":27 "y":180, "z":180}, {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -1000, 1000, 0, 1],
+     ],
+}
+}

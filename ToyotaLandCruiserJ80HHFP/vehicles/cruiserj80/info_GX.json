@@ -1,0 +1,44 @@
+{
+  "0-100 km/h":10.1,
+  "0-100 mph":27.1,
+  "0-200 km/h":92.3,
+  "0-60 mph":9.6,
+  "100-0 km/h":39.9,
+  "100-200 km/h":82.2,
+  "60-0 mph":123,
+  "60-100 mph":17.5,
+  "BoundingBox":[
+    [
+      -0.66,
+      -1.835,
+      -0.21
+    ],
+    [
+      1.28,
+      2.54,
+      1.19
+    ]
+  ],
+  "Braking G":0.986,
+  "Config Type":"Factory",
+  "Configuration":"GX",
+  "Description":"It was imported from the middle east 10 years ago, propbably was someones daily.",
+  "Drivetrain":"4WD",
+  "Fuel Type":"Gasoline",
+  "Induction Type":"NA",
+  "Off-Road Score":27,
+  "Performance Class":"3",
+  "Population":5000,
+  "Power":137,
+  "PowerPeakRPM":"5850 - 6500",
+  "Propulsion":"ICE",
+  "Top Speed":56.4697014,
+  "Torque":175,
+  "TorquePeakRPM":"3550 - 5300",
+  "Transmission":"Manuel",
+  "Value":11500,
+  "Weight":1920,
+  "Weight/Power":9.59854015,
+  "default_color":"Pearl White"
+}
+

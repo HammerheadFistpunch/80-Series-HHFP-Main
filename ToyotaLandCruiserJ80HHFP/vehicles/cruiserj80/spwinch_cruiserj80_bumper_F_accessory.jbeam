@@ -1,0 +1,72 @@
+{
+"spwinch_cruiserj80_bumper_F_accessory": {
+    "information":{
+        "authors":"AwesomeCarl",
+        "name":"SP Winch",
+        "value":1000,
+    },
+    "slotType" : "cruiserj80_bumper_F_accessory",
+    "slots": [
+        ["type", "default", "description"],
+        ["spwinch_common","spwinch_common", "Winch", {"nodeOffset":{"x":0, "y":-0.115, "z":0.0}, "coreSlot":true}],
+
+    ],
+	 	"props": [
+    ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"]    
+    ["spwinch_hydro", "spwinch_wheel", "spwwr9","spwwl7","spwwr13", {"x":0, "y":0, "z":0}, {"x":-360, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 100, 0, 13, {"baseTranslationGlobal":{"x":-0.000782, "y":-2.39643, "z":0.742883}}],
+    ["spwinch_freespool", "spwinch_switch", "spwwr9","spwwl7","spwwr13", {"x":90, "y":0, "z":0}, {"x":0, "y":0, "z":-90}, {"x":0, "y":0, "z":0}, 0, 1, 0, 1, {"baseTranslationGlobal":{"x":0.1838, "y":-2.38373, "z":0.803552}}],
+	],
+    "beams": [
+          ["id1:", "id2:"],
+		  //attach
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"beamSpring":520940,"beamDamp":100},
+          {"beamDeform":8000,"beamStrength":27000},
+          {"breakGroup":"spwinch_attach_r"},
+            ["spwwr8", "fb1r"],
+
+            ["spwwr8", "fb3r"],
+            ["spwwr8", "fb6r"],
+            ["spwwr8", "fb2r"],
+            ["spwwr9", "fb6r"],
+            ["spwwr9", "fb1r"],
+            ["spwwr13", "fb6r"],
+            ["spwwr13", "fb3r"],
+			
+            ["spwwr12", "fb6r"],
+            ["spwwr12", "fb3r"],
+			
+            ["spww14", "fb2r"],
+            ["spww4", "fb2r"],
+			
+            ["spww5", "fb6r"],
+			
+          {"breakGroup":"spwinch_attach_l"},
+            ["spwwl11", "fb6l"],
+            ["spwwl11", "fb3l"],
+            ["spwwl6", "fb6l"],
+            ["spwwl6", "fb3l"],
+            ["spwwl6", "fb1l"],
+            ["spwwl7", "fb1l"],
+            ["spwwl6", "fb2l"],
+            ["spwwl10", "fb6l"],
+            ["spwwl10", "fb3l"],
+			
+            ["spww14", "fb2l"],
+			
+            ["spww4", "fb2l"],
+            ["spww5", "fb6l"],
+			
+          {"breakGroup":"spwinch_attach_m"},
+            ["spww4", "fb2"],
+            ["spww14", "fb2"],
+            ["spww14", "fb3"],
+
+            ["spww5", "fb1"],
+			
+          {"breakGroup":""},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"deformLimitExpansion":1.2},
+    ],
+},
+}
