@@ -5,11 +5,11 @@ This is a combination of mods, and I want to give full credit here.
 Omashida did the original FJ80 mod, including body, beams, and base mod. Based on the Roamer I assume.
 What was missing in his mod:
 
-a. Full time 4wd. In most markets, the Toyota Land Cruiser 80 has the HF2A or HF2AV transfer cases. The HF2A and HF2AV are identical (2-speed, 1:1 high range, open center differential with locking, 2.488:1 low range with locking open center differential) with the exception that the V adds a viscous coupler OVER the center differential (not literally, just mecahnically), meaning that whenever the center differential is unlocked, it acts as an open differential but with a viscous coupler friction adder to try and create more balanced traction.
-b. Correct transmissions.  The Omashida mod does include an accurate H-151 manual 5 speed transmission, but no automatics.  Stock automatic transmission for the FJ80 and FZJ80 were the Aisin Toyota A442 and A343F transmissions. Transmissions added:
+1. Full time 4wd. In most markets, the Toyota Land Cruiser 80 has the HF2A or HF2AV transfer cases. The HF2A and HF2AV are identical (2-speed, 1:1 high range, open center differential with locking, 2.488:1 low range with locking open center differential) with the exception that the V adds a viscous coupler OVER the center differential (not literally, just mecahnically), meaning that whenever the center differential is unlocked, it acts as an open differential but with a viscous coupler friction adder to try and create more balanced traction.
+2. Correct transmissions.  The Omashida mod does include an accurate H-151 manual 5 speed transmission, but no automatics.  Stock automatic transmission for the FJ80 and FZJ80 were the Aisin Toyota A442 and A343F transmissions. Transmissions added:
   I. A442 (different ratios)
   II. A343F (different ratios and changes to the friction)
-c. Engines. The engine in the Omashida mod came from the Toyota engines mod included below, but I found that it needed tweaking. In addition, I added several stock engines that came with the 80 series that are unique to my mod:
+3. Engines. The engine in the Omashida mod came from the Toyota engines mod included below, but I found that it needed tweaking. In addition, I added several stock engines that came with the 80 series that are unique to my mod:
   I. 3F-E (STOCK GASOLINE ENGINE IN THE FJ80)
   II. USDM 1FZ-FE (RECONFIGURED FOR MORE ACCURATE PERFORMANCE BASED ON MY PERSONAL EXPERIENCE AND DATA)
   III. 2ND GEN 1FZ-FE (OTHER MARKETS GOT A REVISED 1FZ-FE WITH A LITTLE MORE POWER)
